@@ -225,7 +225,10 @@ def main() -> None:
     if index_path:
         run(["git", "add", index_path])
     run(["git", "commit", "-m", f"Add role: {role_name} ({slug})"])
-    run(["git", "push", "-u", "origin", branch])
+    # Force-push: this branch is exclusively bot-owned and regenerated fresh
+    # each run, so a leftover remote branch from a prior (e.g. closed
+    # without merge) attempt should just be overwritten, not block on.
+    run(["git", "push", "-f", "-u", "origin", branch])
 
     pr_body = (
         f"Closes #{ISSUE_NUMBER}\n\n"
