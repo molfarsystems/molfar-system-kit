@@ -1,0 +1,40 @@
+name: Clean up rejected role branch
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    # Merged PRs are handled by the repo's "Automatically delete head
+    # branches" setting. This only covers PRs closed without merging
+    # (a rejected role), and only branches this repo's own add-role
+    # workflow creates.
+    if: >
+      github.event.pull_request.merged == false &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      startsWith(github.event.pull_request.head.ref, 'role/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const ref = `heads/${context.payload.pull_request.head.ref}`;
+            try {
+              await github.rest.git.deleteRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref,
+              });
+              console.log(`Deleted ${ref}`);
+            } catch (err) {
+              // Already gone (e.g. deleted by hand) - not an error.
+              if (err.status === 422 || err.status === 404) {
+                console.log(`${ref} already gone`);
+              } else {
+                throw err;
+              }
+            }
