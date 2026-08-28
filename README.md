@@ -7,7 +7,7 @@ Roles, model lists and help files for **Molfar System** — a free Android app w
 Everything here is plain text. Copy what you need, paste it into the app, change it however you like.
 
 - App website: [molfar.nova-hata.com](https://molfar.nova-hata.com)
-- Google Play: `com.nova_hata.molfar`
+- Google Play: [play.google.com/store/apps/details?id=com.nova_hata.molfar](https://play.google.com/store/apps/details?id=com.nova_hata.molfar)
 
 ---
 

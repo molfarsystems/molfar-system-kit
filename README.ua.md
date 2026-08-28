@@ -7,7 +7,7 @@
 Тут лише текстові файли. Бери що треба, вставляй у застосунок, переробляй як завгодно.
 
 - Сайт: [molfar.nova-hata.com](https://molfar.nova-hata.com)
-- Google Play: `com.nova_hata.molfar`
+- Google Play: [play.google.com/store/apps/details?id=com.nova_hata.molfar](https://play.google.com/store/apps/details?id=com.nova_hata.molfar)
 
 ---
 
