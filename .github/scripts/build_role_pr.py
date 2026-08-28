@@ -253,6 +253,13 @@ def main() -> None:
     try:
         run(["gh", "pr", "merge", pr_number, "-R", REPO, "--squash", "--delete-branch"])
         comment(f"Merged {pr_url} — the role is live in `{folder}`.")
+        # Don't rely solely on the "Closes #N" auto-link - it can fail to
+        # fire when more than one PR has referenced the same issue (e.g.
+        # an earlier attempt that was closed without merging).
+        try:
+            run(["gh", "issue", "close", ISSUE_NUMBER, "-R", REPO, "--reason", "completed"])
+        except subprocess.CalledProcessError:
+            pass
     except subprocess.CalledProcessError:
         comment(f"Opened {pr_url} but couldn't auto-merge it — needs a manual merge.")
 
