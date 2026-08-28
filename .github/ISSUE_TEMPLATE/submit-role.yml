@@ -85,8 +85,8 @@ body:
     id: notes
     attributes:
       label: Anything else
-      validations:
-        required: false
+    validations:
+      required: false
 
   - type: checkboxes
     id: rights
