@@ -19,6 +19,15 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: role-code
+    attributes:
+      label: Role code
+      description: Becomes the folder name. Lowercase Latin letters, digits and hyphens only, e.g. "tax-consultant". Leave empty and we will generate one from the role name.
+      placeholder: tax-consultant
+    validations:
+      required: false
+
   - type: dropdown
     id: language
     attributes:
