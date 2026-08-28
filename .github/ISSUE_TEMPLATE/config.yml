@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea
+    url: https://github.com/molfarsystems/molfar-system-kit/discussions
+    about: Ask anything about the app, roles or setup — Discussions is the place.
+  - name: Bug in the app itself
+    url: https://molfar.nova-hata.com
+    about: This repository holds text files only. Report app bugs through the website.

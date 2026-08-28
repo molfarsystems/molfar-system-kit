@@ -1,0 +1,97 @@
+name: Submit a role
+description: Share a prompt and skill you use in Molfar System
+title: "[Role] "
+labels: ["role"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing. Fill in what you can — only the role name and the prompt are required.
+
+        The role will be added to `roles/` with a credit line pointing to your GitHub profile.
+
+  - type: input
+    id: role-name
+    attributes:
+      label: Role name
+      description: Short and descriptive, e.g. "Devil's Advocate", "Tax Consultant"
+      placeholder: Devil's Advocate
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language of the prompt
+      options:
+        - English
+        - Ukrainian
+        - German
+        - Spanish
+        - French
+        - Other (say which in the notes)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: seat
+    attributes:
+      label: Which seat is it for?
+      description: Orchestrator roles work differently — their skill stacks on top of the built-in round mechanics.
+      options:
+        - Participant (seats 1-4)
+        - Orchestrator (seat 5)
+        - Works as either
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: When is this role useful?
+      description: One or two sentences. What kind of question should you send it?
+      placeholder: Use it when a plan looks too good and you want the weak points found before you commit.
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt
+      description: The system instruction — who the role is. Paste the full text.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: skill
+    attributes:
+      label: Skill
+      description: How the role works — checklists, steps, output format. Leave empty if you did not write one.
+      render: markdown
+    validations:
+      required: false
+
+  - type: input
+    id: model
+    attributes:
+      label: Tested with which model?
+      description: Helps others reproduce your result.
+      placeholder: gemini-2.0-flash via Google AI Studio
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      validations:
+        required: false
+
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Confirmation
+      options:
+        - label: This text is mine, or I have the right to publish it. I agree to release it under CC0 1.0 (public domain).
+          required: true
