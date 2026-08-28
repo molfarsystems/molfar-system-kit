@@ -29,6 +29,25 @@ SEAT_MAP = {
     "Works as either": "participant or orchestrator",
 }
 
+SEAT_KEY_MAP = {
+    "Participant (seats 1-4)": "participant",
+    "Orchestrator (seat 5)": "orchestrator",
+    "Works as either": "either",
+}
+
+# Only languages with an existing top-level roles/README.<x>.md index.
+# Other languages still get their role folder, just no index row yet -
+# nothing to translate into, so nothing auto-generated there.
+LANG_README = {
+    "en": "roles/README.md",
+    "ua": "roles/README.ua.md",
+}
+
+TABLE_SEAT = {
+    "en": {"participant": "Participant", "orchestrator": "Orchestrator", "either": "Participant or Orchestrator"},
+    "ua": {"participant": "Учасник", "orchestrator": "Оркестратор", "either": "Учасник або Оркестратор"},
+}
+
 # Ukrainian -> Latin, close to the official transliteration (resolution 55/2010).
 # Used only as a fallback when "Role code" is empty/non-Latin.
 UA_TRANSLIT = {
@@ -77,6 +96,44 @@ def parse_issue_body(body: str) -> dict:
 
 def comment(text: str) -> None:
     run(["gh", "issue", "comment", ISSUE_NUMBER, "-R", REPO, "--body", text])
+
+
+def escape_cell(text: str) -> str:
+    text = text.replace("|", "\\|")
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) > 140:
+        text = text[:139].rstrip() + "…"
+    return text
+
+
+def update_roles_index(lang: str, slug: str, role_name: str, purpose: str, seat_raw: str):
+    path = LANG_README.get(lang)
+    if not path or not os.path.isfile(path):
+        return None
+
+    seat_key = SEAT_KEY_MAP.get(seat_raw, "participant")
+    seat_col = TABLE_SEAT.get(lang, TABLE_SEAT["en"]).get(seat_key, seat_key)
+    lang_link = f"[{lang}]({lang}/{slug}/)"
+
+    with open(path) as f:
+        lines = f.read().split("\n")
+
+    sep_idx = None
+    for i, line in enumerate(lines):
+        if i > 0 and re.match(r"^\|[-\s|]+\|$", line) and lines[i - 1].lstrip().startswith("|"):
+            sep_idx = i
+            break
+    if sep_idx is None:
+        return None
+
+    row = (
+        f"| {escape_cell(role_name)} | {escape_cell(purpose)} | "
+        f"{seat_col} | {lang_link} |"
+    )
+    lines.insert(sep_idx + 1, row)
+    with open(path, "w") as f:
+        f.write("\n".join(lines))
+    return path
 
 
 def main() -> None:
@@ -160,19 +217,22 @@ def main() -> None:
                 f"```text\n{skill}\n```\n"
             )
 
+    index_path = update_roles_index(lang, slug, role_name, purpose, seat_raw)
+
     branch = f"role/{slug}"
     run(["git", "checkout", "-b", branch])
     run(["git", "add", folder])
+    if index_path:
+        run(["git", "add", index_path])
     run(["git", "commit", "-m", f"Add role: {role_name} ({slug})"])
     run(["git", "push", "-u", "origin", branch])
 
     pr_body = (
         f"Closes #{ISSUE_NUMBER}\n\n"
-        "Auto-generated from the *Submit a role* issue form. Please review before merging:\n\n"
-        "- [ ] Prompt/skill text reads well and doesn't need edits\n"
-        f"- [ ] Add a row for this role to `roles/README.md`"
-        f"{' and `roles/README.ua.md`' if lang != 'en' else ''}\n"
-        f"- [ ] Credit: submitted by @{username}\n"
+        "Auto-generated from the *Submit a role* issue, reviewed before the "
+        "`approved` label was applied.\n\n"
+        f"- Role code: `{slug}`\n"
+        f"- Credit: submitted by @{username}\n"
     )
     result = run(
         [
@@ -185,7 +245,13 @@ def main() -> None:
         capture_output=True,
     )
     pr_url = result.stdout.strip().splitlines()[-1]
-    comment(f"Opened {pr_url} — this issue will close automatically once it's merged.")
+    pr_number = pr_url.rstrip("/").rsplit("/", 1)[-1]
+
+    try:
+        run(["gh", "pr", "merge", pr_number, "-R", REPO, "--squash", "--delete-branch"])
+        comment(f"Merged {pr_url} — the role is live in `{folder}`.")
+    except subprocess.CalledProcessError:
+        comment(f"Opened {pr_url} but couldn't auto-merge it — needs a manual merge.")
 
 
 if __name__ == "__main__":
