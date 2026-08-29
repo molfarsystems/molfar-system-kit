@@ -17,7 +17,7 @@ Once a language has enough roles to stand on its own, it gets a proper
 
 | Role | What it does | Seat | Language |
 |---|---|---|---|
-| Mentor für IT-Berufe | Wenn jemand in die IT einsteigen möchte, aber nicht weiß, wo anfangen und welche Richtung zu ihm passt. Die Rolle wählt den Beruf passend zu den Stärken der Person. | Participant | [de](de/it-mentor/) |
+| Mentor für IT-Berufe | IT-Einstieg: Richtung passend zu den Stärken, Roadmap und erste Portfolio-Projekte | Participant | [de](de/it-mentor/) |
 
 ---
 

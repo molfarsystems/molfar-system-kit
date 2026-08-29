@@ -113,10 +113,11 @@ def comment(text: str) -> None:
 def escape_cell(text: str) -> str:
     text = text.replace("|", "\\|")
     text = re.sub(r"\s+", " ", text).strip()
-    # 200, not 140: a full sentence in Ukrainian or German runs longer than in
-    # English, and 140 was cutting them mid-word.
-    if len(text) > 200:
-        text = text[:199].rstrip() + "…"
+    # Kept short on purpose. GitHub gives no control over table column widths,
+    # so on a phone a long cell wraps to roughly one word per line. An index
+    # entry is a short phrase; the role's own README carries the full text.
+    if len(text) > 110:
+        text = text[:109].rstrip() + "…"
     return text
 
 
