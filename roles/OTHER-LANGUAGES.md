@@ -17,6 +17,7 @@ Once a language has enough roles to stand on its own, it gets a proper
 
 | Role | What it does | Seat | Language |
 |---|---|---|---|
+| Negociador | Prepara una negociación concreta: intereses reales, poder de cada lado y próximos movimientos | Participant | [es](es/negociador/) |
 | Avocat du diable | Attaque un plan pour trouver où il casse, avant que la réalité ne s'en charge | Participant | [fr](fr/avocat-du-diable/) |
 | Mentor für IT-Berufe | IT-Einstieg: Richtung passend zu den Stärken, Roadmap und erste Portfolio-Projekte | Participant | [de](de/it-mentor/) |
 
