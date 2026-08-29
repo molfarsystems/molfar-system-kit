@@ -16,10 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # A project address, not actions@github.com: that one maps to the
+      # third-party `actions-user` account, which then shows up in the
+      # contributor list with an avatar we don't control. This address belongs
+      # to no GitHub account, so the bot's commits stay unattributed and the
+      # only bot in the list is github-actions[bot], from the merges.
       - name: Configure git
         run: |
-          git config user.name "molfar-kit-bot"
-          git config user.email "actions@github.com"
+          git config user.name "Molfar Kit Bot"
+          git config user.email "bot@molfar.nova-hata.com"
 
       # The script reads the issue form to learn its field labels.
       - name: Install PyYAML
