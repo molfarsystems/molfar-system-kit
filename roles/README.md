@@ -12,6 +12,8 @@ Roles are not mirrored across languages — each exists in whatever languages so
 
 | Role | What it does | Seat | Languages |
 |---|---|---|---|
+| Маркетолог-стратег | Практик просування малого бізнесу з обмеженими бюджетами. | Participant | [ua](ua/marketing-strateg/) |
+| Архітектор ролей | Майстер, що робить майстрів: перетворює ідею «мені б у нараду юриста з митного права» на готовий промпт і скіл у форматі Molfar. | Participant | [ua](ua/architect-roles/) |
 | Devil's Advocate | Attacks a plan to find where it breaks | Participant | [en](en/devils-advocate/) · [ua](ua/advokat-dyiavola/) |
 
 ---
