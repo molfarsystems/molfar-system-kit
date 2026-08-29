@@ -12,6 +12,8 @@ import re
 import subprocess
 import sys
 
+import yaml
+
 REPO = os.environ["REPO"]
 ISSUE_NUMBER = os.environ["ISSUE_NUMBER"]
 
@@ -94,8 +96,32 @@ def make_code(role_code_raw: str, role_name: str) -> str:
     return code or "role"
 
 
+def form_field_labels():
+    """The `### <label>` headings GitHub writes for the submit-role form.
+
+    Read from the form itself so the two can't drift apart. Splitting on any
+    `### ` instead would eat the role's own content: a skill with `### 1. Step`
+    headings gets cut at the first one, silently - the run still succeeds and
+    the truncated role still merges.
+    """
+    form = os.path.join(os.path.dirname(__file__), "..", "ISSUE_TEMPLATE", "submit-role.yml")
+    with open(form, encoding="utf-8") as f:
+        spec = yaml.safe_load(f)
+    labels = []
+    for item in spec.get("body", []):
+        if item.get("type") == "markdown":
+            continue
+        label = item.get("attributes", {}).get("label")
+        if label:
+            labels.append(label)
+    if not labels:
+        raise RuntimeError(f"no field labels found in {form}")
+    return labels
+
+
 def parse_issue_body(body: str) -> dict:
-    parts = re.split(r"^### (.+)$", body, flags=re.MULTILINE)
+    pattern = "|".join(re.escape(lbl) for lbl in form_field_labels())
+    parts = re.split(rf"^### ({pattern})$", body, flags=re.MULTILINE)
     fields = {}
     for i in range(1, len(parts), 2):
         label = parts[i].strip()

@@ -21,6 +21,10 @@ jobs:
           git config user.name "molfar-kit-bot"
           git config user.email "actions@github.com"
 
+      # The script reads the issue form to learn its field labels.
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+
       - name: Build role folder and open PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
