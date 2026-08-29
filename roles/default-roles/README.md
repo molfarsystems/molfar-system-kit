@@ -15,35 +15,35 @@ Currently Ukrainian only (`ua/`); English translations are a follow-up pass.
 
 ## Participants (seats 1-4)
 
-| Code | Name | Description |
-|---|---|---|
-| [`cto`](participants/ua/cto/) | Технічний директор | Технічний директор. Стратегія розвитку технологій, архітектурні рішення та управління технічними командами. |
-| [`criminal_lawyer`](participants/ua/criminal_lawyer/) | Адвокат криміналіст | Адвокат з кримінального процесуального права та захисту прав людини у кримінальному провадженні. |
-| [`it_lawyer`](participants/ua/it_lawyer/) | ІТ Юрист | Юридичний консультант у сфері інформаційних технологій, цифрових продуктів та малого бізнесу. |
-| [`marketer`](participants/ua/marketer/) | Маркетолог | Спеціаліст зі стратегії, просування та розвитку продуктів і брендів. |
-| [`cybersecurity`](participants/ua/cybersecurity/) | Кібербезпека | Фахівець із кібербезпеки та захисту інформаційних систем, баз даних і мережевої інфраструктури. |
-| [`frontend_developer`](participants/ua/frontend_developer/) | Фронтенд-розробник | Розробник клієнтської частини вебзастосунків. |
-| [`mechanician`](participants/ua/mechanician/) | Конструктор | Інженер-конструктор. Проєктування виробів, механізмів, прототипів та систем на базі Arduino. |
-| [`programmer`](participants/ua/programmer/) | Програміст | Універсальний розробник програмного забезпечення. |
-| [`defense_attorney`](participants/ua/defense_attorney/) | Адвокат-захисник | Адвокат-захисник обвинуваченого у кримінальному провадженні: лінія захисту, оспорювання доказів обвинувачення, розумний сумнів. |
-| [`prosecutor`](participants/ua/prosecutor/) | Прокурор | Прокурор — державне обвинувачення з об'єктивністю: кваліфікація, оцінка доказів, процесуальні документи, обвинувачення. |
-| [`suspect`](participants/ua/suspect/) | Обвинувачений | Обвинувачений (підозрюваний): власна версія подій, документи на захист, реалізація процесуальних прав. |
-| [`medical_expert`](participants/ua/medical_expert/) | Мед. Експерт | Судово-медичний експерт: характер і механізм ушкоджень, ступінь тяжкості, причина смерті, висновок експерта. |
-| [`football_coach`](participants/ua/football_coach/) | Футбольний тренер | Футбольний тренер — тактичний аналіз матчу: форма, склади, схеми, ключові фактори та найімовірніший сценарій. |
-| [`football_journalist`](participants/ua/football_journalist/) | Футбольний журналіст | Футбольний журналіст — збір і перевірка новин про команди й матч: офіційні заяви, кадри, атмосфера; факти проти чуток. |
-| [`football_tactician`](participants/ua/football_tactician/) | Футбольний тактик | Футбольний тактик — розбір матчапу на полі: схеми, пресинг, переходи, зони, дуелі; яка тактика нейтралізує яку. |
-| [`football_psychologist`](participants/ua/football_psychologist/) | Футбольний психолог | Футбольний психолог — психологічні фактори матчу за відкритими джерелами: мотивація, тиск, стійкість; без діагнозів. |
-| [`mathematic`](participants/ua/mathematic/) | Математик-аналітик | Математик-аналітик — статистика, ймовірності й моделі на даних (зокрема xG, Poisson, Elo); результат із рівнем довіри. |
+| Code | Name | Description | Languages |
+|---|---|---|---|
+| `cto` | Chief Technology Officer | Chief Technology Officer. Technology strategy, architectural decisions, and management of technical teams. | [ua](participants/ua/cto/) · [en](participants/en/cto/) |
+| `criminal_lawyer` | Criminal Defense Lawyer | Criminal defense lawyer specializing in criminal procedure law and human rights protection in criminal proceedings. | [ua](participants/ua/criminal_lawyer/) · [en](participants/en/criminal_lawyer/) |
+| `it_lawyer` | IT Lawyer | Legal counsel in the field of information technology, digital products, and small business. | [ua](participants/ua/it_lawyer/) · [en](participants/en/it_lawyer/) |
+| `marketer` | Marketer | Specialist in strategy, promotion, and development of products and brands. | [ua](participants/ua/marketer/) · [en](participants/en/marketer/) |
+| `cybersecurity` | Cybersecurity | Cybersecurity specialist protecting information systems, databases, and network infrastructure. | [ua](participants/ua/cybersecurity/) · [en](participants/en/cybersecurity/) |
+| `frontend_developer` | Frontend Developer | Client-side developer for web applications. | [ua](participants/ua/frontend_developer/) · [en](participants/en/frontend_developer/) |
+| `mechanician` | Design Engineer | Design engineer. Designing products, mechanisms, prototypes, and Arduino-based systems. | [ua](participants/ua/mechanician/) · [en](participants/en/mechanician/) |
+| `programmer` | Programmer | Generalist software developer. | [ua](participants/ua/programmer/) · [en](participants/en/programmer/) |
+| `defense_attorney` | Defense Attorney | Defense attorney for the accused in criminal proceedings: the line of defense, challenging the prosecution's evidence, reasonable doubt. | [ua](participants/ua/defense_attorney/) · [en](participants/en/defense_attorney/) |
+| `prosecutor` | Prosecutor | Prosecutor — state prosecution with objectivity: classification, evidence assessment, procedural documents, the charge. | [ua](participants/ua/prosecutor/) · [en](participants/en/prosecutor/) |
+| `suspect` | Suspect | The accused (suspect): their own version of events, defense documents, exercising procedural rights. | [ua](participants/ua/suspect/) · [en](participants/en/suspect/) |
+| `medical_expert` | Medical Expert | Forensic medical examiner: the nature and mechanism of injuries, degree of severity, cause of death, expert opinion. | [ua](participants/ua/medical_expert/) · [en](participants/en/medical_expert/) |
+| `football_coach` | Football Coach | Football coach — tactical match analysis: form, lineups, schemes, key factors, and the most likely scenario. | [ua](participants/ua/football_coach/) · [en](participants/en/football_coach/) |
+| `football_journalist` | Football Journalist | Football journalist — gathering and verifying news about the teams and the match: official statements, personnel, atmosphere; facts versus rumors. | [ua](participants/ua/football_journalist/) · [en](participants/en/football_journalist/) |
+| `football_tactician` | Football Tactician | Football tactician — breaking down the on-pitch matchup: schemes, pressing, transitions, zones, duels; which tactic neutralizes which. | [ua](participants/ua/football_tactician/) · [en](participants/en/football_tactician/) |
+| `football_psychologist` | Football Psychologist | Football psychologist — psychological factors of a match from open sources: motivation, pressure, resilience; no diagnoses. | [ua](participants/ua/football_psychologist/) · [en](participants/en/football_psychologist/) |
+| `mathematic` | Analytical Mathematician | Analytical mathematician — statistics, probability, and data-based models (including xG, Poisson, Elo); results come with a confidence level. | [ua](participants/ua/mathematic/) · [en](participants/en/mathematic/) |
 
 ---
 
 ## Orchestrators (seat 5)
 
-| Code | Name | Description |
-|---|---|---|
-| [`moderator`](orchestrators/ua/moderator/) | Модератор | Узгоджує відповіді учасників у єдиний підсумок. |
-| [`referee`](orchestrators/ua/referee/) | Суддя (для дебатів) | Оцінює аргументи сторін і виносить обґрунтований вердикт. |
-| [`analyst`](orchestrators/ua/analyst/) | Аналітик | Глибокий аналіз відповідей та виявлення суті. |
-| [`project_manager`](orchestrators/ua/project_manager/) | Керівник проекту | Перетворює дискусію на план дій. |
-| [`criminal_judge`](orchestrators/ua/criminal_judge/) | Суддя Криміналіст | Суддя. |
-| [`bookmaker`](orchestrators/ua/bookmaker/) | Букмекер-аналітик | Слухає профільні висновки учасників і зважує їх проти букмекерського ринку; сумнівне перевіряє в мережі; не радить ставки. |
+| Code | Name | Description | Languages |
+|---|---|---|---|
+| `moderator` | Moderator | Reconciles the participants' answers into a single, balanced summary. | [ua](orchestrators/ua/moderator/) · [en](orchestrators/en/moderator/) |
+| `referee` | Referee (for Debates) | Assesses the parties' arguments and delivers a well-reasoned verdict. | [ua](orchestrators/ua/referee/) · [en](orchestrators/en/referee/) |
+| `analyst` | Analyst | In-depth analysis of the answers to uncover what's really being said. | [ua](orchestrators/ua/analyst/) · [en](orchestrators/en/analyst/) |
+| `project_manager` | Project Manager | Turns the discussion into an action plan. | [ua](orchestrators/ua/project_manager/) · [en](orchestrators/en/project_manager/) |
+| `criminal_judge` | Criminal Judge | Judge. | [ua](orchestrators/ua/criminal_judge/) · [en](orchestrators/en/criminal_judge/) |
+| `bookmaker` | Bookmaker Analyst | Listens to the participants' specialist findings and weighs them against the bookmaker market; checks anything questionable online; does not give betting advice. | [ua](orchestrators/ua/bookmaker/) · [en](orchestrators/en/bookmaker/) |
