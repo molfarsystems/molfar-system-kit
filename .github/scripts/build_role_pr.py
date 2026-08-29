@@ -35,14 +35,24 @@ SEAT_KEY_MAP = {
     "Works as either": "either",
 }
 
-# Every top-level roles/README*.md index lists every role, whatever language
-# the role itself is in - the Languages column is what says which languages a
-# role exists in. The value here is the language the index page is written in,
-# used only to pick the wording of the Seat column. Adding a new translation of
-# the index page is enough to have it filled in from then on; no code change.
-ROLE_INDEXES = {
+# A role in language X and "the same" role in language Y are treated as two
+# separate roles: written by different people, they evolve independently and
+# one may be better than the other. So each role is listed in exactly one
+# index - the one for its own language. Languages without an index page of
+# their own share OTHER_INDEX until they earn a dedicated page (at which point
+# they just get a line here, no code change).
+LANG_INDEX = {
+    "en": "roles/README.md",
+    "ua": "roles/README.ua.md",
+}
+OTHER_INDEX = "roles/OTHER-LANGUAGES.md"
+
+# Language the index page itself is written in, used only to word the Seat
+# column. OTHER_INDEX is written in English.
+INDEX_LANG = {
     "roles/README.md": "en",
     "roles/README.ua.md": "ua",
+    OTHER_INDEX: "en",
 }
 
 TABLE_SEAT = {
@@ -103,52 +113,49 @@ def comment(text: str) -> None:
 def escape_cell(text: str) -> str:
     text = text.replace("|", "\\|")
     text = re.sub(r"\s+", " ", text).strip()
-    if len(text) > 140:
-        text = text[:139].rstrip() + "…"
+    # Kept short on purpose. GitHub gives no control over table column widths,
+    # so on a phone a long cell wraps to roughly one word per line. An index
+    # entry is a short phrase; the role's own README carries the full text.
+    if len(text) > 110:
+        text = text[:109].rstrip() + "…"
     return text
 
 
 def update_roles_index(lang: str, slug: str, role_name: str, purpose: str, seat_raw: str):
-    """Add a row for this role to every roles/README*.md index.
+    """Add a row for this role to the index for its language.
 
-    The role's name and description go in untranslated - a Ukrainian role
-    shows Ukrainian text in the English index, with the Languages column
-    marking it `ua`. Only the Seat column follows each index page's own
-    language. This way no role is missing from an index, including roles in
-    languages that have no index page of their own (de, es, fr).
+    Exactly one index per role: `en` and `ua` have their own page, every other
+    language shares OTHER_INDEX. Name and description go in as written - they
+    are never translated - so each page stays in its own language.
 
-    Returns the list of index files actually changed.
+    Returns the index file changed, or None.
     """
+    path = LANG_INDEX.get(lang, OTHER_INDEX)
+    if not os.path.isfile(path):
+        return None
+
+    with open(path, encoding="utf-8") as f:
+        lines = f.read().split("\n")
+
+    sep_idx = None
+    for i, line in enumerate(lines):
+        if i > 0 and re.match(r"^\|[-\s|]+\|$", line) and lines[i - 1].lstrip().startswith("|"):
+            sep_idx = i
+            break
+    if sep_idx is None:
+        return None
+
     seat_key = SEAT_KEY_MAP.get(seat_raw, "participant")
-    lang_link = f"[{lang}]({lang}/{slug}/)"
-    updated = []
-
-    for path, index_lang in ROLE_INDEXES.items():
-        if not os.path.isfile(path):
-            continue
-
-        with open(path, encoding="utf-8") as f:
-            lines = f.read().split("\n")
-
-        sep_idx = None
-        for i, line in enumerate(lines):
-            if i > 0 and re.match(r"^\|[-\s|]+\|$", line) and lines[i - 1].lstrip().startswith("|"):
-                sep_idx = i
-                break
-        if sep_idx is None:
-            continue
-
-        seat_col = TABLE_SEAT.get(index_lang, TABLE_SEAT["en"]).get(seat_key, seat_key)
-        row = (
-            f"| {escape_cell(role_name)} | {escape_cell(purpose)} | "
-            f"{seat_col} | {lang_link} |"
-        )
-        lines.insert(sep_idx + 1, row)
-        with open(path, "w", encoding="utf-8") as f:
-            f.write("\n".join(lines))
-        updated.append(path)
-
-    return updated
+    index_lang = INDEX_LANG.get(path, "en")
+    seat_col = TABLE_SEAT.get(index_lang, TABLE_SEAT["en"]).get(seat_key, seat_key)
+    row = (
+        f"| {escape_cell(role_name)} | {escape_cell(purpose)} | "
+        f"{seat_col} | [{lang}]({lang}/{slug}/) |"
+    )
+    lines.insert(sep_idx + 1, row)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    return path
 
 
 def main() -> None:
@@ -232,12 +239,12 @@ def main() -> None:
                 f"```text\n{skill}\n```\n"
             )
 
-    index_paths = update_roles_index(lang, slug, role_name, purpose, seat_raw)
+    index_path = update_roles_index(lang, slug, role_name, purpose, seat_raw)
 
     branch = f"role/{slug}"
     run(["git", "checkout", "-b", branch])
     run(["git", "add", folder])
-    for index_path in index_paths:
+    if index_path:
         run(["git", "add", index_path])
     run(["git", "commit", "-m", f"Add role: {role_name} ({slug})"])
     # Force-push: this branch is exclusively bot-owned and regenerated fresh

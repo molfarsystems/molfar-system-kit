@@ -58,7 +58,7 @@ body:
     id: purpose
     attributes:
       label: When is this role useful?
-      description: One or two sentences. What kind of question should you send it?
+      description: A short phrase, not a paragraph — this goes into the catalogue table, where anything past ~110 characters is cut off (and long cells read badly on a phone). What kind of question should you send this role?
       placeholder: Use it when a plan looks too good and you want the weak points found before you commit.
     validations:
       required: true

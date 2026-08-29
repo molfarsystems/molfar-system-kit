@@ -8,15 +8,13 @@ The app already ships with 23 built-in roles. This folder holds only roles that 
 
 ## All roles
 
-Roles are not mirrored across languages — each exists in whatever languages someone wrote it in. A missing language is an invitation to add it.
+Roles are not mirrored across languages. A role written in Ukrainian and one written in English are separate roles: different people wrote them, they can be improved independently, and one may end up better than the other. Each is listed once, on the page for its own language.
 
-| Role | What it does | Seat | Languages |
+**English roles are below.** Ukrainian ones are in [`README.ua.md`](README.ua.md), everything else in [`OTHER-LANGUAGES.md`](OTHER-LANGUAGES.md).
+
+| Role | What it does | Seat | Language |
 |---|---|---|---|
-| Mentor für IT-Berufe | Wenn jemand in die IT einsteigen möchte, aber nicht weiß, wo anfangen und welche Richtung zu ihm passt. Die Rolle wählt den Beruf passend z… | Participant | [de](de/it-mentor/) |
-| Ментор з IT-професій | Коли людина хоче увійти в IT, але не знає, з чого почати і який напрям їй пасує. Роль підбирає професію під сильні сторони людини, складає… | Participant | [ua](ua/it-mentor/) |
-| Маркетолог-стратег | Практик просування малого бізнесу з обмеженими бюджетами. | Participant | [ua](ua/marketing-strateg/) |
-| Архітектор ролей | Майстер, що робить майстрів: перетворює ідею «мені б у нараду юриста з митного права» на готовий промпт і скіл у форматі Molfar. | Participant | [ua](ua/architect-roles/) |
-| Devil's Advocate | Attacks a plan to find where it breaks | Participant | [en](en/devils-advocate/) · [ua](ua/advokat-dyiavola/) |
+| Devil's Advocate | Attacks a plan to find where it breaks | Participant | [en](en/devils-advocate/) |
 
 ---
 
