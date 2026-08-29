@@ -12,6 +12,7 @@ Roles are not mirrored across languages — each exists in whatever languages so
 
 | Role | What it does | Seat | Languages |
 |---|---|---|---|
+| Mentor für IT-Berufe | Wenn jemand in die IT einsteigen möchte, aber nicht weiß, wo anfangen und welche Richtung zu ihm passt. Die Rolle wählt den Beruf passend z… | Participant | [de](de/it-mentor/) |
 | Ментор з IT-професій | Коли людина хоче увійти в IT, але не знає, з чого почати і який напрям їй пасує. Роль підбирає професію під сильні сторони людини, складає… | Participant | [ua](ua/it-mentor/) |
 | Маркетолог-стратег | Практик просування малого бізнесу з обмеженими бюджетами. | Participant | [ua](ua/marketing-strateg/) |
 | Архітектор ролей | Майстер, що робить майстрів: перетворює ідею «мені б у нараду юриста з митного права» на готовий промпт і скіл у форматі Molfar. | Participant | [ua](ua/architect-roles/) |
