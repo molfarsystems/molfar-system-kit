@@ -35,12 +35,14 @@ SEAT_KEY_MAP = {
     "Works as either": "either",
 }
 
-# Only languages with an existing top-level roles/README.<x>.md index.
-# Other languages still get their role folder, just no index row yet -
-# nothing to translate into, so nothing auto-generated there.
-LANG_README = {
-    "en": "roles/README.md",
-    "ua": "roles/README.ua.md",
+# Every top-level roles/README*.md index lists every role, whatever language
+# the role itself is in - the Languages column is what says which languages a
+# role exists in. The value here is the language the index page is written in,
+# used only to pick the wording of the Seat column. Adding a new translation of
+# the index page is enough to have it filled in from then on; no code change.
+ROLE_INDEXES = {
+    "roles/README.md": "en",
+    "roles/README.ua.md": "ua",
 }
 
 TABLE_SEAT = {
@@ -107,33 +109,46 @@ def escape_cell(text: str) -> str:
 
 
 def update_roles_index(lang: str, slug: str, role_name: str, purpose: str, seat_raw: str):
-    path = LANG_README.get(lang)
-    if not path or not os.path.isfile(path):
-        return None
+    """Add a row for this role to every roles/README*.md index.
 
+    The role's name and description go in untranslated - a Ukrainian role
+    shows Ukrainian text in the English index, with the Languages column
+    marking it `ua`. Only the Seat column follows each index page's own
+    language. This way no role is missing from an index, including roles in
+    languages that have no index page of their own (de, es, fr).
+
+    Returns the list of index files actually changed.
+    """
     seat_key = SEAT_KEY_MAP.get(seat_raw, "participant")
-    seat_col = TABLE_SEAT.get(lang, TABLE_SEAT["en"]).get(seat_key, seat_key)
     lang_link = f"[{lang}]({lang}/{slug}/)"
+    updated = []
 
-    with open(path) as f:
-        lines = f.read().split("\n")
+    for path, index_lang in ROLE_INDEXES.items():
+        if not os.path.isfile(path):
+            continue
 
-    sep_idx = None
-    for i, line in enumerate(lines):
-        if i > 0 and re.match(r"^\|[-\s|]+\|$", line) and lines[i - 1].lstrip().startswith("|"):
-            sep_idx = i
-            break
-    if sep_idx is None:
-        return None
+        with open(path, encoding="utf-8") as f:
+            lines = f.read().split("\n")
 
-    row = (
-        f"| {escape_cell(role_name)} | {escape_cell(purpose)} | "
-        f"{seat_col} | {lang_link} |"
-    )
-    lines.insert(sep_idx + 1, row)
-    with open(path, "w") as f:
-        f.write("\n".join(lines))
-    return path
+        sep_idx = None
+        for i, line in enumerate(lines):
+            if i > 0 and re.match(r"^\|[-\s|]+\|$", line) and lines[i - 1].lstrip().startswith("|"):
+                sep_idx = i
+                break
+        if sep_idx is None:
+            continue
+
+        seat_col = TABLE_SEAT.get(index_lang, TABLE_SEAT["en"]).get(seat_key, seat_key)
+        row = (
+            f"| {escape_cell(role_name)} | {escape_cell(purpose)} | "
+            f"{seat_col} | {lang_link} |"
+        )
+        lines.insert(sep_idx + 1, row)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
+        updated.append(path)
+
+    return updated
 
 
 def main() -> None:
@@ -217,12 +232,12 @@ def main() -> None:
                 f"```text\n{skill}\n```\n"
             )
 
-    index_path = update_roles_index(lang, slug, role_name, purpose, seat_raw)
+    index_paths = update_roles_index(lang, slug, role_name, purpose, seat_raw)
 
     branch = f"role/{slug}"
     run(["git", "checkout", "-b", branch])
     run(["git", "add", folder])
-    if index_path:
+    for index_path in index_paths:
         run(["git", "add", index_path])
     run(["git", "commit", "-m", f"Add role: {role_name} ({slug})"])
     # Force-push: this branch is exclusively bot-owned and regenerated fresh

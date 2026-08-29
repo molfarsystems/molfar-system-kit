@@ -12,6 +12,8 @@
 
 | Роль | Що робить | Місце | Мови |
 |---|---|---|---|
+| Mentor für IT-Berufe | Wenn jemand in die IT einsteigen möchte, aber nicht weiß, wo anfangen und welche Richtung zu ihm passt. Die Rolle wählt den Beruf passend z… | Учасник | [de](de/it-mentor/) |
+| Ментор з IT-професій | Коли людина хоче увійти в IT, але не знає, з чого почати і який напрям їй пасує. Роль підбирає професію під сильні сторони людини, складає… | Учасник | [ua](ua/it-mentor/) |
 | Маркетолог-стратег | Практик просування малого бізнесу з обмеженими бюджетами. | Учасник | [ua](ua/marketing-strateg/) |
 | Архітектор ролей | Майстер, що робить майстрів: перетворює ідею «мені б у нараду юриста з митного права» на готовий промпт і скіл у форматі Molfar. | Учасник | [ua](ua/architect-roles/) |
 | Адвокат диявола | Атакує план, щоб знайти, де він ламається | Учасник | [en](en/devils-advocate/) · [ua](ua/advokat-dyiavola/) |
