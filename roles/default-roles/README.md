@@ -9,7 +9,9 @@ Each role's `README.md` carries `code` / `name` / `description` / `seat` as
 YAML front matter, matching the fields `roles_seed.py` needs — that's the
 source of truth for re-generating the seed file from these folders.
 
-Currently Ukrainian only (`ua/`); English translations are a follow-up pass.
+Each role exists in Ukrainian (`ua/`) and English (`en/`). Ukrainian is the
+original — the app ships in Ukrainian — and English is a translation of it,
+kept structurally identical so the two stay in sync.
 
 ---
 
