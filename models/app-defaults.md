@@ -33,9 +33,11 @@ user makes deliberately, not a default.
 Model list: https://ai.google.dev/gemini-api/docs/models
 
 1. `gemini-2.5-flash`
+   
    Gemini 2.5 Flash
 
-2. `gemini-2.0-flash`
+3. `gemini-2.0-flash`
+   
    Gemini 2.0 Flash
 
 ---
@@ -45,9 +47,11 @@ Model list: https://ai.google.dev/gemini-api/docs/models
 Model list: https://build.nvidia.com/models
 
 1. `nvidia/nemotron-3-ultra-550b-a55b`
+   
    Nemotron 3 Ultra 550B
 
-2. `google/gemma-4-31b-it`
+3. `google/gemma-4-31b-it`
+   
    Gemma 4 31B
 
 ---
@@ -60,9 +64,11 @@ Free models carry `:free` in the ID. Without that suffix the model bills
 against the user's balance — check before adding.
 
 1. `nvidia/nemotron-3-super-120b-a12b:free`
+   
    Nemotron 3 Super 120B
 
-2. `google/gemma-4-31b-it:free`
+3. `google/gemma-4-31b-it:free`
+   
    Gemma 4 31B
 
 ---
