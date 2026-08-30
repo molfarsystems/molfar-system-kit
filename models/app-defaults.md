@@ -32,13 +32,17 @@ user makes deliberately, not a default.
 
 Model list: https://ai.google.dev/gemini-api/docs/models
 
-1. `gemini-2.5-flash`
+1. model: `gemini-2.5-flash`
    
-   Gemini 2.5 Flash
+   name: `Gemini 2.5 Flash`
 
-3. `gemini-2.0-flash`
+   Context: 1M
    
-   Gemini 2.0 Flash
+3. model: `gemini-2.0-flash`
+   
+   name: `Gemini 2.0 Flash`
+
+   Context: 256K
 
 ---
 
