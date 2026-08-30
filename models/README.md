@@ -4,6 +4,7 @@ English only — this folder is mostly model names and numbers, which do not nee
 
 - [`providers.md`](providers.md) — the three supported providers, what each is good for, how their free tiers behave
 - [`recommended.md`](recommended.md) — which model to put in which seat
+- [`catalogue.md`](catalogue.md) — specific models with IDs, context windows and prices
 
 ## The one rule worth knowing
 
