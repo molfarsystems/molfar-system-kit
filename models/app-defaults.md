@@ -11,17 +11,24 @@ drift apart.
 **Order matters.** The order within a provider is the order shown in the app's
 picker. Put the model you want people to reach for first at number 1.
 
-**Format is strict** — exactly two lines per model, in this order:
+**Format is strict** — three fields per model, each on its own line, blank
+line between them:
 
 ```
-N. `model-id`
-   Display name
+N. model: `model-id`
+
+   name: `Display name`
+
+   Context: 1M
 ```
 
-The ID goes in backticks, on its own line. The display name goes on the next
-line, indented. Nothing else between entries. Keep display names short — they
-appear on a phone as `G · Gemini 2.5 Flash`, and the provider prefix is already
-eating space.
+Values go in backticks so the boundaries are unambiguous. Keep display names
+short — they appear on a phone as `G · Gemini 2.5 Flash`, and the provider
+prefix is already eating space.
+
+Context is the input window, written the short way: `1M`, `262K`, `128K`. It is
+there for the user, not for the app — the registry only takes the ID and the
+name.
 
 Only models that work on a free tier belong here. Anything paid is a choice the
 user makes deliberately, not a default.
@@ -33,13 +40,13 @@ user makes deliberately, not a default.
 Model list: https://ai.google.dev/gemini-api/docs/models
 
 1. model: `gemini-2.5-flash`
-   
+
    name: `Gemini 2.5 Flash`
 
    Context: 1M
-   
-3. model: `gemini-2.0-flash`
-   
+
+2. model: `gemini-2.0-flash`
+
    name: `Gemini 2.0 Flash`
 
    Context: 256K
@@ -50,13 +57,17 @@ Model list: https://ai.google.dev/gemini-api/docs/models
 
 Model list: https://build.nvidia.com/models
 
-1. `nvidia/nemotron-3-ultra-550b-a55b`
-   
-   Nemotron 3 Ultra 550B
+1. model: `nvidia/nemotron-3-ultra-550b-a55b`
 
-3. `google/gemma-4-31b-it`
-   
-   Gemma 4 31B
+   name: `Nemotron 3 Ultra 550B`
+
+   Context: 1M
+
+2. model: `google/gemma-4-31b-it`
+
+   name: `Gemma 4 31B`
+
+   Context: 262K
 
 ---
 
@@ -67,13 +78,17 @@ Model list: https://openrouter.ai/models
 Free models carry `:free` in the ID. Without that suffix the model bills
 against the user's balance — check before adding.
 
-1. `nvidia/nemotron-3-super-120b-a12b:free`
-   
-   Nemotron 3 Super 120B
+1. model: `nvidia/nemotron-3-super-120b-a12b:free`
 
-3. `google/gemma-4-31b-it:free`
-   
-   Gemma 4 31B
+   name: `Nemotron 3 Super 120B`
+
+   Context: ?
+
+2. model: `google/gemma-4-31b-it:free`
+
+   name: `Gemma 4 31B`
+
+   Context: 262K
 
 ---
 

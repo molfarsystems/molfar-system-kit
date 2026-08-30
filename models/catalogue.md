@@ -128,11 +128,11 @@ Buying $10 of credit once raises the daily cap substantially. Free models carry
 nvidia/nemotron-3-super-120b-a12b:free
 ```
 
-Context 1M · Free · Slow, reasoning · Ukrainian good
+Context ? · Free · Slow, reasoning · Ukrainian good
 **Seat:** orchestrator
 
-Reasoning model with a very large window. Strong synthesis, but do not put it
-in more than one seat — the wait adds up.
+Reasoning model. Strong synthesis, but do not put it in more than one seat —
+the wait adds up.
 
 ### Gemma 4 31B ✓
 
