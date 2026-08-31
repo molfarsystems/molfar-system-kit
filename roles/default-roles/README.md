@@ -1,9 +1,12 @@
 # Default roles
 
-The 23 roles Molfar System ships with out of the box (`modules/roles_seed.py`),
-mirrored here for reference and for pulling into future app updates. Unlike
-`roles/`, this folder is not community content and its roles are not listed in
-the top-level `roles/README.md` / `README.ua.md` tables.
+The default roles of Molfar System, mirrored here for reference and for pulling
+into app updates. Unlike `roles/`, this folder is not community content and its
+roles are not listed in the top-level `roles/README.md` / `README.ua.md` tables.
+
+26 roles: the 23 the app ships with today (`modules/roles_seed.py`), plus three
+marked **new** below, which are queued for the next update and are not in the
+shipped app yet.
 
 Each role's `README.md` carries `code` / `name` / `description` / `seat` as
 YAML front matter, matching the fields `roles_seed.py` needs — that's the
@@ -36,6 +39,9 @@ kept structurally identical so the two stay in sync.
 | `football_tactician` | Football Tactician | Football tactician — breaking down the on-pitch matchup: schemes, pressing, transitions, zones, duels; which tactic neutralizes which. | [ua](participants/ua/football_tactician/) · [en](participants/en/football_tactician/) |
 | `football_psychologist` | Football Psychologist | Football psychologist — psychological factors of a match from open sources: motivation, pressure, resilience; no diagnoses. | [ua](participants/ua/football_psychologist/) · [en](participants/en/football_psychologist/) |
 | `mathematic` | Analytical Mathematician | Analytical mathematician — statistics, probability, and data-based models (including xG, Poisson, Elo); results come with a confidence level. | [ua](participants/ua/mathematic/) · [en](participants/en/mathematic/) |
+| `interviewer` | Interviewer **new** | Interviewer. Draws out the full picture of an idea through questions and returns a structured summary. Does not advise. | [ua](participants/ua/interviewer/) · [en](participants/en/interviewer/) |
+| `tech_journalist` | Technology Journalist **new** | Technology journalist. Deep, accurate articles built from supplied material; fact kept apart from interpretation. | [ua](participants/ua/tech_journalist/) · [en](participants/en/tech_journalist/) |
+| `architect_roles` | Role Architect **new** | Role architect. Turns the idea of a specialist you need into a finished Molfar pair of files: prompt and skill. | [ua](participants/ua/architect_roles/) · [en](participants/en/architect_roles/) |
 
 ---
 
