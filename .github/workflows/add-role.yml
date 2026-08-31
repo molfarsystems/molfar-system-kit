@@ -4,6 +4,14 @@ on:
   issues:
     types: [labeled]
 
+# Two roles approved in the same second used to race: both runs branched off
+# the same main and the second one's merge was rejected with "Base branch was
+# modified". Queue them instead - the second run then starts from a main that
+# already has the first role.
+concurrency:
+  group: add-role
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pull-requests: write

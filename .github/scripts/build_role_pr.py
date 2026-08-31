@@ -11,6 +11,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 
 import yaml
 
@@ -184,6 +185,33 @@ def update_roles_index(lang: str, slug: str, role_name: str, purpose: str, seat_
     return path
 
 
+def merge_pr(pr_number: str, attempts: int = 3) -> bool:
+    """Squash-merge the PR, retrying while main moves under us.
+
+    Two roles approved in the same second race: both runs branch off the same
+    main, the first merges, and the second gets "Base branch was modified"
+    from the merge API. Nothing is wrong with the second PR - GitHub computed
+    its mergeability against a main that no longer exists. Updating the
+    branch and asking again is all it takes.
+    """
+    for attempt in range(attempts):
+        try:
+            run(["gh", "pr", "merge", pr_number, "-R", REPO, "--squash", "--delete-branch"])
+            return True
+        except subprocess.CalledProcessError:
+            if attempt == attempts - 1:
+                return False
+            print(f"merge attempt {attempt + 1} failed, updating branch", file=sys.stderr)
+            try:
+                run(["gh", "pr", "update-branch", pr_number, "-R", REPO])
+            except subprocess.CalledProcessError:
+                # Already up to date, or a real conflict. Either way the next
+                # merge attempt is what decides.
+                pass
+            time.sleep(5)
+    return False
+
+
 def main() -> None:
     raw = run(
         ["gh", "issue", "view", ISSUE_NUMBER, "-R", REPO, "--json", "body,author"],
@@ -285,21 +313,34 @@ def main() -> None:
         f"- Role code: `{slug}`\n"
         f"- Credit: submitted by @{username}\n"
     )
-    result = run(
-        [
-            "gh", "pr", "create", "-R", REPO,
-            "--title", f"Add role: {role_name} ({slug})",
-            "--body", pr_body,
-            "--base", "main",
-            "--head", branch,
-        ],
-        capture_output=True,
-    )
-    pr_url = result.stdout.strip().splitlines()[-1]
+    # A PR for this branch may already be open: the label was removed and
+    # re-applied, or an earlier run opened one and failed to merge it. Reuse
+    # it - the force-push above already put the current content on its head.
+    try:
+        result = run(
+            [
+                "gh", "pr", "create", "-R", REPO,
+                "--title", f"Add role: {role_name} ({slug})",
+                "--body", pr_body,
+                "--base", "main",
+                "--head", branch,
+            ],
+            capture_output=True,
+        )
+        pr_url = result.stdout.strip().splitlines()[-1]
+    except subprocess.CalledProcessError:
+        result = run(
+            ["gh", "pr", "list", "-R", REPO, "--head", branch,
+             "--state", "open", "--json", "url", "-q", ".[0].url"],
+            capture_output=True,
+        )
+        pr_url = result.stdout.strip()
+        if not pr_url:
+            raise
+        print(f"reusing existing PR {pr_url}", file=sys.stderr)
     pr_number = pr_url.rstrip("/").rsplit("/", 1)[-1]
 
-    try:
-        run(["gh", "pr", "merge", pr_number, "-R", REPO, "--squash", "--delete-branch"])
+    if merge_pr(pr_number):
         comment(f"Merged {pr_url} — the role is live in `{folder}`.")
         # Don't rely solely on the "Closes #N" auto-link - it can fail to
         # fire when more than one PR has referenced the same issue (e.g.
@@ -308,7 +349,7 @@ def main() -> None:
             run(["gh", "issue", "close", ISSUE_NUMBER, "-R", REPO, "--reason", "completed"])
         except subprocess.CalledProcessError:
             pass
-    except subprocess.CalledProcessError:
+    else:
         comment(f"Opened {pr_url} but couldn't auto-merge it — needs a manual merge.")
 
 
