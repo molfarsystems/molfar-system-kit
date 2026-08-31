@@ -14,6 +14,7 @@ Roles are not mirrored across languages. A role written in Ukrainian and one wri
 
 | Role | What it does | Seat | Language |
 |---|---|---|---|
+| Role architect | The master who makes masters: turns the idea of a role into a finished prompt and skill. | Participant | [en](en/architect-roles/) |
 | Interviewer | Draws out the details of an idea through questions and returns a structured summary. Does not advise. | Participant | [en](en/interviewer/) |
 | Devil's Advocate | Attacks a plan to find where it breaks | Participant | [en](en/devils-advocate/) |
 
