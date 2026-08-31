@@ -185,14 +185,18 @@ def update_roles_index(lang: str, slug: str, role_name: str, purpose: str, seat_
     return path
 
 
-def merge_pr(pr_number: str, attempts: int = 3) -> bool:
-    """Squash-merge the PR, retrying while main moves under us.
+def merge_pr(pr_number: str, rebuild, attempts: int = 3) -> bool:
+    """Squash-merge the PR, rebuilding it onto a fresh main between attempts.
 
-    Two roles approved in the same second race: both runs branch off the same
-    main, the first merges, and the second gets "Base branch was modified"
-    from the merge API. Nothing is wrong with the second PR - GitHub computed
-    its mergeability against a main that no longer exists. Updating the
-    branch and asking again is all it takes.
+    Roles approved together are built in parallel, each from whatever main
+    existed when its run started. The first to merge moves main, and every
+    other run is then holding a branch built on a base that no longer exists.
+    The role files never clash - they are new files in their own folder - but
+    the index table does: two runs insert a row at the same line.
+
+    So a failed merge is not a reason to stand down. Rebuild the branch from
+    the current main, which re-reads the index with the other role's row
+    already in it, and ask again.
     """
     for attempt in range(attempts):
         try:
@@ -201,14 +205,9 @@ def merge_pr(pr_number: str, attempts: int = 3) -> bool:
         except subprocess.CalledProcessError:
             if attempt == attempts - 1:
                 return False
-            print(f"merge attempt {attempt + 1} failed, updating branch", file=sys.stderr)
-            try:
-                run(["gh", "pr", "update-branch", pr_number, "-R", REPO])
-            except subprocess.CalledProcessError:
-                # Already up to date, or a real conflict. Either way the next
-                # merge attempt is what decides.
-                pass
+            print(f"merge attempt {attempt + 1} failed, rebuilding on main", file=sys.stderr)
             time.sleep(5)
+            rebuild()
     return False
 
 
@@ -252,59 +251,76 @@ def main() -> None:
         slug = f"{code}-{ISSUE_NUMBER}"
 
     folder = f"{roles_dir}/{slug}"
-    os.makedirs(folder, exist_ok=True)
+    branch = f"role/{slug}"
 
-    readme = [
-        f"# {role_name}",
-        "",
-        f"**Seat:** {seat_text}",
-        f"**Language:** {lang_raw}",
-        "",
-        purpose or "_No description provided._",
-        "",
-        "## Files",
-        "",
-        f"- [`prompt-{slug}.md`](prompt-{slug}.md)",
-    ]
-    if skill:
-        readme.append(f"- [`skill-{slug}.md`](skill-{slug}.md)")
-    readme += [
-        "",
-        "---",
-        f"Submitted by [@{username}](https://github.com/{username}) via "
-        f"[issue #{ISSUE_NUMBER}](https://github.com/{REPO}/issues/{ISSUE_NUMBER}).",
-        "",
-    ]
-    with open(f"{folder}/README.md", "w") as f:
-        f.write("\n".join(readme))
+    def build_and_push() -> None:
+        """Write the role folder and the index row, commit, force-push.
 
-    with open(f"{folder}/prompt-{slug}.md", "w") as f:
-        f.write(
-            f"# Prompt — {role_name}\n\n"
-            "Copy the block below into the **Prompt** field of a new role.\n\n"
-            f"```text\n{prompt}\n```\n"
-        )
+        Called again after a failed merge, on a branch reset to the current
+        main, so the index row lands in the index as it stands now. The slug
+        is deliberately not re-resolved: the PR is already pointing at this
+        branch name.
+        """
+        os.makedirs(folder, exist_ok=True)
 
-    if skill:
-        with open(f"{folder}/skill-{slug}.md", "w") as f:
+        readme = [
+            f"# {role_name}",
+            "",
+            f"**Seat:** {seat_text}",
+            f"**Language:** {lang_raw}",
+            "",
+            purpose or "_No description provided._",
+            "",
+            "## Files",
+            "",
+            f"- [`prompt-{slug}.md`](prompt-{slug}.md)",
+        ]
+        if skill:
+            readme.append(f"- [`skill-{slug}.md`](skill-{slug}.md)")
+        readme += [
+            "",
+            "---",
+            f"Submitted by [@{username}](https://github.com/{username}) via "
+            f"[issue #{ISSUE_NUMBER}](https://github.com/{REPO}/issues/{ISSUE_NUMBER}).",
+            "",
+        ]
+        with open(f"{folder}/README.md", "w", encoding="utf-8") as f:
+            f.write("\n".join(readme))
+
+        with open(f"{folder}/prompt-{slug}.md", "w", encoding="utf-8") as f:
             f.write(
-                f"# Skill — {role_name}\n\n"
-                "Copy the block below into the **Skill** field of the role.\n\n"
-                f"```text\n{skill}\n```\n"
+                f"# Prompt — {role_name}\n\n"
+                "Copy the block below into the **Prompt** field of a new role.\n\n"
+                f"```text\n{prompt}\n```\n"
             )
 
-    index_path = update_roles_index(lang, slug, role_name, purpose, seat_raw)
+        if skill:
+            with open(f"{folder}/skill-{slug}.md", "w", encoding="utf-8") as f:
+                f.write(
+                    f"# Skill — {role_name}\n\n"
+                    "Copy the block below into the **Skill** field of the role.\n\n"
+                    f"```text\n{skill}\n```\n"
+                )
 
-    branch = f"role/{slug}"
-    run(["git", "checkout", "-b", branch])
-    run(["git", "add", folder])
-    if index_path:
-        run(["git", "add", index_path])
-    run(["git", "commit", "-m", f"Add role: {role_name} ({slug})"])
-    # Force-push: this branch is exclusively bot-owned and regenerated fresh
-    # each run, so a leftover remote branch from a prior (e.g. closed
-    # without merge) attempt should just be overwritten, not block on.
-    run(["git", "push", "-f", "-u", "origin", branch])
+        index_path = update_roles_index(lang, slug, role_name, purpose, seat_raw)
+
+        run(["git", "add", folder])
+        if index_path:
+            run(["git", "add", index_path])
+        run(["git", "commit", "-m", f"Add role: {role_name} ({slug})"])
+        # Force-push: this branch is exclusively bot-owned and regenerated
+        # fresh each run and each rebuild, so whatever is on the remote
+        # should just be overwritten, not blocked on.
+        run(["git", "push", "-f", "-u", "origin", branch])
+
+    def rebuild() -> None:
+        run(["git", "fetch", "origin", "main"])
+        run(["git", "checkout", "-B", branch, "origin/main"])
+        build_and_push()
+
+    # Start from the newest main, not whatever the checkout happened to fetch:
+    # a sibling role may have merged while this run was queuing.
+    rebuild()
 
     pr_body = (
         f"Closes #{ISSUE_NUMBER}\n\n"
@@ -340,7 +356,7 @@ def main() -> None:
         print(f"reusing existing PR {pr_url}", file=sys.stderr)
     pr_number = pr_url.rstrip("/").rsplit("/", 1)[-1]
 
-    if merge_pr(pr_number):
+    if merge_pr(pr_number, rebuild):
         comment(f"Merged {pr_url} — the role is live in `{folder}`.")
         # Don't rely solely on the "Closes #N" auto-link - it can fail to
         # fire when more than one PR has referenced the same issue (e.g.

@@ -4,12 +4,17 @@ on:
   issues:
     types: [labeled]
 
-# Two roles approved in the same second used to race: both runs branched off
-# the same main and the second one's merge was rejected with "Base branch was
-# modified". Queue them instead - the second run then starts from a main that
-# already has the first role.
+# One group PER ISSUE, deliberately - not one group for the workflow. A single
+# shared group looks like it serialises approvals, but GitHub keeps only ONE
+# run pending per group: label three issues at once and the third evicts the
+# second, which is reported as "cancelled" and never builds its role.
+#
+# So runs are left to overlap, and the race they used to lose is handled where
+# it actually happens - build_role_pr.py rebuilds the branch on the current
+# main between merge attempts. This group only stops the same issue from being
+# built twice over, e.g. on a fast unlabel/relabel.
 concurrency:
-  group: add-role
+  group: add-role-${{ github.event.issue.number }}
   cancel-in-progress: false
 
 permissions:
