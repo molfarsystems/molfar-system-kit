@@ -1,215 +1,311 @@
 # Model catalogue
 
-Which models to put in the app, with the numbers that matter: context window,
-price, and how a model behaves in a meeting.
+Every model the app ships with, in picker order, with the numbers that matter:
+the exact ID, the context window, and what it costs.
 
 English only, like the rest of this folder — it is mostly model IDs and numbers.
 
+The list here is generated from [`app-defaults.md`](app-defaults.md), which is
+the working file. If the two disagree, `app-defaults.md` is right.
+
 ---
 
-## How to use this
+## How to read this
 
 Every entry shows the **model ID** in a code block. That is the string the app
 needs. On GitHub, tap the code to copy it, then paste it into the model field
 in **AI Settings**.
 
-Marks next to a name:
+**Everything listed here is already in the app.** You do not have to type any of
+it — these are the models in the picker before you add anything of your own.
+The IDs are here for when you want to check what a seat is actually running, or
+to re-enter one by hand.
 
-- **✓** — ships with the app by default, no typing needed
-- **★** — we recommend it
-- **?** — listed but not verified by us; check it works before relying on it
+**Free** means the model runs on the provider's free tier. **Paid** models show
+the price as `input / output` per million tokens, and carry a `$` in front of
+their name in the app so you can see at a glance what draws on your balance.
 
-**Prices** are per million tokens, written `input / output`. Output is normally
-several times more expensive than input, so one number would mislead. Free
-models say `Free`.
-
-**Context** is the input window. That is what matters for the Orchestrator,
+**Context** is the input window. That is what matters most for the Orchestrator,
 which reads every participant's answer at once.
 
----
+**Seat** is a suggestion derived from the context window alone, not from
+testing: a model with a 1M window can hold a full round plus documents, so it
+suits seat 5 or 6; a smaller window is fine for a participant, which only sees
+your question.
 
-## Google AI Studio
-
-Free tier: **10 requests/minute**, 250K tokens/minute. The daily cap is the
-number that varies between sources — treat it as "a few hundred a day" and
-watch for the error rather than counting.
-
-### Gemini 2.5 Flash ✓
-
-```
-gemini-2.5-flash
-```
-
-Context 1M · Free tier · Fast · Ukrainian good
-**Seat:** participant, orchestrator
-
-The current default in the app. Solid all-rounder, wide context, quick enough
-that four seats do not feel slow.
-
-### Gemini 2.0 Flash ✓
-
-```
-gemini-2.0-flash
-```
-
-Context 1M · Free tier · Fast · Ukrainian good
-**Seat:** participant
-
-The older sibling, still in the app as a fallback. No reason to pick it over
-2.5 unless 2.5 is rate-limited.
-
-### Gemini 3 Flash ★ ?
-
-```
-gemini-3-flash-preview
-```
-
-Context 1M · $0.25 / $1.50 · Fast · Ukrainian good
-**Seat:** orchestrator
-
-Newer generation than what the app ships with. Worth testing as the
-Orchestrator seat — that is where a better model pays off most.
-
----
-
-## NVIDIA NIM
-
-Free tier: **40 requests/minute**, and a credit budget rather than a token
-count — roughly 1,000 credits to start. Small models cost a fraction of a
-credit per call, large ones cost more.
-
-### Nemotron 3 Ultra 550B ✓
-
-```
-nvidia/nemotron-3-ultra-550b-a55b
-```
-
-Context 1M · Free tier (credits) · Slow · Ukrainian good
-**Seat:** orchestrator
-
-Large model, large context. Being slow, it is a poor fit for a participant
-seat — the round only finishes when the slowest one does.
-
-### Gemma 4 31B ✓ ★
-
-```
-google/gemma-4-31b-it
-```
-
-Context 262K · Free tier (credits) · Medium · Ukrainian good
-**Seat:** participant
-
-Good balance for a working seat. Google-trained but served by NVIDIA, so it
-still gives you infrastructure variety against a Gemini seat.
-
-### Mistral Nemotron ✓
-
-```
-mistralai/mistral-nemotron
-```
-
-Context ? · Free tier (credits) · Medium · Ukrainian ?
-**Seat:** participant
-
-Already in the app. European training data — a genuinely different angle from
-the Google and Meta families.
+**What is deliberately not here:** speed, answer quality, how well a model
+writes Ukrainian. Those need testing on your own questions, and a number
+invented for a table would be worse than no number. Try a model in Haiduk
+first — one seat, immediate answer — and judge it there.
 
 ---
 
 ## OpenRouter
 
-Free tier: about **20 requests/minute** and a low daily cap (tens of requests).
-Buying $10 of credit once raises the daily cap substantially. Free models carry
-`:free` in the ID.
+Free models carry `:free` in the ID. The other four bill against your balance.
 
-### Nemotron 3 Super 120B ✓ ★
+**Free models need a privacy setting turned on** — without it every `:free`
+model returns a 404 and nothing works. See
+[`providers.md`](providers.md#free-models-return-404) before you start.
+
+### Nemotron 3 Ultra 550B
+
+```
+nvidia/nemotron-3-ultra-550b-a55b:free
+```
+
+Context 1M · Free · Seat: orchestrator, secretary
+
+The largest model in the list, with the largest window. Also available direct
+from NVIDIA NIM in a smaller variant.
+
+### Nemotron 3 Super 120B
 
 ```
 nvidia/nemotron-3-super-120b-a12b:free
 ```
 
-Context ? · Free · Slow, reasoning · Ukrainian good
-**Seat:** orchestrator
+Context 262K · Free · Seat: participant
 
-Reasoning model. Strong synthesis, but do not put it in more than one seat —
-the wait adds up.
+The middle Nemotron. A quarter of Ultra's window, still comfortable for a
+participant seat, which only reads your question.
 
-### Gemma 4 31B ✓
-
-```
-google/gemma-4-31b-it:free
-```
-
-Context 262K · Free · Medium · Ukrainian good
-**Seat:** participant
-
-Same model as the NVIDIA entry above, different provider. Useful when NVIDIA
-credits run low.
-
-### GPT-OSS 120B ✓
+### Nemotron 3 Nano Omni 30B
 
 ```
-openai/gpt-oss-120b:free
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
 ```
 
-Context ? · Free · Medium · Ukrainian ?
-**Seat:** participant
+Context 256K · Free · Seat: participant
 
-Open-weight model from a fourth training lineage — good for breaking up an
-echo between Google- and NVIDIA-family seats.
+A reasoning variant — it thinks before answering, which costs time. Keep it to
+one seat: a round ends only when its slowest participant does.
 
-### Llama 3.3 70B ?
+### Nemotron 3.5 Lightning
 
 ```
-meta-llama/llama-3.3-70b-instruct:free
+nvidia/nemotron-3.5-lightning:free
 ```
 
-Context 131K · Free · Medium · Ukrainian acceptable
-**Seat:** participant
+Context 1M · Free · Seat: participant, orchestrator
 
-Not in the app's defaults. Meta family, so a different set of blind spots
-again. Smaller context than most here.
+Newer generation than the Nemotron 3 pair above. Also on NVIDIA NIM as a
+30B variant, if OpenRouter is rate-limiting you.
 
-### MiniMax M3 ?
+### Laguna XS 2.1
+
+```
+poolside/laguna-xs-2.1:free
+```
+
+Context 262K · Free · Seat: participant
+
+The same model is available direct from NVIDIA NIM. Two routes to one model:
+useful when one provider is throttling, useless as two separate seats — they
+would give you one opinion twice.
+
+### MiniMax M3
 
 ```
 minimax/minimax-m3:free
 ```
 
-Context 1M · Free · ? · Ukrainian ?
-**Seat:** orchestrator
+Context 1M · Free · Seat: orchestrator, secretary
 
-Listed with a full 1M window on the free tier, which is unusual. Worth a test
-in the Orchestrator seat.
+A full million-token window on a free tier, which is unusual. Worth trying in
+the Orchestrator seat.
+
+### Ling 3.0 Flash Fin
+
+```
+inclusionai/ling-3.0-flash-fin:free
+```
+
+Context 262K · Free · Seat: participant
+
+A different training lineage from everything else in this list, which is the
+whole point of filling seats from more than one family.
+
+### MiniMax M2.7
+
+```
+minimax/minimax-m2.7:free
+```
+
+Context 197K · Free · Seat: participant
+
+The previous MiniMax generation and the smallest window on OpenRouter. Reach
+for M3 above unless it is rate-limited.
+
+### $ Qwen 3.8 Flash
+
+```
+qwen/qwen3.8-flash
+```
+
+Context 1M · $0,15 / $0,47 per 1M · Seat: orchestrator, secretary
+
+Paid. The most expensive output in this list — about three times what the
+others charge — so watch it in a seat that writes long summaries.
+
+### $ GLM 5.3 Flash
+
+```
+z-ai/glm-5.3-flash
+```
+
+Context 1M · $0,05 / $0,17 per 1M · Seat: orchestrator, secretary
+
+Paid, and the cheapest of the four on both input and output. The one to try
+first if you want to see whether paying changes anything for you.
+
+### $ Muse Spark 1.2
+
+```
+meta/muse-spark-1.2-contributor
+```
+
+Context 1M · $0,10 / $0,20 per 1M · Seat: orchestrator, secretary
+
+Paid. Meta lineage, so a different set of blind spots from the Nemotron and
+Gemini seats.
+
+### $ GPT 5.6 Luna
+
+```
+openai/gpt-5.6-luna
+```
+
+Context 1M · $0,10 / $0,20 per 1M · Seat: orchestrator, secretary
+
+Paid. OpenAI lineage — a fourth family again, and the only OpenAI model here
+that is not open-weight.
 
 ---
 
-## Adding an entry
+## Google AI Studio
 
-Copy this block, fill it in, drop it under the right provider:
+### Gemini 2.5 Flash
 
-```markdown
-### <Short name>  <✓ if shipped>  <★ if recommended>  <? if unverified>
-
-​```
-<full model ID>
-​```
-
-Context <N>K · <Free | $in / $out> · <fast|medium|slow><, reasoning> · Ukrainian <good|acceptable|weak>
-**Seat:** <participant | orchestrator | secretary>
-
-<One line: a limit, a quirk, or why you would pick this over its neighbour.>
+```
+gemini-2.5-flash
 ```
 
-Keep the note to one line. Anything longer belongs in
-[`recommended.md`](recommended.md), which covers strategy rather than
-individual models.
+Context 1M · Free tier · Seat: participant, orchestrator, secretary
+
+The one Google model in the defaults, and the shortest path from no API key to
+a working meeting. A wide window and a free tier make it usable in any seat —
+which is exactly why you should not put it in all of them.
+
+---
+
+## NVIDIA NIM
+
+NVIDIA's free tier runs on credits rather than a token count, so a heavy model
+spends the budget faster than a small one.
+
+### Laguna XS 2.1
+
+```
+poolside/laguna-xs-2.1
+```
+
+Context 262K · Free tier (credits) · Seat: participant
+
+Same model as the OpenRouter entry above, served direct. No `:free` suffix
+here — on NVIDIA the free tier is the account, not the model ID.
+
+### Kimi K3
+
+```
+moonshotai/kimi-k3
+```
+
+Context 1M · Free tier (credits) · Seat: orchestrator, secretary
+
+Moonshot lineage, trained largely on Chinese and English data — a genuinely
+different angle from the Western families in this list.
+
+### DeepSeek V4 Flash
+
+```
+deepseek-ai/deepseek-v4-flash-0731
+```
+
+Context 1M · Free tier (credits) · Seat: participant, orchestrator
+
+The lighter of the two DeepSeek builds here. The `0731` is the snapshot date,
+so this ID stays pinned to one version rather than drifting under you.
+
+### DiffusionGemma 26B
+
+```
+google/diffusiongemma-26b-a4b-it
+```
+
+Context 262K · Free tier (credits) · Seat: participant
+
+Google-trained but served by NVIDIA. That still buys you infrastructure
+variety against a Gemini seat, though not training variety — worth knowing
+before you count it as an independent opinion.
+
+### DeepSeek V4 Pro
+
+```
+deepseek-ai/deepseek-v4-pro-0813
+```
+
+Context 1M · Free tier (credits) · Seat: orchestrator, secretary
+
+The heavier DeepSeek. Larger models spend NVIDIA credits faster, so it earns
+its place better in one summarising seat than in four participant seats.
+
+### Nemotron 3.5 Lightning 30B
+
+```
+nvidia/nemotron-3.5-lightning-30b-a3b
+```
+
+Context 1M · Free tier (credits) · Seat: participant, orchestrator
+
+The 30B build of the Lightning model that also appears on OpenRouter. Same
+family, different provider and size.
+
+### GPT-OSS 20B
+
+```
+openai/gpt-oss-20b
+```
+
+Context 131K · Free tier (credits) · Seat: participant
+
+Open-weight model from OpenAI, and the smallest window in the whole list.
+Fine for a participant, too small to hold a full round in seat 5.
+
+---
+
+## Counting the families
+
+Twenty entries, but fewer independent opinions than that. By training lineage:
+
+- **NVIDIA / Nemotron** — 5 entries (3 Ultra/Super/Nano, 2 Lightning builds)
+- **DeepSeek** — 2
+- **MiniMax** — 2
+- **Google** — 2 (Gemini, DiffusionGemma)
+- **OpenAI** — 2 (GPT-OSS, GPT 5.6 Luna)
+- **Poolside / Laguna** — 2 entries, one model on two providers
+- **Moonshot, InclusionAI, Qwen, Z-AI, Meta** — 1 each
+
+Two seats from the same row above will agree with each other more often than
+the agreement deserves. Pick from different rows.
 
 ---
 
 ## Freshness
 
-Verified: **not yet** — entries marked **?** still need a pass through the app.
+IDs, context windows and prices here were checked against each provider's own
+model list. Behaviour was not — see the note above about what is deliberately
+missing.
 
 Providers rename, deprecate and replace models constantly, and prices move.
 When something here stops working, the app's own model picker is the source of

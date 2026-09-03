@@ -43,6 +43,9 @@ The key is account-wide even though it is issued from a model page — you do no
 2. Sign up or sign in
 3. **Create Key**
 4. Copy and paste into the OpenRouter field
+5. Open [openrouter.ai/settings/privacy](https://openrouter.ai/settings/privacy) and turn on both *Free endpoints that may train on request data* and *Free endpoints that may publish prompts*
+
+**Step 5 is not optional if you want the free models.** Without both toggles on, every `:free` model returns a 404 and the seat produces nothing. It also means those providers may train on your meetings and publish the prompts, so keep confidential work off the free tier. Details and what to check if it still fails: [../../models/providers.md](../../models/providers.md#free-models-return-404).
 
 **Free and paid models live side by side here.** In the app, paid models are marked with `$` and draw from your OpenRouter balance. Free ones usually have `:free` in the name. If you never top up your balance, you simply cannot be charged — but check the marking before picking a model, or a round will fail with a billing error.
 

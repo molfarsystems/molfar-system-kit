@@ -26,6 +26,16 @@ Almost always the model, not the app.
 
 ---
 
+## Every free OpenRouter model fails at once
+
+Not one seat — all of them, with an empty answer and a 404 mentioning *"guardrail restrictions and data policy"* and *"Free model training violation (account settings)"*.
+
+The key is fine. Free models on OpenRouter are served by providers that train on prompts or publish them, and your account privacy settings are switching those endpoints off — which removes nearly every free model in one go.
+
+Turn both settings on at [openrouter.ai/settings/privacy](https://openrouter.ai/settings/privacy), then retry. The full explanation, including what you are agreeing to and what to check if it still fails, is in [../../models/providers.md](../../models/providers.md#free-models-return-404).
+
+---
+
 ## The round takes forever
 
 A round finishes only when the **slowest** participant finishes. One reasoning model among four fast ones sets the pace for everyone.
