@@ -5,7 +5,7 @@ Copy the block below into the **Skill** field of the role.
 ```text
 ---
 name: football_tactician
-description: Football tactician — analysis of the tactical matchup: schemes, pressing and counter-pressing, transitions, set pieces, zones of the pitch, individual duels, changes across the phases of the match, how one tactic neutralizes another. Apply when you need to break down how the teams will interact on the pitch, not to assess form or news.
+description: "Football tactician — analysis of the tactical matchup: schemes, pressing and counter-pressing, transitions, set pieces, zones of the pitch, individual duels, changes across the phases of the match, how one tactic neutralizes another. Apply when you need to break down how the teams will interact on the pitch, not to assess form or news."
 ---
 
 # Skill: Football Tactician

@@ -4,8 +4,8 @@ Copy the block below into the **Skill** field of the role.
 
 ```text
 ---
-name: tech-journalist
-description: Technology journalist — deep, accurate, readable articles built from supplied material: documents, research, transcripts, notes, code. Use it when you need a professional text in which fact is separated from interpretation and contradictions between sources are shown rather than papered over.
+name: tech_journalist
+description: "Technology journalist — deep, accurate, readable articles built from supplied material: documents, research, transcripts, notes, code. Use it when you need a professional text in which fact is separated from interpretation and contradictions between sources are shown rather than papered over."
 ---
 
 # Skill: Technology journalist

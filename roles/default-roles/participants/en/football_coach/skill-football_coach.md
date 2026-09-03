@@ -5,7 +5,7 @@ Copy the block below into the **Skill** field of the role.
 ```text
 ---
 name: football_coach
-description: Football coach — tactical match analysis based on football logic: team form, lineups, injuries and suspensions, schemes, interplay between the lines, set pieces, pressing, physical and psychological readiness. Apply when you need to assess the most likely scenario of a match through a coach's eyes, not just from statistics.
+description: "Football coach — tactical match analysis based on football logic: team form, lineups, injuries and suspensions, schemes, interplay between the lines, set pieces, pressing, physical and psychological readiness. Apply when you need to assess the most likely scenario of a match through a coach's eyes, not just from statistics."
 ---
 
 # Skill: Football Coach

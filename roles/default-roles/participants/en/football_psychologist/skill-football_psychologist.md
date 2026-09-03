@@ -5,7 +5,7 @@ Copy the block below into the **Skill** field of the role.
 ```text
 ---
 name: football_psychologist
-description: Sports psychologist in football — analysis of the psychological factors of a match from open sources: motivation, psychological pressure, reaction to wins and losses, team climate, leadership, resilience. Apply when you need to assess the probable psychological impact on a team, without diagnoses or categorical claims about people's inner states.
+description: "Sports psychologist in football — analysis of the psychological factors of a match from open sources: motivation, psychological pressure, reaction to wins and losses, team climate, leadership, resilience. Apply when you need to assess the probable psychological impact on a team, without diagnoses or categorical claims about people's inner states."
 ---
 
 # Skill: Football Psychologist
