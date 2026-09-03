@@ -14,7 +14,7 @@ A working default:
 |---|---|---|
 | 1 | Google | Fast, reliable, good baseline |
 | 2 | NVIDIA NIM | Different training, different blind spots |
-| 3 | OpenRouter (free model) | A third opinion from a third vendor |
+| 3 | OpenRouter (a `:free` model) | A third opinion from a third vendor |
 | 4 | Leave empty at first | Three participants is already plenty to read |
 
 Start with two participants. Four answers plus an Orchestrator summary is a lot of text to read on a phone, and most questions do not need it.
@@ -27,7 +27,9 @@ This one reads every answer and writes the summary. It needs the **largest conte
 
 Pick a model with a long context. A fast, small model here will truncate or lose track of the later answers.
 
-This is the seat where paying a little makes the most difference, if you ever decide to.
+Most of the models the app ships with have a 1M window, so this is easy — but not all of them. `GPT-OSS 20B` (131K) and `MiniMax M2.7` (197K) are the smallest, and belong in a participant seat rather than here. [`catalogue.md`](catalogue.md) lists the window for every model.
+
+This is the seat where paying a little makes the most difference, if you ever decide to. Models with a `$` in front of their name bill against your OpenRouter balance; `$ GLM 5.3 Flash` is the cheapest of them and the sensible one to try first.
 
 ---
 
@@ -40,6 +42,10 @@ Speed matters less here — you are not waiting on it during a round.
 ---
 
 ## Practical notes
+
+**The same model on two providers is still one opinion.** `Laguna XS 2.1` ships twice — free through OpenRouter, direct through NVIDIA NIM. Useful when one of them is throttling, useless as two seats. [`catalogue.md`](catalogue.md) groups every default model by training family, so you can see which picks actually differ.
+
+**Free OpenRouter models need a privacy setting.** Without it they all fail at once with a 404. One-time fix, explained in [`providers.md`](providers.md#free-models-return-404).
 
 **Rate limits bite when seats share a provider.** Four Google models in one round is four simultaneous requests against the same per-minute quota. Spreading seats across providers avoids this entirely.
 
