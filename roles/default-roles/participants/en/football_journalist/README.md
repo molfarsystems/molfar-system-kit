@@ -1,7 +1,7 @@
 ---
 code: football_journalist
 name: Football Journalist
-description: "Football journalist — gathering and verifying news about the teams and the match: official statements, personnel, atmosphere; facts versus rumors."
+description: "Football journalist — gathering and verifying match news: official statements, personnel, atmosphere; facts versus rumors."
 seat: participant
 ---
 

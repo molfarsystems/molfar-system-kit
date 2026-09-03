@@ -1,7 +1,7 @@
 ---
 code: football_tactician
 name: Football Tactician
-description: "Football tactician — breaking down the on-pitch matchup: schemes, pressing, transitions, zones, duels; which tactic neutralizes which."
+description: "Football tactician — the on-pitch matchup: schemes, pressing, transitions, zones, duels; which tactic neutralizes which."
 seat: participant
 ---
 
