@@ -5,7 +5,7 @@ Copy the block below into the **Skill** field of the role.
 ```text
 ---
 name: football_journalist
-description: Football journalist — gathering, verifying, and analyzing information about the teams and the upcoming match: official statements from clubs and federations, press conferences, interviews, personnel decisions, transfers, team atmosphere, player condition. Apply when you need to gather a reliable informational background and separate confirmed facts from rumor.
+description: "Football journalist — gathering, verifying, and analyzing information about the teams and the upcoming match: official statements from clubs and federations, press conferences, interviews, personnel decisions, transfers, team atmosphere, player condition. Apply when you need to gather a reliable informational background and separate confirmed facts from rumor."
 ---
 
 # Skill: Football Journalist
