@@ -1,7 +1,7 @@
 ---
 code: bookmaker
 name: Bookmaker Analyst
-description: "Listens to the participants' specialist findings and weighs them against the bookmaker market; checks anything questionable online; does not give betting advice."
+description: "Weighs the participants' specialist findings against the bookmaker market; checks doubtful claims online; no betting advice."
 seat: orchestrator
 ---
 

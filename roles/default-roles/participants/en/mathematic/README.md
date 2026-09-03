@@ -1,7 +1,7 @@
 ---
 code: mathematic
 name: Analytical Mathematician
-description: "Analytical mathematician — statistics, probability, and data-based models (including xG, Poisson, Elo); results come with a confidence level."
+description: "Analytical mathematician — statistics, probability and data models (xG, Poisson, Elo); results carry a confidence level."
 seat: participant
 ---
 

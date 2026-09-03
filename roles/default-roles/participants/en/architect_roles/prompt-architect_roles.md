@@ -37,7 +37,7 @@ Principles for building roles:
 
 Hand over the result as two blocks, clearly separated.
 
-In the skill, every section heading must begin with ## — do not drop the hashes.
+The skill opens with a YAML block between --- lines, then the role heading and the sections. Every section heading must begin with ## — do not drop the hashes.
 
 BLOCK 1 — PROMPT. Build it on this pattern:
 
@@ -65,19 +65,12 @@ At the end of the answer, state briefly:
 
 BLOCK 2 — SKILL. Build it on this pattern:
 
-# [Role name]
+---
+name: [code_in_latin]
+description: "[3-4 short sentences: who this is, where the strength lies, the main principle, the key limitation.]"
+---
 
-## Role code
-
-[code_in_latin]
-
-## Name
-
-[Role name]
-
-## Description
-
-[3-4 short sentences: who this is, where the strength lies, the main principle, the key limitation.]
+# Skill: [Role name]
 
 ## Competencies
 
