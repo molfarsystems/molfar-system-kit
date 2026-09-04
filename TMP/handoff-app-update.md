@@ -10,6 +10,9 @@ files — if they disagree, the files are right and this note is stale.
 - Kit repo: `molfarsystems/molfar-system-kit`, branch `main`
 - App repo: `molfarsystems/Molfar-System` — the code currently on Google Play,
   version 1.0.3, `buildozer.spec` line 10
+- The work list is `TMP/plan-1.0.4.md`, next to this file. It is written in
+  Ukrainian because it is the owner's plan; this file is the technical half.
+  The plan says *what*, this says *what will bite you*.
 
 ---
 
@@ -123,6 +126,62 @@ A `.pyc` reached `main` that way once already (commit `c874ee2`, removed in
 
 ---
 
+## 2b. Bugs already located, with file and line
+
+Found by reading the code during the plan review. Nothing was changed in the
+app repo — these are diagnoses, not fixes.
+
+### Haiduk locks up after a failure (plan 1.1)
+
+Two separate holes, both needed to explain the symptom.
+
+`is_waiting` is set in `send_message` (`mod/pop_ai.py:2114`) and cleared only
+in `_on_api_done` / `_on_api_error`.
+
+**Hole one.** `_worker()` in the same method has no `try/except`, and calls
+`_documents_system_text(text)` — a SQL LIKE across the whole knowledge.db plus
+Python scoring. If that raises, the daemon thread dies **before**
+`APIManager.ask_with_config` is ever reached, so no watchdog is armed and
+`is_waiting` stays `True` for the rest of the session. The send button then
+returns silently on `if not text or self.is_waiting`.
+
+`ask_with_config` itself is sound: the Clock watchdog plus the `settled` flag
+do guarantee exactly one of `on_done`/`on_error`. The hole is strictly before
+that call, which is why the guarantee never applies.
+
+**Hole two.** `_do_clear_chat` (`mod/pop_ai.py:1358`) clears widgets, history
+and the DB but does not reset `is_waiting`, does not call `_clear_typing()`
+and does not clear `_pending_persist`. So no user action can recover from the
+lock — which is exactly what the owner reported.
+
+### The list lag is two different problems (plan 2.2 and 4.1)
+
+- `modules/models_modal.py:293` — **already chunked** (`_CHUNK = 8`). It still
+  lags because chunking spreads the work rather than reducing it: each
+  `ModelRow` is an `MDSwitch` + two `MDIconButton` + a canvas border with two
+  bindings.
+- `modules/roles_modal.py:202` — **not chunked at all**, a plain synchronous
+  `for role in roles`. That is why roles feel worse than models, and adding
+  three seed roles makes it worse again.
+- `RecycleView` is not used anywhere in the project.
+
+Copying the chunking pattern into `roles_modal` is cheap and should be done.
+Rewriting rows or moving to `RecycleView` should wait for a measurement — do
+not start it on a hunch.
+
+### Markdown in chat is mostly written already (plan 1.2)
+
+`modules/md_render.py` already has `to_blocks()`, returning escaped Kivy markup
+blocks ready for `MDLabel(markup=True)`; the document reader already draws with
+it, in chunks. The blocker is stated in that file's own header: the chat bubble
+`_SelectableText` is a `TextInput`, which does not support markup.
+
+So this is a trade-off decision — formatting versus text selection — not a
+build. Bold, italic, headings, code blocks, quotes, bullets and rules map;
+tables and nested lists do not. Get the decision before writing code.
+
+---
+
 ## 3. The state of the kit, for reference
 
 `main` at the time of writing carries everything below. Nothing is in flight.
@@ -165,6 +224,35 @@ approved.
 
 ---
 
+## 3b. The Play "outdated SDK" notice — what was checked
+
+The owner received a Play notification about an outdated SDK. The repo does
+**not** show the usual cause:
+
+- `android.api = 36` in `buildozer.spec`, set on 28 July 2026 in `bb19bc6` —
+  before the 1.0.3 release (`6787a23`, 18 August). So the published build
+  already targets the maximum API. The CI workflow even carries a comment
+  saying Play requires targetSdk 36 from 31.08.2026.
+- The only third-party Gradle dependency is
+  `com.google.android.play:review:2.0.2`, which is the current version.
+- `p4a.branch = v2026.05.09` with NDK 28c, pinned deliberately for 16 KB page
+  size support; that round was tested on a device.
+
+Which leaves two explanations the repo cannot settle, both checkable in the
+Play Console:
+
+1. An **older artifact still active on a test track** (internal/closed), built
+   before `android.api` reached 36. Play warns about any active release, not
+   just the newest.
+2. A notice about a specific bundled SDK, in which case the notification text
+   names it and its version.
+
+**Do not guess at this.** Ask for the exact notification text before changing
+anything in `buildozer.spec` — the current pins were hard-won and the comments
+around them explain why.
+
+---
+
 ## 4. Branches in `Molfar-System`
 
 Checked at `bebfc70`. Four of the six carry **zero** commits that are not
@@ -188,13 +276,20 @@ The owner has not decided; do not delete anything without asking.
 
 ## 5. Suggested order for the update
 
+The ordered work list is `TMP/plan-1.0.4.md`. In short:
+
 1. Read `models/app-defaults.md` and `roles/default-roles/README.md` in full.
-2. Do the registry swap (A) — small, self-contained, easy to verify.
-3. Do the seed addition (B) plus the three `roles_seed.py` defects.
-4. Bump `version` in `buildozer.spec`.
-5. Let CI build the APK. Do not try to build locally unless the packaging
-   itself is what is being tested — `CLAUDE.md` explains why the pinned
-   toolchain versions matter.
+2. Section 0 of the plan — the registry swap and the seed roles. Both are
+   prepared and verified; this is transcription, not design.
+3. Plan 1.1 — the Haiduk lock. It is a correctness bug affecting users today
+   and the fix is roughly ten lines.
+4. Plan 4.1 — chunk the roles list, by copying the pattern already in
+   `models_modal.py`.
+5. Everything else, then the release.
+
+Do not build the APK locally unless the packaging itself is what is being
+tested — `CLAUDE.md` explains why the pinned toolchain versions matter. CI
+triggers on pushes to `update/complete-overhaul`, not `main`.
 
 ### The part that is easy to get wrong
 
