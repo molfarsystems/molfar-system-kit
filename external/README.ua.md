@@ -8,4 +8,4 @@
 
 | Тека | Джерело | Ліцензія |
 |---|---|---|
-| `agency-agents/` | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) — The Agency, колекція ролей для ШІ-агентів | MIT |
+| [`agency-agents/`](agency-agents/README.ua.md) | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) — The Agency, колекція ролей для ШІ-агентів | MIT |

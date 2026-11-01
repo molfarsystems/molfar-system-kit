@@ -8,4 +8,4 @@ Selections from other open role collections, converted for Molfar: each role is 
 
 | Folder | Source | License |
 |---|---|---|
-| `agency-agents/` | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) — The Agency, a collection of AI agent personalities | MIT |
+| [`agency-agents/`](agency-agents/) | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) — The Agency, a collection of AI agent personalities | MIT |

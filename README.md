@@ -65,6 +65,8 @@ Want your role to be here? Open a **New issue** → the *Submit a role* form. No
 | [`roles/`](roles/README.md) | Individual Molfar and community roles: prompt, skill and description for each |
 | [`roles/builtin-ua/`](roles/builtin-ua/README.md) | The 26 built-in roles in Ukrainian — texts and a pack |
 | [`external/`](external/) | Selections from other open role collections — under their own licenses |
+| [`external/agency-agents/`](external/agency-agents/) | 151 roles from The Agency (agency-agents), 12 packs by division — MIT |
+| [`FORMAT.md`](FORMAT.md), [`tools/`](tools/) | The pack format and the scripts that build and check packs — make your own |
 
 **Languages.** Roles are not mirrored: a role exists in the languages someone wrote it in. The language of a role doesn't set the language of the answer — the model answers in the language of the question.
 
