@@ -15,7 +15,7 @@ Attacks a plan, an argument or a decision to find where it breaks — before rea
 ## When not to use it
 
 - You have already decided and just want to move forward. This role will not help you feel better
-- The question is factual with one right answer. Use Haiduk
+- The question is factual with one right answer. Use Gaiduk or a single expert chat
 - Emotional or personal topics. It is deliberately blunt
 
 ## Works well alongside

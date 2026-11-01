@@ -2,67 +2,78 @@
 
 # Molfar System Kit
 
-Roles, model lists and help files for **Molfar System** — a free Android app where several AI models hold a meeting instead of one chatbot answering alone.
+Roles for **Molfar System** — a free Android app where several AI models hold a meeting instead of one chatbot answering alone. Here you'll find ready-made role packs that go into the app as a single file, and individual roles to copy by hand.
 
-Everything here is plain text. Copy what you need, paste it into the app, change it however you like.
+- Website: [molfar.nova-hata.com](https://molfar.nova-hata.com)
+- Google Play: [Molfar System](https://play.google.com/store/apps/details?id=com.nova_hata.molfar)
+- App help: inside the app ("?" on every screen) and on the website — [FAQ](https://molfar.nova-hata.com/faq)
 
-- App website: [molfar.nova-hata.com](https://molfar.nova-hata.com)
-- Google Play: [play.google.com/store/apps/details?id=com.nova_hata.molfar](https://play.google.com/store/apps/details?id=com.nova_hata.molfar)
+The app never contacts this repository on its own: you decide what to install.
 
 ---
 
-## What is in this repository
+## What a role is
+
+A role is who the model will be in a conversation: the **prompt** (who it is and how it talks) and the **skill** (what it does and in what order), up to 10,000 characters each. Roles live in two catalogs in the app:
+
+- **Experts** — specialists at the meeting table (seats 1–4) and in the expert chat;
+- **Orchestrators** — run the meeting (seat 5): bring the answers together, look for disagreements, sum up.
+
+The app already comes with 28 built-in roles. This repository holds the ones it doesn't have.
+
+---
+
+## Install a role pack (the easy way)
+
+A pack is a `.zip` file the app adds to your catalog. You need Molfar **2.0.4** or newer.
+
+1. Download a pack: from [`roles/packs/`](roles/packs/) (Molfar and community roles) or from [`external/`](external/) (selections from other open collections). On GitHub: open the file → **Download raw file**.
+2. In Molfar: **Settings** → **Data archive** → **Restore from archive** → pick the file.
+3. The app shows how many roles the pack holds — tap **Add**.
+
+Nothing is deleted and nothing restarts:
+
+- new roles appear in their categories;
+- a role that is already there unchanged is skipped;
+- a role with the same name but a different text opens the "Already exists" window: **Replace**, **Keep both** ("Name (2)" appears) or **Skip**.
+
+A pack doesn't touch your API keys, chats or meetings — it holds roles only.
+
+---
+
+## Install a single role by hand
+
+1. Open the role's folder, e.g. [`roles/en/devils-advocate/`](roles/en/devils-advocate/).
+2. In the app: on the home screen, the **Roles** block → **Experts** (or **Orchestrators**) → **+** at the top → category, name, description → **Save**.
+3. Tap the **Prompt** block → paste the text from `prompt-*.md` → save. The same with `skill-*.md` in the **Skill** block.
+
+---
+
+## Share your own roles
+
+**Settings** → **Data archive** → **Create archive** → **Roles only — to share**. You get a `.zip` with your own and changed roles — send it to friends or colleagues: they install it exactly like a pack from here.
+
+Want your role to be here? Open a **New issue** → the *Submit a role* form. No git needed: fill in the fields, submit, and the role appears here with a link to you.
+
+---
+
+## What's where
 
 | Folder | What is inside |
 |---|---|
-| [`help/`](help/) | Guides: getting started, API keys, FAQ, troubleshooting |
-| [`roles/`](roles/) | Ready-made roles — prompt + skill for each |
-| [`models/`](models/) | Which model to put in which seat, and where to get keys |
+| [`roles/packs/`](roles/packs/) | Ready-made `.zip` packs — installed via "Data archive" |
+| [`roles/`](roles/README.md) | Individual Molfar and community roles: prompt, skill and description for each |
+| [`roles/builtin-ua/`](roles/builtin-ua/README.md) | The 26 built-in roles in Ukrainian — texts and a pack |
+| [`external/`](external/) | Selections from other open role collections — under their own licenses |
 
-The app itself never connects to this repository. Nothing here is downloaded automatically — you copy what you want by hand.
+**Languages.** Roles are not mirrored: a role exists in the languages someone wrote it in. The language of a role doesn't set the language of the answer — the model answers in the language of the question.
 
----
-
-## Quick start
-
-New to the app? Read [help/en/quick-start.md](help/en/quick-start.md) first. It takes about five minutes and covers the whole setup.
-
-No API key yet? [help/en/api-keys.md](help/en/api-keys.md) shows where to get free ones from all three supported providers.
-
-Something not working? [help/en/troubleshooting.md](help/en/troubleshooting.md).
-
----
-
-## How to use a role from this repository
-
-1. Open the role folder, for example [`roles/en/devils-advocate/`](roles/en/devils-advocate/)
-2. Open `prompt-*.md`, tap the copy button on the code block
-3. In the app: **Roles** → create a new role → paste into the **Prompt** field
-4. Do the same with `skill-*.md` into the **Skill** field
-5. Save. The role now appears in the lists next to the built-in ones
-
-You can also save the `.md` file to your phone and load it through the folder icon in the prompt editor — the app accepts `.txt` and `.md`.
-
-The app already ships with 23 built-in roles, so this repository only holds roles that are **not** in the app.
-
----
-
-## Contributing a role
-
-Have a role that works well? Open a **New issue** and pick the *Submit a role* form. Fill in the fields, send it, and it will be added here with your name in the credit line.
-
-You do not need to know git. The form is just a form.
-
----
-
-## Language policy
-
-- `help/` — translated strictly, the same files in every language
-- `roles/` — **not** mirrored. A role exists in whatever languages someone wrote it in
-- `models/` — English only, since it is mostly model names and numbers
+**Models.** There are no model lists here: the app loads each provider's models itself over the API (**AI Settings** → provider card → **Models** → **Load from API**). The keys are yours; providers — Google Gemini, OpenAI, Anthropic Claude, OpenRouter, NVIDIA NIM or any OpenAI-compatible service.
 
 ---
 
 ## License
 
-Everything in this repository is released under **CC0 1.0** — public domain. Take it, change it, publish it, use it commercially. No attribution required, though it is always welcome.
+Everything in this repository **except the [`external/`](external/) folder** is **CC0 1.0**, public domain: take it, change it, publish it, use it commercially. Credit is not required, but appreciated.
+
+The contents of `external/` are under their authors' licenses (each subfolder has its `LICENSE` and source).
