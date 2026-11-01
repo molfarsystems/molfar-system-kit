@@ -2,7 +2,7 @@
 
 Ready-made roles for Molfar System. Each one is a **prompt** (who the role is) and a **skill** (how it works).
 
-The app already ships with 23 built-in roles. This folder holds only roles that are **not** in the app.
+The app already comes with 28 built-in roles. This folder holds only roles that are **not** in the app. Ready-made `.zip` packs of these roles are in [`packs/`](packs/) — the quickest way to install them (see the [main README](../README.md)).
 
 ---
 
@@ -23,13 +23,15 @@ Roles are not mirrored across languages. A role written in Ukrainian and one wri
 
 ## How to use a role
 
-1. Open the role folder
-2. Open `prompt-*.md` and tap the copy button on the code block
-3. In the app: **Roles** → new role → paste into **Prompt**
-4. Same with `skill-*.md` into **Skill**
-5. Save
+The quickest way is a pack from [`packs/`](packs/): **Settings** → **Data archive** → **Restore from archive** → **Add** (Molfar 2.0.4+).
 
-Or save the `.md` file to your phone and load it through the folder icon in the editor. The app accepts `.txt` and `.md`.
+One role by hand:
+
+1. Open the role folder, then `prompt-*.md`, and tap the copy button on the code block
+2. In the app: the **Roles** block on the home screen → **Experts** (or **Orchestrators**) → **+** → category, name, description → **Save**
+3. Tap the **Prompt** block → paste → save. The same with `skill-*.md` in the **Skill** block
+
+Or save the `.md` file to your phone and open it in the prompt / skill editor: **⋮** → **Open** → **Storage** or **From device**.
 
 ---
 
@@ -49,9 +51,9 @@ roles/<language>/<role-name>/
 
 ---
 
-## Participant roles vs Orchestrator roles
+## Expert roles vs Orchestrator roles
 
-**Participant roles** (seats 1-4) answer the question. Write them as a specialist with a point of view.
+**Expert roles** (the **Experts** catalog; "Participant" in the tables above — seats 1-4 of a meeting and the expert chat) answer the question. Write them as a specialist with a point of view.
 
 **Orchestrator roles** (seat 5) run the round. The round mechanics are built into the app, and an Orchestrator's skill stacks on top of the fixed rules of that seat. So an Orchestrator skill should describe only the **leading style and evaluation criteria** — not how rounds work. Repeating the mechanics wastes context and can conflict with the built-in rules.
 
@@ -63,11 +65,11 @@ roles/<language>/<role-name>/
 
 **Say what it should refuse to do.** "Do not soften the assessment to be polite" does more work than three sentences describing expertise.
 
-**Keep the prompt under 5000 characters.** If it is longer, part of it belongs in the skill.
+**Up to 10,000 characters each — prompt and skill.** The prompt is who the role is and how it talks; the procedure, checklists and output formats belong in the skill.
 
-**Test it in Haiduk first.** One model, instant feedback, no meeting to set up.
+**Test it in the expert chat first.** One model, instant feedback, no meeting to set up: Projects → **+** → Expert → pick the role.
 
-**Write it in the language you want answers in.** The models follow the prompt's language by default.
+**Any language works.** The language of a role doesn't set the language of the answer — the model answers in the language of the question. Write in the language you think in best.
 
 ---
 
