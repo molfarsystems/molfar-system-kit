@@ -1,0 +1,27 @@
+name: Check role packs
+
+# Every PR that touches roles, packs or the tools: all packs must read the way the app reads them
+# (tools/check_pack.py, see FORMAT.md), and the role folders must still build.
+on:
+  pull_request:
+    paths:
+      - "roles/**"
+      - "external/**"
+      - "tools/**"
+      - "FORMAT.md"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check packs
+        run: python3 tools/check_pack.py roles/packs/*.zip external/*/packs/*.zip
+      - name: Role folders still build
+        run: |
+          cp -r . /tmp/kit
+          python3 /tmp/kit/tools/rebuild_packs.py /tmp/kit
+          python3 tools/check_pack.py /tmp/kit/roles/packs/*.zip
