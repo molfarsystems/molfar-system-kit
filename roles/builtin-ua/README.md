@@ -15,8 +15,8 @@ The role list with descriptions (in Ukrainian) is in [`README.ua.md`](README.ua.
 ```
 builtin-ua/<code>/
   README.md        front matter: code, name, description (≤ 128), seat (participant / orchestrator)
-  prompt-<code>.md the prompt in a ```text block (≤ 10,000 characters)
-  skill-<code>.md  the skill in a ```text block (≤ 10,000 characters)
+  prompt-<code>.md the prompt in a ```text block (≤ 25,000 characters)
+  skill-<code>.md  the skill in a ```text block (≤ 25,000 characters)
 ```
 
 CC0 1.0.

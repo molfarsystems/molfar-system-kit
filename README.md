@@ -14,7 +14,7 @@ The app never contacts this repository on its own: you decide what to install.
 
 ## What a role is
 
-A role is who the model will be in a conversation: the **prompt** (who it is and how it talks) and the **skill** (what it does and in what order), up to 10,000 characters each. Roles live in two catalogs in the app:
+A role is who the model will be in a conversation: the **prompt** (who it is and how it talks) and the **skill** (what it does and in what order), up to 25,000 characters each. Roles live in two catalogs in the app:
 
 - **Experts** — specialists at the meeting table (seats 1–4) and in the expert chat;
 - **Orchestrators** — run the meeting (seat 5): bring the answers together, look for disagreements, sum up.

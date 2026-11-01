@@ -49,8 +49,8 @@
 ```
 builtin-ua/<код>/
   README.md        шапка: code, name, description (≤ 128), seat (participant / orchestrator)
-  prompt-<код>.md  промпт у блоці ```text (≤ 10 000 символів)
-  skill-<код>.md   скіл у блоці ```text (≤ 10 000 символів)
+  prompt-<код>.md  промпт у блоці ```text (≤ 25 000 символів)
+  skill-<код>.md   скіл у блоці ```text (≤ 25 000 символів)
 ```
 
 CC0 1.0.

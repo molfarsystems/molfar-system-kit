@@ -65,7 +65,7 @@ roles/<language>/<role-name>/
 
 **Say what it should refuse to do.** "Do not soften the assessment to be polite" does more work than three sentences describing expertise.
 
-**Up to 10,000 characters each — prompt and skill.** The prompt is who the role is and how it talks; the procedure, checklists and output formats belong in the skill.
+**Up to 25,000 characters each — prompt and skill.** The prompt is who the role is and how it talks; the procedure, checklists and output formats belong in the skill. A role goes into every request, so a long one costs tokens — keep it as long as it needs to be, not longer.
 
 **Test it in the expert chat first.** One model, instant feedback, no meeting to set up: Projects → **+** → Expert → pick the role.
 
