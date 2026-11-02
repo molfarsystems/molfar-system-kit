@@ -1,0 +1,60 @@
+name: Rebuild role packs
+
+# After a role lands in main, rebuild roles/packs/*.zip and the pack tables, then commit them.
+#
+# Two triggers on purpose: a merge by a person is a plain push, but the "Build role PR" bot merges with
+# GITHUB_TOKEN, and pushes made with GITHUB_TOKEN never start other workflows - so the bot's merges are caught
+# when its workflow run completes. The commit this workflow makes (also GITHUB_TOKEN) starts nothing, so there
+# is no loop.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "roles/**"
+      - "!roles/packs/**"
+      - "tools/build_pack.py"
+      - "tools/rebuild_packs.py"
+  workflow_run:
+    workflows: ["Build role PR"]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: rebuild-packs
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Configure git
+        run: |
+          git config user.name "Molfar Kit Bot"
+          git config user.email "bot@molfar.nova-hata.com"
+
+      - name: Rebuild and check
+        run: |
+          python3 tools/rebuild_packs.py
+          python3 tools/check_pack.py roles/packs/*.zip external/*/packs/*.zip
+
+      - name: Commit if anything changed
+        run: |
+          git add -A roles/packs
+          if git diff --cached --quiet; then
+            echo "Packs are up to date."
+            exit 0
+          fi
+          git commit -m "Rebuild role packs"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1

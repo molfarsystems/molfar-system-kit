@@ -14,7 +14,7 @@ The app never contacts this repository on its own: you decide what to install.
 
 ## What a role is
 
-A role is who the model will be in a conversation: the **prompt** (who it is and how it talks) and the **skill** (what it does and in what order), up to 10,000 characters each. Roles live in two catalogs in the app:
+A role is who the model will be in a conversation: the **prompt** (who it is and how it talks) and the **skill** (what it does and in what order), up to 25,000 characters each. Roles live in two catalogs in the app:
 
 - **Experts** — specialists at the meeting table (seats 1–4) and in the expert chat;
 - **Orchestrators** — run the meeting (seat 5): bring the answers together, look for disagreements, sum up.
@@ -25,10 +25,10 @@ The app already comes with 28 built-in roles. This repository holds the ones it 
 
 ## Install a role pack (the easy way)
 
-A pack is a `.zip` file the app adds to your catalog. You need Molfar **2.0.4** or newer.
+A pack is a `.zip` file the app adds to your catalog. You need Molfar **2.0.5** or newer.
 
 1. Download a pack: from [`roles/packs/`](roles/packs/) (Molfar and community roles) or from [`external/`](external/) (selections from other open collections). On GitHub: open the file → **Download raw file**.
-2. In Molfar: **Settings** → **Data archive** → **Restore from archive** → pick the file.
+2. In Molfar: **Settings** → **Data archive** → **Install roles** → pick the file.
 3. The app shows how many roles the pack holds — tap **Add**.
 
 Nothing is deleted and nothing restarts:
@@ -65,6 +65,8 @@ Want your role to be here? Open a **New issue** → the *Submit a role* form. No
 | [`roles/`](roles/README.md) | Individual Molfar and community roles: prompt, skill and description for each |
 | [`roles/builtin-ua/`](roles/builtin-ua/README.md) | The 26 built-in roles in Ukrainian — texts and a pack |
 | [`external/`](external/) | Selections from other open role collections — under their own licenses |
+| [`external/agency-agents/`](external/agency-agents/) | 151 roles from The Agency (agency-agents), 12 packs by division — MIT |
+| [`FORMAT.md`](FORMAT.md), [`tools/`](tools/) | The pack format and the scripts that build and check packs — make your own |
 
 **Languages.** Roles are not mirrored: a role exists in the languages someone wrote it in. The language of a role doesn't set the language of the answer — the model answers in the language of the question.
 
