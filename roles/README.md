@@ -23,7 +23,7 @@ Roles are not mirrored across languages. A role written in Ukrainian and one wri
 
 ## How to use a role
 
-The quickest way is a pack from [`packs/`](packs/): **Settings** → **Data archive** → **Restore from archive** → **Add** (Molfar 2.0.4+).
+The quickest way is a pack from [`packs/`](packs/): **Settings** → **Data archive** → **Install roles** → **Add** (Molfar 2.0.5+).
 
 One role by hand:
 

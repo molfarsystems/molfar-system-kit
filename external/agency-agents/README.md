@@ -10,7 +10,7 @@ Roles from [**The Agency**](https://github.com/msitarzewski/agency-agents) — a
 
 ## Install
 
-Download a pack from [`packs/`](packs/) (**Download raw file**) → Molfar → **Settings** → **Data archive** → **Restore from archive** → **Add**. You need Molfar **2.0.4** or newer. The roles land in the **Experts** catalog, in categories **Agency — <division>**. Nothing is deleted; a role you already have unchanged is skipped.
+Download a pack from [`packs/`](packs/) (**Download raw file**) → Molfar → **Settings** → **Data archive** → **Install roles** → **Add**. You need Molfar **2.0.5** or newer. The roles land in the **Experts** catalog, in categories **Agency — <division>**. Nothing is deleted; a role you already have unchanged is skipped.
 
 | Pack | Roles | Pack | Roles |
 |---|---|---|---|

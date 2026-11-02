@@ -1,6 +1,6 @@
 # Molfar role pack format
 
-A role pack is a `.zip` file that [Molfar System](https://play.google.com/store/apps/details?id=com.nova_hata.molfar) (Android) adds to the user's role catalog: **Settings → Data archive → Restore from archive → Add**. This page describes the format so that anyone can build packs. The tools in [`tools/`](tools/) build and check them.
+A role pack is a `.zip` file that [Molfar System](https://play.google.com/store/apps/details?id=com.nova_hata.molfar) (Android) adds to the user's role catalog: **Settings → Data archive → Install roles → Add**. This page describes the format so that anyone can build packs. The tools in [`tools/`](tools/) build and check them.
 
 ## Files
 

@@ -2,7 +2,7 @@
 
 # Role packs
 
-Ready-made `.zip` packs of the roles in this repository. Install: download the file (**Download raw file**) → Molfar → **Settings** → **Data archive** → **Restore from archive** → **Add**. You need Molfar **2.0.4** or newer.
+Ready-made `.zip` packs of the roles in this repository. Install: download the file (**Download raw file**) → Molfar → **Settings** → **Data archive** → **Install roles** → **Add**. You need Molfar **2.0.5** or newer.
 
 The roles land in the **Experts** catalog, category **Molfar Kit** (the built-in roles in Ukrainian — category **Українською**, in both catalogs). The packs are rebuilt automatically when a role is added. Nothing is deleted; a role with the same name but a different text asks first (**Replace** / **Keep both** / **Skip**).
 

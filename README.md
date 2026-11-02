@@ -25,10 +25,10 @@ The app already comes with 28 built-in roles. This repository holds the ones it 
 
 ## Install a role pack (the easy way)
 
-A pack is a `.zip` file the app adds to your catalog. You need Molfar **2.0.4** or newer.
+A pack is a `.zip` file the app adds to your catalog. You need Molfar **2.0.5** or newer.
 
 1. Download a pack: from [`roles/packs/`](roles/packs/) (Molfar and community roles) or from [`external/`](external/) (selections from other open collections). On GitHub: open the file → **Download raw file**.
-2. In Molfar: **Settings** → **Data archive** → **Restore from archive** → pick the file.
+2. In Molfar: **Settings** → **Data archive** → **Install roles** → pick the file.
 3. The app shows how many roles the pack holds — tap **Add**.
 
 Nothing is deleted and nothing restarts:

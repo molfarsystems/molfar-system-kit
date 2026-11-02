@@ -4,7 +4,7 @@
 
 Ukrainian versions of 26 built-in Molfar roles (the app ships them in English). This section is also a sample of how a pack is built from role folders.
 
-**Install them all at once:** [`../packs/molfar-builtin-ua.zip`](../packs/molfar-builtin-ua.zip) → Molfar → **Settings** → **Data archive** → **Restore from archive** → **Add** (Molfar 2.0.4+). The roles appear in both catalogs in the category **Українською** ("In Ukrainian"), next to the English ones, replacing nothing.
+**Install them all at once:** [`../packs/molfar-builtin-ua.zip`](../packs/molfar-builtin-ua.zip) → Molfar → **Settings** → **Data archive** → **Install roles** → **Add** (Molfar 2.0.5+). The roles appear in both catalogs in the category **Українською** ("In Ukrainian"), next to the English ones, replacing nothing.
 
 Three roles — Role Architect, Interviewer, Technology Journalist — are also in [`molfar-kit-ua.zip`](../packs/molfar-kit-ua.zip) in a different edition; install both and the app asks "Already exists".
 
