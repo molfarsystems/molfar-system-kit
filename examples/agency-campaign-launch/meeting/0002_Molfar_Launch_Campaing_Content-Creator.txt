@@ -1,0 +1,189 @@
+# Molfar Launch Campaing" — Content Creator
+
+## User
+
+Hello, team. This is a real planning meeting for a real project.
+
+Please read the documents attached to your seat: the shared 01_mission_brief.md, 02_facts.md and 03_channels.md, and your personal task file — task_1_content_creator.md, task_2_twitter_engager.md, task_3_reddit_community_builder.md or task_4_analytics_reporter.md.
+
+The task: a 4-week launch campaign for Molfar System Kit, with zero budget and about 4 hours a week of one person's time, on a phone, with possible gaps of 1–2 weeks.
+
+Answer in English, inside your own zone, following your task file. Keep your answer under 900 words. Facts about Molfar and the Kit: only from 02_facts.md, the website and the Kit repository. Web search is on: use it for the outside world, give a source link for every outside fact, and mark anything unconfirmed "[unverified]". If something is missing, say what you need instead of guessing.
+We conduct meetings in English.
+
+---
+
+## Content Creator
+
+## 1. Core description
+
+**One sentence**
+
+```text
+Molfar System Kit is a free collection of ready-made AI role packs for Molfar System, an Android app for chats and multi-model meetings.
+```
+
+**One paragraph**
+
+```text
+Molfar System Kit is a public repository of ready-made AI roles for Molfar System. Download a pack to add roles to the Android app, or submit a role without knowing git. The Kit includes Molfar roles, Ukrainian translations of 26 built-in roles, and 151 roles adapted from The Agency. Molfar is free; you bring your own AI provider key.
+```
+
+Source: `02_facts.md`, “Molfar System” and “Molfar System Kit.”
+
+## 2. Launch headlines
+
+1. ```text
+   Ready-made AI roles for Molfar System, in one free Kit
+   ```
+   For Android users looking for roles they can install.
+
+2. ```text
+   151 Agency roles, adapted for multi-model meetings on Android
+   ```
+   For people familiar with The Agency who want to try its roles in Molfar.
+
+3. ```text
+   Bring your own AI role: Molfar System Kit is open for submissions
+   ```
+   For people interested in contributing roles.
+
+## 3. Announcement post
+
+```text
+We made Molfar System Kit: a free, public collection of ready-made roles for Molfar System, our Android app for AI chats and meetings.
+
+The Kit includes Molfar roles in five languages, Ukrainian translations of 26 built-in roles, and 151 roles adapted from The Agency (agency-agents) in 12 packs. The Agency roles are MIT-licensed, © AgentLand Contributors, and retain attribution.
+
+To install a pack:
+
+1. Open the Kit and download a pack’s .zip file.
+2. In Molfar 2.0.5 or newer, open Settings → Data archive → Install roles and select the file.
+3. Check the pack and tap Add.
+
+Molfar is free and Android-only. To use AI models, bring your own provider key.
+
+Have a role to share? In the repository, choose New issue → “Submit a role.” No git knowledge is needed.
+
+We’re a solo developer from Ukraine working with Claude. Questions and ideas are welcome in GitHub Discussions.
+
+[Open Molfar System Kit](https://github.com/molfarsystems/molfar-system-kit)
+[Get Molfar on Google Play](https://play.google.com/store/apps/details?id=com.nova_hata.molfar)
+[The Agency](https://github.com/msitarzewski/agency-agents)
+```
+
+Source: `02_facts.md`, “Molfar System” and “Molfar System Kit”; `01_mission_brief.md`, “Who is behind it.”
+
+## 4. Newcomer FAQ
+
+Source: `02_facts.md`, “Molfar System” and “Molfar System Kit.”
+
+1. **What is a role?** A prompt describes who the model is and how it talks; a skill describes what it does and in what order.
+2. **What do I need?** An Android device running Android 7.0 or newer, Molfar 2.0.5 or newer for pack installation, and your own AI provider key.
+3. **Does installing a pack delete my roles?** No. Identical roles are skipped; for a changed role, you can replace it, keep both, or skip it.
+4. **Where do my requests go?** Requests go directly from your phone to your chosen provider. Molfar has no server of its own.
+5. **Can I contribute without git?** Yes. Use the repository’s New issue → “Submit a role” form.
+
+## 5. Newcomer review
+
+I opened the website and repository README. This is a review of their retrieved page content, **not a tested phone installation**.
+
+### What works
+
+- The README explains the app and links to Google Play near the top. ([github.com](https://github.com/molfarsystems/molfar-system-kit))
+- It gives a three-step pack installation path and explains duplicate handling. ([github.com](https://github.com/molfarsystems/molfar-system-kit))
+- The website explains the app’s meeting flow and distinguishes local storage from requests sent to providers. ([molfar.nova-hata.com](https://molfar.nova-hata.com/))
+
+### What may stop a newcomer
+
+1. **No screenshots visible:** the website says screenshots are coming soon. **Smallest fix:** add one phone screenshot showing a meeting. ([molfar.nova-hata.com](https://molfar.nova-hata.com/))
+2. **Conflicting role limits:** the website says 10,000 characters, while `02_facts.md` and the README say 25,000. **Smallest fix:** update the website’s role-limit text. ([molfar.nova-hata.com](https://molfar.nova-hata.com/))
+3. **Kit discovery is weak:** the retrieved homepage mentions the Kit in its development plan, but does not show an obvious Kit download link there. **Smallest fix:** add a clearly labelled repository link beside that mention. ([molfar.nova-hata.com](https://molfar.nova-hata.com/))
+
+## 6. Four-week content calendar
+
+Effort estimates include preparation and posting; they exclude the other specialists’ work.
+
+| Week | Piece | Channel | Minutes |
+|---|---|---|---:|
+| 1 | Announcement above; reuse the same text | GitHub Discussions and Discord feedback forum | 60 |
+| 2 | Short pack-install walkthrough, adapted from the announcement and FAQ | Telegram | 45 |
+| 3 | Explain prompt versus skill and invite role submissions | GitHub Discussions | 60 |
+| 4 | Answer the five newcomer questions; link to the Kit | Discord feedback forum | 60 |
+
+Each piece stands alone. If a week is lost, publish the next available piece when the owner returns; do not try to catch up in the same week.
+
+### Open questions
+
+- Can the owner update the website text and add a screenshot from the phone? Those fixes are not included in the content estimates.
+- Which pack should the walkthrough use as its concrete example?
+
+> Open R · OpenAI: GPT-6.1 Terra Pro · 🌐 · ↑96381 ↓3645
+
+---
+
+## User
+
+Where should the FAQ and the pinned announcement live (README, a pinned Discussion, or the website /faq) so newcomers get answers while the owner is offline, and what one-line auto-reply or pinned note covers unanswered Discussions?
+
+---
+
+## Content Creator
+
+## Recommended placement
+
+- **FAQ: repository README**, near the introduction and installation steps. Put the five existing questions there so visitors can find answers without waiting for a reply.
+- **Announcement: GitHub Discussions.** Pin it if the owner can; otherwise, link to it prominently from the README. Link back to the README FAQ from the announcement.
+- **Website FAQ:** link to the README FAQ when convenient, rather than maintaining a second copy. This is optional, not a launch dependency.
+
+Add this line to the announcement as a **pinned note**, not an auto-reply:
+
+```text
+We made Molfar: a solo developer from Ukraine working with Claude. Replies may be delayed; the Kit README has answers to common questions.
+```
+
+The note sets expectations but does not answer individual Discussions while the owner is away.
+
+### Open question
+
+- Can the owner edit the README and pin a Discussion from the phone?
+
+> Open R · OpenAI: GPT-6.1 Terra Pro · 🌐 · ↑81029 ↓1045
+
+---
+
+## User
+
+If the owner cannot edit the README or pin a Discussion from a phone, what is the fallback place for the FAQ and the pinned note, and about how many minutes does the README FAQ edit take?
+
+---
+
+## Content Creator
+
+## Fallback
+
+Put the **five FAQ answers and the delayed-reply note directly in the launch announcement** on GitHub Discussions. Post the same self-contained text in the Discord `feedback` forum. Neither version needs a pinned Discussion or a README edit.
+
+Place this note near the top of each post:
+
+```text
+We made Molfar: one developer from Ukraine working with Claude. Replies may be delayed; common questions are answered below.
+```
+
+This is a visible note, **not an auto-reply**. Newcomers can read the FAQ while the owner is offline, but individual questions will wait.
+
+## Time estimate
+
+- **README FAQ edit: approximately 20–30 minutes**, assuming the five answers are already written and the owner can edit and verify the README on a phone. This is an estimate, not a tested time.
+- **Fallback: approximately 10–15 extra minutes** to add the existing FAQ and note to the announcement and check both posts. Allow this on top of the original 60-minute announcement estimate.
+
+Use the same FAQ wording in both posts to keep updates manageable.
+
+### Open question
+
+- Can the owner publish and edit both a GitHub Discussion and a Discord forum post from the phone?
+
+> Open R · OpenAI: GPT-6.1 Terra Pro · 🌐 · ↑67725 ↓864
+
+---
+
