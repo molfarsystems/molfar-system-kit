@@ -9,7 +9,7 @@
 > **Rounds:** round 1, two rounds of follow-up questions, a consolidated plan, the minutes
 > **Tokens and cost:** about 0.9 million input and 0.08 million output tokens in the exported requests; about $1.5 in total
 > **Device:** one Android phone
-> **Video:** _link will be added_
+> **Video:** [the meeting on YouTube](https://youtu.be/ArGtVTWNf30), recorded on the phone
 > **Purpose:** show The Agency's roles working as one team in Molfar System, on different models, with an orchestrator that joins and checks their answers
 
 Nothing here was edited after the meeting. The exports in [`meeting/`](meeting/) are exactly what the app saved, including the typo in the meeting title ("Campaing").
