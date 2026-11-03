@@ -1,0 +1,252 @@
+# Molfar Launch Campaing" — Analytics Reporter
+
+## User
+
+Hello, team. This is a real planning meeting for a real project.
+
+Please read the documents attached to your seat: the shared 01_mission_brief.md, 02_facts.md and 03_channels.md, and your personal task file — task_1_content_creator.md, task_2_twitter_engager.md, task_3_reddit_community_builder.md or task_4_analytics_reporter.md.
+
+The task: a 4-week launch campaign for Molfar System Kit, with zero budget and about 4 hours a week of one person's time, on a phone, with possible gaps of 1–2 weeks.
+
+Answer in English, inside your own zone, following your task file. Keep your answer under 900 words. Facts about Molfar and the Kit: only from 02_facts.md, the website and the Kit repository. Web search is on: use it for the outside world, give a source link for every outside fact, and mark anything unconfirmed "[unverified]". If something is missing, say what you need instead of guessing.
+We conduct meetings in English.
+
+---
+
+## Analytics Reporter
+
+I'll check how long each free source keeps its numbers, then set a phone-friendly baseline, weekly check, and week-4 thresholds.The sheet is the record. GitHub keeps traffic for 14 days only, then it is gone, with no backfill. Stars, issues, Play installs, and site reports survive a quiet week. Pack downloads do not.
+
+## How long each source keeps data
+
+GitHub Insights → Traffic shows views, unique visitors, full clones, and unique cloners for the past 14 days, in UTC. Referring sites and popular content are a rolling top list for those same 14 days, updated daily, with no per-day dates. Search engines and GitHub itself are excluded from referrers. [Viewing traffic to a repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/viewing-traffic-to-a-repository), [Traffic API](https://docs.github.com/rest/metrics/traffic). [[1]](https://docs.github.com/enterprise-cloud@latest/repositories/viewing-activity-and-data-for-your-repository/viewing-traffic-to-a-repository) [[2]](https://docs.github.com/rest/metrics/traffic)
+
+Write GitHub traffic down at least every 7 days, and on the day you return from a gap. A gap of 15 days or more with no snapshot deletes the early days. Stars, forks, Discussions, and issues stay on the repository page. I did not find a retention limit for those counts.
+
+Play Console Statistics still holds user acquisitions, and store-listing acquisitions remain in Statistics and CSV exports. Since July 2026 the store-listing screens emphasize install clicks, not completed installs. [Understand and grow your app's user base](https://support.google.com/googleplay/android-developer/answer/9859173). [[3]](https://support.google.com/googleplay/android-developer/answer/9859173) I did not find an official deletion date for those Statistics totals. Write the weekly number anyway.
+
+On the website, Google Analytics standard reports are not cut by the retention setting. Event-level explorations default to 2 months and can be set to 14 months on a free property. [Data retention](https://support.google.com/analytics/answer/7667196). [[4]](https://support.google.com/analytics/answer/7667196?hl=en&ref_topic=9303569) On day 1, in Admin, set Data retention to 14 months if the menu allows it.
+
+Discord Server Insights, where it exists, goes back 120 days for an ordinary server, and some charts start only after 500 members. [Server Insights FAQ](https://support.discord.com/hc/en-us/articles/360032807371-Server-Insights-FAQ). [[5]](https://support.discord.com/hc/th/articles/360032807371-Server-Insights-FAQ) This server is small, so expect no Insights. The member count on screen has no history.
+
+Telegram’s detailed channel statistics exist only for channels of a certain size. The exact limit is a server-side flag, not a number I can confirm. [Channel statistics](https://core.telegram.org/api/stats). [[6]](https://core.telegram.org/api/stats) The subscriber count under the channel title is a snapshot. Write it down.
+
+## Day-1 baseline
+
+Read these before the first post. Do not reuse anyone else’s figures. When I opened the public repository page it showed 0 stars, 0 forks, and 0 watchers. That is a glance, not the baseline. [Repository page](https://github.com/molfarsystems/molfar-system-kit). [[7]](https://github.com/molfarsystems/molfar-system-kit)
+
+On the phone browser, not the GitHub app, open the traffic page and request the desktop site if the chart is cramped. A community reply says the app does not show Traffic. That limit is not in GitHub’s own docs, so treat it as [unverified]. [Mobile discussion](https://github.com/orgs/community/discussions/189626). [[8]](https://github.com/orgs/community/discussions/189626)
+
+Write the date, and note that traffic is the trailing 14 days and includes your own visits.
+
+| What | Where on the phone |
+|---|---|
+| Views, unique visitors, clones, unique cloners | Browser: repository → Insights → Traffic, or the traffic URL |
+| Top referring sites and popular paths, copied as text | Same page, under the chart |
+| Stars, forks, watchers | Repository home, app or browser |
+| Discussion threads, open issues, any “Submit a role” issues | Discussions and Issues tabs |
+| User acquisitions, last 7 days and last 28 days | Play Console → Statistics. Also the previous 28 days, as the comparison |
+| Store-listing visitors, and acquisitions if still shown, otherwise unique install clicks | Statistics, or Grow users → Store performance |
+| Traffic-source split, if shown | Same report |
+| Sessions, users, top session source/medium, last 7 and last 28 days | analytics.google.com → Reports → Acquisition → Traffic acquisition |
+| Discord member count, and whether feedback looks quiet | Discord server member list |
+| Telegram subscriber count | Channel title |
+
+Play and Analytics labels moved in 2026. If a name is missing, record the closest install or session total and write the label you actually saw.
+
+## Six metrics
+
+Check all six in the weekly pass. None of them is a statistical test. The counts will be too small for one.
+
+1. **GitHub unique visitors, trailing 14 days.** Source: Insights → Traffic. Weekly, and on return. This is “people found the Kit.”
+2. **GitHub unique cloners, same window.** Closest substitute for someone taking the files. A clone is not a pack install.
+3. **Outside reactions.** New stars, plus Discussions, issues, issue comments, and submitted roles that are not you. Weekly, from the repository tabs. This is the brief’s “a few people outside the project.”
+4. **Play user acquisitions, 28 days versus the prior 28 days.** Statistics. Weekly. This is “Molfar got new installs,” not “they installed a pack.”
+5. **Website sessions with campaign `kit-launch`.** Traffic acquisition, dimension Session campaign, then Session source / medium. Weekly. This is which channel brought site visits. [URL builders](https://support.google.com/analytics/answer/10917952). [[9]](https://support.google.com/analytics/answer/10917952?hl=en)
+6. **Play visits or acquisitions with a campaign UTM**, filter Ads and referrals, breakdown UTM source. Weekly after the first tagged link. Partial proof that a store visit came from a campaign link. [Play Console help](https://support.google.com/googleplay/android-developer/answer/9859173). [[3]](https://support.google.com/googleplay/android-developer/answer/9859173)
+
+Discord and Telegram counts go in the sheet as context only. A change of one or two on a small channel is noise.
+
+**Cannot measure.** The README tells people to use Download raw file on the zip in `roles/packs/`, not a release asset. GitHub does not count those raw-file downloads, nor the automatic source zip. Release assets do have a download count, but only if a file is uploaded as an asset. [About releases](https://docs.github.com/repositories/releasing-projects-on-github/about-releases). [[10]](https://help.github.com/articles/getting-the-download-count-for-your-releases/) The app has no analytics, so a pack install inside Molfar is invisible. Do not add a tracker to measure it. Substitutes are unique cloners, questions that show someone tried the install steps, and submitted roles.
+
+## Weekly check, 15 minutes
+
+One note on the phone, same headings each week. If you may disappear, fill it the day before. On return, fill it that day. A blank GitHub cell after a long gap is “lost,” not zero.
+
+```text
+Week ending:
+GitHub views 14d / unique visitors 14d:
+Clones 14d / unique cloners 14d:
+Top referrers (name, views, uniques):
+Stars (total) / new since last week:
+New discussions / new issues / submitted roles:
+Outside replies this week (count, one line, not you):
+Play user acquisitions, last 7d / last 28d:
+Play UTM source, if any:
+Site sessions, campaign kit-launch:
+Top source / medium:
+Discord members / Telegram subscribers:
+Lost or estimated cells:
+```
+
+## Week-4 thresholds
+
+Compare with the day-1 sheet. If the day-1 14-day unique visitors are already above 30, drop the floor of 30 and keep the multiple.
+
+**Worked** if at least 3 of these 4 are true:
+
+- A saved 14-day unique-visitor total is at least 30, and at least 3 times the day-1 14-day unique visitors.
+- Net new stars are at least 5.
+- At least 3 outside replies: a Discussion, an issue, a comment, or a submitted role. Stars do not count in this row.
+- Play user acquisitions for the campaign 28 days are at least 5 above the prior 28 days, or at least 3 acquisitions carry a campaign UTM.
+
+**Did not work** only if all of these are true: no saved 14-day window is more than 10 unique visitors above day 1, net stars are under 2, outside replies are zero, and Play acquisitions are not above the prior 28 days.
+
+**Unclear** is the rest, including a lost GitHub window. Do not score a missing snapshot as failure.
+
+Reasoning: the October Show HN had no traction, the Kit is new, and the time budget is about 4 hours a week. Thirty visitors in 14 days is about two people a day. Five stars and three replies is “a few people,” which is the brief’s direction, not a growth target. Raise the floors if day 1 is already busier than this. These are judgment bands. A miss of one star is not a finding.
+
+## Attribution, no paid tools
+
+Use one campaign name, lowercase, no spaces. Put the tagged website link and the plain GitHub link in each post. GitHub will not keep a UTM. Its referrer list may show `reddit.com`, `t.co`, or `news.ycombinator.com` for 14 days, and it will not show search or a click that started on GitHub.
+
+```text
+https://molfar.nova-hata.com/?utm_source=SOURCE&utm_medium=social&utm_campaign=kit-launch&utm_content=w1
+
+https://play.google.com/store/apps/details?id=com.nova_hata.molfar&referrer=utm_source%3DSOURCE%26utm_medium%3Dsocial%26utm_campaign%3Dkit-launch
+```
+
+`SOURCE` is one of: `x`, `reddit`, `hackernews`, `discord`, `telegram`, `facebook`.
+
+The website form is the one Google Analytics documents. The Play form follows Google’s older Play campaign pattern, with the tags inside `referrer`. Play Console’s current help says it reads `utm_source` and `utm_campaign` on a deep link to the listing, but only in the Ads and referrals filter. I could not confirm that a bare `?utm_source=` on a Play URL is stored. Before the first public post, open the Play link once, then look for that source under Ads and referrals. How many days that test takes to appear is [unverified]. If it never appears, Play channel split stays unclear and the website UTMs plus GitHub referrers are the record.
+
+One honest question in the Discord feedback forum is enough: where the person found the Kit. That is a note, not a count.
+
+## Open questions
+
+- Is the site property GA4, and does Admin show a 14-month retention option? I assumed GA4 because that is the current product.
+- Is there already a Kit page on the website, or only the homepage and FAQ? That decides which page path to watch beside the campaign filter.
+
+> Open R · SpaceXAI: Grok 4.7 · 🌐 · ↑240678 ↓12755
+
+---
+
+## User
+
+Given that only GitHub Discussions, Discord, Telegram and X are in the plan, which UTM SOURCE values should stay in the tagged links, and what is the one snapshot the owner should take on launch day so a 15-day gap does not erase the GitHub traffic record?
+
+---
+
+## Analytics Reporter
+
+Keep four `SOURCE` values. Take one GitHub Traffic snapshot at the end of the launch sitting. That note is the only copy of launch-day traffic if you are gone for 15 days.
+
+## UTM sources to keep
+
+The plan posts in four places. Each place gets its own source. Drop `reddit`, `hackernews`, and `facebook`. Do not prepare those links. An unused link is easy to paste by mistake, and then the report shows a channel that was never used.
+
+| `SOURCE` | Put this link in |
+|---|---|
+| `github` | The GitHub Discussion only |
+| `discord` | The Discord `feedback` post only |
+| `telegram` | The Telegram post only (week 2 in the current plan) |
+| `x` | The X thread and the later X posts |
+
+`utm_campaign` stays `kit-launch`. `utm_medium` stays `social`. One campaign filter then shows all four. The repository URL stays plain. GitHub does not keep a UTM on its own pages. The tagged links are the website link and the Play link inside each post.
+
+```text
+https://molfar.nova-hata.com/?utm_source=SOURCE&utm_medium=social&utm_campaign=kit-launch&utm_content=w1
+
+https://play.google.com/store/apps/details?id=com.nova_hata.molfar&referrer=utm_source%3DSOURCE%26utm_medium%3Dsocial%26utm_campaign%3Dkit-launch
+```
+
+Replace `SOURCE` with `github`, `discord`, `telegram`, or `x`. Change `w1` to `w2`, `w3`, or `w4` on later posts. The Play form is the one from the first round: tags live inside `referrer`. Whether Play stores that click is still the day-1 test, not a new assumption.
+
+Telegram will not appear in the launch-day snapshot. That post is week 2. If week 2 is the lost week, there is no Telegram UTM to record. That is a skipped post, not a zero.
+
+## The one launch-day snapshot
+
+Day-1 baseline stays as it was: before the first post. It does not save launch traffic.
+
+After the Discussion, the Discord post, and the X thread are live, open the repository in the phone browser (desktop site if the chart is cramped). Go to Insights → Traffic. Copy this into the same phone note, at the end of that sitting, not before the posts.
+
+```text
+LAUNCH SNAPSHOT
+Local time (GitHub chart is UTC):
+Views, trailing 14 days:
+Unique visitors, trailing 14 days:
+Clones, trailing 14 days:
+Unique cloners, trailing 14 days:
+Launch day UTC, if the chart shows that day (views / uniques / clones / unique cloners):
+Referring sites — every row (name, views, uniques):
+Popular content — every row:
+Stars / discussion threads / open issues at this moment:
+```
+
+This is the record a 15-day gap cannot replace. GitHub shows visitors, full clones, referring sites, and popular content for the past 14 days only, in UTC. Visitors and clones update hourly. Referring sites and popular content update daily. Search engines and GitHub itself are left out of referrers. [[1]](https://help.github.com/articles/viewing-traffic-to-a-repository/) The referrer list is a top 10 with counts and no dates. [[2]](https://docs.github.com/rest/metrics/traffic) Once a day rolls out of the window, GitHub does not give it back.
+
+Stars, Discussions, and issues do not expire. They are on this note only so the return-day count has a start line. The lines that disappear are the four traffic totals, the per-day bar, and the referrer list.
+
+Two limits, so a blank is not scored as zero:
+
+- Taken at the end of the sitting, the hourly visitor and clone totals include launch day up to that hour. They are not the finished UTC day.
+- Referrers may still be yesterday’s list, because that section updates once a day. If you are online on the next UTC day, copy only the referrer list again. If you are not, write “referrers may not include launch day” on this snapshot. Do not treat a missing `t.co` row as “X brought nobody.”
+
+A third-party archiver claims GitHub’s counts can lag by about two days. That is [unverified]. The official cadence above is the one to plan on. No phone tool in this setup will backfill day 15.
+
+## Open questions
+
+- The Play UTM test from day 1 is still open. If that source never appears under Ads and referrals, channel split for installs stays on the website UTMs only.
+
+> Open R · SpaceXAI: Grok 4.7 · 🌐 · ↑45590 ↓4390
+
+---
+
+## User
+
+What are your time estimates for the day-1 baseline, the launch snapshot, the weekly check and the final check, and does the launch snapshot replace step 5 or sit alongside it?
+
+---
+
+## Analytics Reporter
+
+The launch snapshot does not replace step 5. On launch day it sits beside a shorter step 5. Later weeks, step 5 stands alone.
+
+These times are planning estimates from the screen list, not a timed trial. They assume Play Console and Analytics are already logged in on the phone. A fresh login adds time I cannot size.
+
+| Task | When | Estimate | What the minutes cover |
+|---|---|---|---|
+| Day-1 baseline | Before the first post | **30 minutes** (25–40) | GitHub Traffic in the phone browser, stars, Discussions, issues, Play acquisitions for 7 and 28 days plus the prior 28 days, site sessions, Discord members, Telegram subscribers, one Play-link test, retention setting if the menu shows it |
+| Launch snapshot | End of the launch sitting, after the Discussion, Discord post, and X thread are live | **10 minutes** (8–15) | The four GitHub traffic totals, the launch-day bar if shown, every referrer row, every popular-content row, plus stars, threads, and open issues as a start line |
+| Weekly check | Once a week, including week 4 | **15 minutes** | The note already specified. Launch day only: **10 minutes**, because the GitHub lines are copied from the snapshot |
+| Final check | After the week-4 note exists | **15 minutes** (10–20) | Compare the saved notes with day 1 and write worked / unclear / did not work. No new exploration |
+
+Week 1 measurement is about **50 minutes**: 30 + 10 + 10. It is not three full passes.
+
+## What each note is for
+
+**Baseline** is the pre-campaign line. A snapshot taken after the posts cannot replace it. The trailing 14-day GitHub totals will look similar on both notes if both are taken the same day. That is expected. The small gap is not the campaign result.
+
+**Launch snapshot** is only a rescue copy of GitHub Traffic. GitHub keeps that chart for 14 days and does not give dropped days back. Stars, Discussions, and issues do not expire. Play and the website are not on this note.
+
+**Step 5** is the six-metric weekly row: Play acquisitions, Play UTM if any, site sessions for `kit-launch`, Discord and Telegram counts, and outside replies. On launch day, write the GitHub cells as “see launch snapshot.” Do not open Traffic again. Play and Analytics will often still show nothing for the new links. Write **not yet**, not zero.
+
+**Final check** reads the day-1 sheet, the launch snapshot, and the weekly notes. It does not replace the week-4 weekly check. Same sitting is fine: 15 minutes to fill week 4, then 15 to score it.
+
+## If the sitting runs out of time
+
+Do the baseline before any post. After the posts, the snapshot beats a full step 5. The expiring record is GitHub. Play and the site will still be there next week, and same-day UTM rows are not evidence yet.
+
+If a later week may be followed by 15 days away, fill that week’s check before leaving. That note already holds the GitHub block. No second template.
+
+A blank GitHub cell after a long gap stays **lost**, not zero. A missing `t.co` row on the launch snapshot still must not be read as “X brought nobody.” The referrer list may not include launch day yet.
+
+## Open questions
+
+- Are Play Console and Analytics already logged in on the phone? If not, the 30-minute baseline is the low side.
+- The day-1 Play UTM test is still open. It does not change these times.
+
+> Open R · SpaceXAI: Grok 4.7 · 🌐 · ↑24035 ↓2813
+
+---
+

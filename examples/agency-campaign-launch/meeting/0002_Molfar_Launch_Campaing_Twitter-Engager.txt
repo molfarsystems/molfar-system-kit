@@ -1,0 +1,219 @@
+# Molfar Launch Campaing" — Twitter Engager
+
+## User
+
+Hello, team. This is a real planning meeting for a real project.
+
+Please read the documents attached to your seat: the shared 01_mission_brief.md, 02_facts.md and 03_channels.md, and your personal task file — task_1_content_creator.md, task_2_twitter_engager.md, task_3_reddit_community_builder.md or task_4_analytics_reporter.md.
+
+The task: a 4-week launch campaign for Molfar System Kit, with zero budget and about 4 hours a week of one person's time, on a phone, with possible gaps of 1–2 weeks.
+
+Answer in English, inside your own zone, following your task file. Keep your answer under 900 words. Facts about Molfar and the Kit: only from 02_facts.md, the website and the Kit repository. Web search is on: use it for the outside world, give a source link for every outside fact, and mark anything unconfirmed "[unverified]". If something is missing, say what you need instead of guessing.
+We conduct meetings in English.
+
+---
+
+## Twitter Engager
+
+## Seat 2 — X (Twitter)
+
+**First, a warning from this round's search.** Queries for "Molfar" return an unrelated Ukrainian OSINT company (Molfar Intelligence) with press releases, a SOCMINT explainer and partnership announcements. `02_facts.md` states we are not affiliated with any other company named Molfar — so none of those links may be used, quoted or replied to as if they were ours. Expect the same confusion in X search: people searching "Molfar" will land on them first.
+
+**On "what works on X now":** this round's search gave me nothing usable about X formats, timing or launch behaviour. [learn.chatgpt.com](https://learn.chatgpt.com/use-cases/launch-campaign-kit) supports only one thing I use below — pre-drafting launch assets with unverified claims flagged for review before publishing. Everything else I say about X mechanics is general knowledge from my own training, marked **[unverified]**, and should be treated as a hypothesis to test, not a fact.
+
+### 1. Profile
+
+Bio (145 characters, no hype words, states authorship):
+
+```
+Free, open-source role packs for Molfar, an Android AI app. 151 roles adapted from The Agency + our own. Made by one dev in Ukraine, with Claude.
+```
+
+Pin: the launch thread. Nothing else — a pinned thread is the one thing a first-time visitor reads.
+
+### 2. Launch thread (7 posts, ready to copy)
+
+```
+1/ Molfar System is a free Android AI app: bring your own API key, no account, no ads, no server of ours. I built it solo, from a phone, with Claude.
+
+Today we published Molfar System Kit — ready-made AI roles you install in the app. 🧵
+
+2/ What is a role? A prompt (who the model is, how it talks) + a skill (what it does, in what order) — up to 25,000 characters each.
+
+Molfar ships 28 built-in roles and has two catalogs: Experts and Orchestrators.
+
+3/ The biggest part of the Kit: 151 roles adapted from The Agency (MIT, © AgentLand Contributors), in 12 packs by division — specialized 50, marketing 34, GIS 13, design 10, sales 9, and more. Every role keeps its attribution line.
+
+4/ Also inside: Molfar's own packs in English, Ukrainian, German, French and Spanish, plus the 26 built-in roles translated to Ukrainian. Everything is CC0 (public domain) except external/.
+
+5/ Install: download a .zip → Molfar → Settings → Data archive → Install roles → Add. Needs Molfar 2.0.5 or newer.
+
+New roles are added, identical ones skipped, a changed one asks Replace / Keep both / Skip. Nothing is deleted.
+
+6/ You don't need git. New issue → "Submit a role" form, and a bot turns it into a pull request. There is also FORMAT.md with a compatibility promise, and Python tools to build and check packs.
+
+7/ Honest notes: the Kit is new and almost nobody knows about it yet. The app is Android only (7.0+), there is no iOS and no web version. Free, no ads, no accounts, no trackers.
+
+Repo: github.com/molfarsystems/molfar-system-kit
+Discussions is open for questions.
+```
+
+### 3. Four-week rhythm — ~1 hour a week
+
+One sitting per week, one post per week. Batch-write everything in the first sitting (40 min), keep it in a phone note, so a bad week costs nothing.
+
+| Week | Post (pre-written) | Reply time |
+|---|---|---|
+| 1 | Launch thread (above) | 20 min |
+| 2 | "Role of the week" — one role from a pack, what it does, which pack | 20 min |
+| 3 | Install walk-through: the five steps from post 5/ | 20 min |
+| 4 | "Submit a role without git" — the issue form, and what we do with it | 20 min |
+
+Rules that make it survive a lost week: never post twice in one day to "catch up"; a missed week is simply dropped, not rescheduled; no post promises a date or a follow-up. Only the launch thread and the four singles are ever published — nothing depends on being online that day. Posting time: pick one slot, note impressions in a phone note, change one variable next month. Any specific "best time" claim is **[unverified]**.
+
+### 4. Engagement without daily presence
+
+Kinds of accounts, no names: people publishing small open-source AI tools and asking for feedback; people discussing how they organise prompts or split a prompt from a workflow; Android app developers shipping solo; roundup/curation accounts that list free AI tooling.
+
+How to add value: answer the question that was actually asked, with something reusable from our own work — the prompt/skill split, the "Replace / Keep both / Skip" install logic, the issue-form-to-PR pattern. No link unless someone asks what the project is; then one line and the repo. Never quote-post a launch to promote ours.
+
+Returning after a 1–2 week gap: no apology post and no explanation of absence. Reply to what still matters with a useful answer, at most a few replies in a day, and continue with the next scheduled slot. Because the launch CTA sends questions to GitHub Discussions, an unanswered mention is not a lost user.
+
+### 5. One honest risk
+
+The owner may go offline right after the launch thread, so replies arrive when nobody is there to answer — and on X an unanswered reply under your own thread is visible to everyone who opens it **[unverified]**. Mitigation: the thread's call to action is Discussions (persistent, answers stay findable), post 7/ says openly that this is one person, and the account states in one line that answers can be slow. Do not add "DM me" — a DM promise we cannot keep is worse than no promise.
+
+### Open questions
+
+- Which single post time slot can the owner realistically hold — and is any weekday better given the irregular availability?
+- Do we have one screenshot of the app (install screen or a role in use) that may be posted? All posts above are text-only without it.
+- Is a Ukrainian version of the launch thread wanted in the same week, or later as a second wave?
+- Does anyone at the table have a confirmed, sourced fact about current X reach or timing? I could not confirm one.
+
+> Open R · DeepSeek: DeepSeek V4.1 Flash 1017 · 🌐 · ↑7453 ↓4019
+
+---
+
+## User
+
+Can you rewrite posts 1/ and 7/ of the launch thread to use "we" and drop any personal detail beyond "a solo developer from Ukraine, working with Claude", and say whether "from a phone" should stay?
+
+---
+
+## Twitter Engager
+
+## Seat 2 — rewrites of 1/ and 7/
+
+No web search this round: nothing here needs outside facts. Everything below is wording built on `02_facts.md` and `01_mission_brief.md` (constraints, "Who is behind it").
+
+What was wrong in my own first draft: post 1/ said *"I built it solo"* — that contradicts the brief's "we" (developer + Claude) and drops Claude, which the brief says we never hide. Post 7/ had no authorship line at all.
+
+### Post 1/ — hook
+
+```text
+1/ Molfar System: a free Android app for AI chats and meetings. Bring your own provider key, no account, no ads, no server of ours.
+
+We're a solo developer from Ukraine, working with Claude.
+
+New: Molfar System Kit — ready-made AI roles you install into the app. 🧵
+```
+
+What changed: "I built it solo, from a phone, with Claude" is gone; authorship is stated as the brief words it; the Kit is introduced in the same post, because a hook that only describes the app loses the people the Kit is for.
+
+### Post 7/ — honest notes and where questions go
+
+```text
+7/ Honest notes: the Kit is new, almost nobody knows about it yet. Android only (7.0+), no iOS, no web version. Free, no ads, no accounts, no trackers.
+
+We work in short sittings from a phone, so replies can be slow. Questions go to Discussions — they stay findable there.
+```
+
+What changed: "I" → "we"; the app's limits are stated as limits; the slow-reply risk from my first answer is now handled openly instead of hidden. The repository link is too long to sit comfortably here alongside the rest — keep it in post 6/ and let 7/ be the honest closing note. Whether X still counts a link as 23 characters, and whether 280 is still the per-post limit, is **[unverified]** in my sources — check the counter on one private test post before publishing.
+
+### Should "from a phone" stay?
+
+**Yes — but only in post 7/, in this form, and never again in the thread.**
+
+- The phone-only setup is a stated project constraint in `01_mission_brief.md` ("All work is done on a phone — no computer"), not a personal detail of the kind the brief forbids. No name, no face, no location.
+- Its only job is explaining why answers are slow. That is the honest alternative to "DM me", which we cannot honour.
+- It must not be a hook. "Built from a phone" in post 1/ would read as a gimmick and would pull replies about tooling instead of the Kit.
+- If the owner would rather not explain the setup at all, cut the clause and keep the sentence as: *"We can't always answer quickly."* The thread still works; only the reason is missing.
+
+### One check before posting
+
+The phrase *"We're a solo developer"* is grammatically mixed on purpose — it is the brief's own wording, where "we" = the developer plus Claude. If that reads badly to the owner, the shorter variant is:
+
+```text
+Made by one developer in Ukraine, working with Claude.
+```
+
+But then post 1/ needs "we" somewhere else in the thread to stay consistent with posts 5/–7/.
+
+### Open questions
+
+- Does the owner accept the brief's mixed "we / a solo developer" voice on X, or prefer "one developer … working with Claude" everywhere?
+- Should the phone sentence be dropped from post 7/ in case the owner gets "why not use a PC?" replies that nobody can answer offline?
+- Post 6/ currently ends with the repository link and "Discussions is open" — is it acceptable for 6/ to carry the call to action and 7/ to carry only the limits?
+
+> Open R · DeepSeek: DeepSeek V4.1 Flash 1017 · 🌐 · ↑16231 ↓2995
+
+---
+
+## User
+
+Which links go in which posts of the 7-post thread (plain repository URL, website with utm_source=x, Play link with referrer), given that post 7/ carries no link and the character limit is unverified?
+
+---
+
+## Twitter Engager
+
+## Link map
+
+| Post | Link | Why there |
+|---|---|---|
+| 1/ | none | The hook is read before anyone knows what the Kit is; a link here competes with reading. (The claim that links in the first post reduce reach is **[unverified]** — my own sources gave nothing on X mechanics.) |
+| 2/–5/ | none | These posts explain; nothing to click yet. |
+| 6/ | plain repository URL | This is the post that tells people to download a pack. GitHub does not keep a UTM, so the plain link is correct — as the Analytics Reporter said. |
+| 7/ | none | Keep it as the honest closing note. A link there pulls attention away from the limits it states. |
+| Pinned reply under 1/ | Play link with `referrer`, plus the website link with `utm_source=x` | All destinations in one place a reader reaches in one tap, and the only `utm_source=x` hit Google Analytics can record. |
+
+Two consequences, stated plainly: the thread body carries exactly one link, and the measured X traffic is attributed through the website link in the pinned reply, not through a post.
+
+## Ready to paste
+
+Post 6/ — only the last line changes:
+
+```text
+6/ You don't need git. New issue → "Submit a role" form, and a bot turns it into a pull request. There is FORMAT.md with a compatibility promise, and Python tools to build and check packs.
+
+https://github.com/molfarsystems/molfar-system-kit
+```
+
+Pinned reply under 1/:
+
+```text
+Kit (packs to download): https://github.com/molfarsystems/molfar-system-kit
+Molfar on Google Play: https://play.google.com/store/apps/details?id=com.nova_hata.molfar&referrer=utm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Dkit-launch
+About Molfar: https://molfar.nova-hata.com/?utm_source=x&utm_medium=social&utm_campaign=kit-launch&utm_content=w1
+We made both. Questions go to Discussions.
+```
+
+## The character limit
+
+I cannot settle this from my sources. My own count of the characters, treating each URL as one long string: post 6/ ≈ 250, and the pinned reply ≈ 320. The reply therefore fits only if X still counts every URL as 23 characters — **[unverified]**. The reliable check is to paste both into the composer as drafts and read the counter; if the reply goes over, split it into one reply with the Play link and one with the website link. Repost the pinned reply on weeks 2–4 with `utm_content=w2`, `w3`, `w4`, since a stale `w1` makes the weekly comparison useless.
+
+## What this costs elsewhere
+
+- The Play UTM test from day 1 now has a definite click path: it is the pinned reply, not post 5/. If the source never appears under Ads and referrals, the loss is confined to one link, not the thread.
+- The repository link sits in a post, so GitHub's 14-day referrer list may show `t.co` for it — which says nothing about which post was clicked. Only the website UTMs separate weeks.
+
+## Open questions
+
+- Does the owner accept that the X thread carries one link in its body and the rest behind a pinned reply, or do all links need to be inside the 7 posts?
+- Is it acceptable for the pinned reply to carry three links, given the unverified length rule?
+- Should the `utm_content` tag be dropped (keeping `utm_source=x`, `utm_medium`, `utm_campaign`) to buy roughly 8 characters of margin?
+
+> Open R · DeepSeek: DeepSeek V4.1 Flash 1017 · 🌐 · ↑20527 ↓4439
+
+---
+

@@ -1,0 +1,218 @@
+# Molfar Launch Campaing" — Reddit Community Builder
+
+## User
+
+Hello, team. This is a real planning meeting for a real project.
+
+Please read the documents attached to your seat: the shared 01_mission_brief.md, 02_facts.md and 03_channels.md, and your personal task file — task_1_content_creator.md, task_2_twitter_engager.md, task_3_reddit_community_builder.md or task_4_analytics_reporter.md.
+
+The task: a 4-week launch campaign for Molfar System Kit, with zero budget and about 4 hours a week of one person's time, on a phone, with possible gaps of 1–2 weeks.
+
+Answer in English, inside your own zone, following your task file. Keep your answer under 900 words. Facts about Molfar and the Kit: only from 02_facts.md, the website and the Kit repository. Web search is on: use it for the outside world, give a source link for every outside fact, and mark anything unconfirmed "[unverified]". If something is missing, say what you need instead of guessing.
+We conduct meetings in English.
+
+---
+
+## Reddit Community Builder
+
+## Reddit Community Builder: first-round answer
+
+**Sources:** Reddit's own rule pages could not be read directly. Everything below comes from third-party guides and subreddit-rule checkers dated 2026, so each subreddit's sidebar must be checked before any post. Facts about Molfar and the Kit come from `02_facts.md` and `03_channels.md`.
+
+### 1. Is Reddit worth it now?
+
+**Short answer: not for the 4-week launch. Revisit after the appeal result, and only as a small, slow channel.**
+
+- The 10% rule is a community norm, not written Reddit policy. The 10 percent guideline is community custom, not written policy. Subreddit moderators set the real limits, and a subreddit can create and enforce its own participation rules, including rules that disallow self-promotion.
+- Our account history is a serious handicap. A new account would have no karma, and most subreddits have minimum account age (7-90 days) and karma requirements (10-100+) before you can post. Promoting with a brand-new account triggers spam filters and immediate removal. That is a vendor claim, but it matches what subreddit rules say.
+- At about 1 hour a week, a sustained Reddit presence is not realistic. Our time is better spent on GitHub, the Play page and Discord.
+
+**The old account:**
+1. Confirm the diagnosis first. A logged-out profile that shows "page not found" points to a sitewide shadowban, while other symptoms can be subreddit AutoMod filtering. Most suspected shadowbans are actually something else: AutoMod filtering, single-post shadow removals, Crowd Control, or link filtering.
+2. If it is a sitewide shadowban, file one short, honest appeal at reddit.com/appeals. For shadowbans and account suspensions: Use the official Reddit appeal form at reddit.com/appeals. The appeal success rate quoted by guides (60–70%) is [unverified].
+3. Do not create a new account to get around the old one. If your account is restricted and you create new accounts to continue posting the same way, that can look like evasion.
+
+**How to avoid a repeat:** participate in one community at a time and read its rules before the first comment. Keep links rare and disclosed.
+
+### 2. Communities (conditional — only if we go ahead)
+
+| Community | Fit | Current rule (check the sidebar) | Risk |
+|---|---|---|---|
+| **r/SideProject** | Build-in-public feedback; a good place for the "how we built it" story | Its description is "a subreddit for sharing and receiving constructive feedback on side projects". Promotion "Max 1 mention or 3 links can be shared every 60 days", you must "clearly disclose affiliation" (this rule is attributed to r/SaaS by another source, so verify). | AI-generated text is explicitly prohibited per one source. Our drafts are AI-assisted, so this is a real risk. |
+| **r/opensource** | The Kit is an open repository under CC0 | One guide notes that r/opensource points to Reddit's 10% guideline. Sidebar not verified. [unverified] | Low tolerance for promo; must lead with discussion. |
+| **r/droidappshowcase** (for the Molfar app only) | Android app showcase | r/droidappshowcase takes finished apps under a Promo, Giveaway or Feedback flair. | r/androidapps rewrote its entire ruleset on 2026-03-22, and the rewrite is what pushed self-promotion out to a sister subreddit. |
+
+**Excluded:**
+- **r/selfhosted:** the Kit is not self-hosted software. r/selfhosted restricts promotion to New Project Megathread (new projects); Wednesday (dashboards/tools); a standalone promo post gets removed.
+- **r/apps:** r/apps does not allow self-promotion.
+
+**Missing:** Ukrainian-language subreddits. We need the owner to name them, or confirm that they are out of scope.
+
+### 3. Warm-up plan (about 1 hour a week)
+
+- **Week 1 (about 1 hour):** read the sidebar rules of the three communities above and save screenshots. Do not post. Find 5 open threads where the Kit's topic (AI roles, prompts, open-source packs) is discussed.
+- **Week 2 (about 1 hour):** write 2–3 substantive comments answering real questions, with no links. If the old account is restored, use it. Otherwise, wait for the appeal result before starting anything new.
+- **Weeks 3–4:** only if the account is in good standing, post the value-first draft in r/SideProject or r/opensource, depending on the rules that day.
+
+This is a planning assumption, not a measured result. Two weeks of comments will not establish a reputation.
+
+### 4. Value-first post draft (for r/SideProject or r/opensource, after rules are checked)
+
+```
+Title: What we learned turning 151 open agent roles into installable packs
+
+We spent a few weeks adapting 151 roles from The Agency (agency-agents, MIT licence) into a format a phone app can install. Each role is split into a prompt (who the model is, how it talks) and a skill (what it does, in what order). The original attribution lines are kept.
+
+Three things surprised us:
+- Some agents drive tools (code, files, packages). We left them out, because a chat-based role cannot run them safely on a phone.
+- The split into prompt and skill made many roles easier to read, and easier to check.
+- Our own rules for changing a role were harder to write than the roles themselves.
+
+Questions for this community: what would you need to trust a community-written role? What breaks when a role pack is updated?
+
+Disclosure: I made Molfar System Kit and Molfar, a free Android app with no ads and no accounts. I worked on it with Claude, an AI by Anthropic. The repository is CC0 except the external/ folder: [link to repo].
+```
+
+*Note: the draft contains claims I have not verified against the final pack, such as the "harder to write" line. The owner must check each sentence before posting.*
+
+### 5. Comments while offline
+
+- **Pin one comment** on every post, with the FAQ link (molfar.nova-hata.com/faq) and the repository Discussions link.
+- **Template reply** (copy, edit, and paste):
+
+```
+Thanks for asking. I made this project, and I'm not able to reply in depth right now. The FAQ answers the common questions: [FAQ link]. Open questions go to the repository Discussions: [Discussions link]. I'll read the thread again when I'm back.
+```
+
+- **Do not post while the owner may be away.** Only post when a 4–6 hour window of replies is possible. That timing rule is vendor advice from [a Reddit marketing guide](https://forkoff.xyz/blog/reddit-marketing/reddit-marketing-consumer-apps-launch-week-2026) and is unverified.
+
+### 6. Red lines
+
+- No alternate or sock-puppet accounts, and no accounts created to evade a ban. Creating new accounts to circumvent subreddit bans. Reddit tracks this through multiple signals, and ban evasion can escalate a subreddit-level ban into a site-wide shadowban.
+- No requests for upvotes, and no vote manipulation.
+- No cross-posting of the same text to several communities.
+- No undisclosed promotion. Disclose authorship every time, and state that AI helped write the posts. Reddit's manipulated-content policy requir[es] AI generated content to be tagged and disclosed.
+- No deleting posts to fix a ratio. A vendor guide says removing promotional content to improve your ratio is tracked as deceptive behavior. [unverified]
+- No hype words from the brief ("revolutionary", "game-changer", "unleash", "supercharge").
+- No "a friend recommended", and no reply from anyone other than the owner.
+
+### Open questions for the owner
+
+1. Is the old account's shadowban confirmed with a logged-out profile check? Which exact username is it?
+2. Are Ukrainian-language subreddits in scope? If yes, which ones?
+3. Are you willing to disclose AI-assisted writing in every post, even where a community bans AI text?
+4. Do you want Reddit in the plan at all, or should we treat it as a later channel?
+
+> Open R · Anthropic: Claude Haiku 5.5 · 🌐 · ↑88440 ↓8233
+
+---
+
+## User
+
+Which sentences of your draft post are supported by 02_facts.md, and which have no source and should be cut?
+
+---
+
+## Reddit Community Builder
+
+## Reddit draft: which claims 02_facts.md supports
+
+I checked each claim in my draft against `02_facts.md`. The brief and the other task files are not the source for any claim here.
+
+| Draft claim | Verdict | Source or reason |
+|---|---|---|
+| "151 roles from The Agency (agency-agents, MIT)" | Keep | "Molfar System Kit" section: 151 roles, MIT license |
+| "into a format a phone app can install" | Keep | "Molfar System Kit" section: role packs installed in the Android app |
+| "Each role is split into a prompt… and a skill…" | Keep | "Roles" bullet under "Molfar System" |
+| "The original attribution lines are kept." | Keep | "Molfar System Kit" section: each role keeps an attribution line |
+| "We spent a few weeks adapting…" | **Cut** | No effort or duration in the facts. Use real figures only if the owner supplies them. |
+| "Some agents drive tools… We left them out…" | Keep the fact, **cut the reason** | The fact is in "Molfar System Kit": tool-driving agents were left out. "Cannot run them safely on a phone" is not in the facts. |
+| "The split… made many roles easier to read, and easier to check." | **Cut** | Not in the facts, and it is an opinion I cannot support. |
+| "Our own rules for changing a role were harder to write…" | **Cut** | Not in the facts. The facts only describe the install behaviour (add, skip identical, Replace / Keep both / Skip). |
+| "Molfar… a free Android app with no ads and no accounts" | Keep | "Molfar System" section |
+| "The repository is CC0 except the external/ folder" | Keep | "Molfar System Kit" section |
+| "I worked on it with Claude, an AI by Anthropic." | Keep, **but the source is the brief** | `01_mission_brief.md`, "Who is behind it." It is not in `02_facts.md`. |
+| Questions to the community | Keep | Questions, not facts |
+
+**Corrections beyond the cuts:**
+
+- **"I" and "we" are mixed.** The brief says the project speaks as "we", so the post should use "we" throughout.
+- **The post was AI-assisted, and the draft does not say so.** My own red lines require that disclosure, so I have added a line for the owner to confirm.
+- **"What breaks when a role pack is updated?"** presumes something breaks. The facts do not support that, so I have reworded it.
+
+## Revised draft (facts only, owner must check before posting)
+
+```text
+Title: 151 roles from The Agency, turned into installable packs for a phone app
+
+We adapted 151 roles from The Agency (agency-agents, MIT license) into role packs for Molfar System, a free Android app. Each role is split into a prompt (who the model is and how it talks) and a skill (what it does and in what order). Each role keeps its attribution line.
+
+We left out agents that drive tools such as code, files and packages.
+
+Question for this community: what would make you trust a community-written role, and how should attribution and license terms be shown to people who install one?
+
+Disclosure: we made Molfar System Kit and Molfar. We are a solo developer from Ukraine working with Claude, an AI by Anthropic. Molfar is free, with no ads and no accounts. The repository is CC0 except the external/ folder, which holds the MIT-licensed Agency roles. This post was drafted with AI help; the owner has checked it. [repository link]
+```
+
+**Open items:**
+
+1. The owner needs to confirm that the AI-help line is accurate, and that the post is in the "we" voice the brief asks for.
+2. If the owner has a real figure for how long the adaptation took, it can be added. I have not invented one.
+3. This draft is still for a community whose rules have not been checked. The sidebar check comes first, as set out in my earlier answer.
+
+> Open R · Anthropic: Claude Haiku 5.5 · 🌐 · ↑25720 ↓4277
+
+---
+
+## User
+
+Which Reddit-owned pages (site rules plus the rules of one named target community) must the owner read before any post, and what go/no-go test applies after reading them?
+
+---
+
+## Reddit Community Builder
+
+## Reddit: pages to read before any post
+
+**Reddit-owned pages**
+
+1. **Reddit Rules (Help Center, "What are Reddit's rules?").** Each community on Reddit may set its own rules, which are defined and enforced by the moderators of that community. The owner must read this page and the target subreddit's rules together. I could not open the live page in this search; the summary above is from the search snippet.
+2. **Content Policy.** A third-party guide says the Content Policy is published at redditinc.com/policies/content-policy and that it is updated periodically. I did not open that page, so the link is [unverified]. The owner should read the current version, not a summary.
+3. **Spam page (Help Center).** A third-party analysis says the Spam page defines spam as repeated or unsolicited actions, automated or manual, that negatively affect users, communities or Reddit itself. It also reports that the page and the Rules contain no fixed self-promotion ratio (We found no ratio or percentage in the Spam page, the Rule 2 text or the User Agreement.). I have not checked this myself.
+4. **Self-promotion guidance (reddit.com/wiki/selfpromotion).** Third-party guides quote it as saying "It's perfectly fine to be a Redditor with a website, it's not okay to be a website with a Reddit account." I could not open it, so it is [unverified].
+5. **Target subreddit's sidebar, About tab, wiki and pinned mod posts.** Guides say larger communities usually keep a fuller version in the wiki, which is where the specifics live. The modmail policy is also checked here (Some communities require permission before anything promotional, and asking first turns a ban into a green light.).
+
+**Correction to my round-1 answer.** I presented the 10% rule as a working norm and cited an AI-disclosure rule from a Reddit policy. Today's sources do not confirm that rule. The 10% rule appears in one Reddit moderator-facing page quoted by a third party, others abide by a 10% rule, and a different source says it was retired as any kind of official policy. Treat the ratio as a community custom, not a limit. The AI-disclosure line is [unverified] until the owner reads the current text.
+
+## Go / no-go test
+
+Run it per community, after reading the pages above. Every line must be checked on the day of posting.
+
+**GO only if all of these hold:**
+- The subreddit's written rules allow posting about your own project, or name a showcase or feedback thread where it belongs. Silence counts as no-go.
+- The post type, flair and link rules are met by the draft.
+- The account is in good standing: the profile is visible when logged out, and no restriction is shown. If the old account's status is unresolved, the answer is no-go for that account.
+- The account meets the community's minimum age and karma, read from the wiki. If those numbers are not listed, the answer is no-go.
+- If the rules say "ask modmail first", the mods have answered yes.
+- Every factual sentence in the draft traces to `02_facts.md`, the website or the repository. The disclosure line is present.
+- The community does not ban AI-assisted text, or the owner accepts a no-go for that community.
+- The owner is free for the 4–6 hour reply window after posting (our own rule, not Reddit's).
+
+**NO-GO if any of these hold:** the rules are silent or ban promotion; a karma or age threshold is not met; the mods have not answered an ask-first request; the community bans AI text; the account has an active restriction.
+
+**Cross-platform risk.** A 2026 guide says Reddit now more actively correlates activity across platforms, identifying coordination that begins on Discord, Telegram, or Twitter and manifests on Reddit. That is a third-party claim, so it is [unverified]. Our launch already runs on X, Discord and Telegram. A Reddit post in the same days could look coordinated, so do not announce it on those channels at the same time, and do not ask anyone to upvote it.
+
+## Recommendation for the owner
+
+Reddit stays out of the four-week plan unless the owner reads the pages above and the go/no-go test passes for one named community. Reading takes minutes and needs no post. The owner should send me the target subreddit's name and the wiki's rules text, if the owner wants me to test one community.
+
+## Open questions
+
+- Which single subreddit, if any, should be tested first?
+- Is the old account's shadowban confirmed by a logged-out profile check?
+- Does the owner accept the AI-assistance disclosure in every post?
+
+> Open R · Anthropic: Claude Haiku 5.5 · 🌐 · ↑95263 ↓4005
+
+---
+

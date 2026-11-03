@@ -1,0 +1,300 @@
+# Molfar Launch Campaing" — Campaign Project Manager
+
+## User
+
+Hello, team. This is a real planning meeting for a real project.
+
+Please read the documents attached to your seat: the shared 01_mission_brief.md, 02_facts.md and 03_channels.md, and your personal task file — task_1_content_creator.md, task_2_twitter_engager.md, task_3_reddit_community_builder.md or task_4_analytics_reporter.md.
+
+The task: a 4-week launch campaign for Molfar System Kit, with zero budget and about 4 hours a week of one person's time, on a phone, with possible gaps of 1–2 weeks.
+
+Answer in English, inside your own zone, following your task file. Keep your answer under 900 words. Facts about Molfar and the Kit: only from 02_facts.md, the website and the Kit repository. Web search is on: use it for the outside world, give a source link for every outside fact, and mark anything unconfirmed "[unverified]". If something is missing, say what you need instead of guessing.
+We conduct meetings in English.
+
+---
+
+## Campaign Project Manager
+
+# Molfar System Kit: 4-week launch plan (Campaign Project Manager)
+
+I used no web search this round. Everything below comes from the participants' answers and the three brief documents. Where a claim comes only from a participant's own page fetch, I say so.
+
+## Goal
+
+The brief sets the direction, and the owner sets the final numbers:
+- People find the Kit and install packs.
+- A few outsiders react: a star, a comment, a question or a submitted role.
+- Molfar gets new installs from the Kit.
+- The owner ends with a routine that fits 4 hours a week and survives a lost week.
+
+The Analytics Reporter proposed "worked" thresholds as judgment bands, not growth targets. They are in the Week 4 table, and the owner decides whether to adopt them.
+
+## Shared base (before any channel step)
+
+- **Message.** Use the Content Creator's one-sentence and one-paragraph descriptions, announcement text and 5-question FAQ as the single source. Every channel reuses them. Both the Content Creator and the Twitter Engager built these from `02_facts.md`.
+- **Tagging.** Use one campaign name, `kit-launch`, with the Analytics Reporter's tagged website link. GitHub links cannot carry a UTM.
+- **Disclosure.** Every post says the author made the project: a solo developer from Ukraine, working with Claude. The brief requires this.
+
+## Weekly plan
+
+Times are the specialists' own estimates. Only the Content Creator estimated and merged them with posting. Replies and website fixes are not estimated by anyone.
+
+### Week 1: baseline and launch (about 2.5 h)
+
+| # | Action | Owner | Done test | Measure |
+|---|---|---|---|---|
+| 1 | Fill the day-1 baseline sheet: GitHub Traffic (in a phone browser), stars, Play acquisitions, GA sessions, Discord and Telegram counts. Open the Play link once to test UTM capture. If the menu allows it, set GA retention to 14 months. | Analytics Reporter | Note saved with date, before the first post | Baseline itself |
+| 2 | Publish the announcement in GitHub Discussions, and pin it if the owner can | Content Creator (~60 min including preparation) | Post is live, link saved | Unique visitors, outside replies |
+| 3 | Post the same text in the Discord `feedback` forum | Content Creator | Post is live | Outside replies, Discord count (context only) |
+| 4 | Batch-write the 5 X posts in a phone note (~40 min). Publish the 7-post launch thread and pin it (~20 min). | Twitter Engager | Thread live, pinned | GitHub referrers (`t.co`), site sessions with `utm_source=x` |
+| 5 | Fill the weekly 15-minute check, on the same day as launch | Analytics Reporter | Note filled | All six metrics |
+
+### Week 2
+
+| # | Action | Owner | Done test | Measure |
+|---|---|---|---|---|
+| 6 | Post the short install walkthrough in Telegram (~45 min) | Content Creator | Post is live | Telegram subscribers (context), unique visitors |
+| 7 | Post "role of the week" on X (~20 min) | Twitter Engager | Post live | Impressions noted in a phone note. This is the Twitter Engager's own proposal and is not one of the Analytics Reporter's six metrics. |
+| 8 | Weekly check (15 min) | Analytics Reporter | Note filled | Six metrics |
+
+### Week 3
+
+| # | Action | Owner | Done test | Measure |
+|---|---|---|---|---|
+| 9 | Post "prompt versus skill, and submit a role" in GitHub Discussions (~60 min) | Content Creator | Post live | Discussions, issues and submitted roles from outsiders |
+| 10 | Post the X install walkthrough, reusing the walkthrough from step 6 (~20 min) | Twitter Engager | Post live | Site sessions with `utm_source=x` |
+| 11 | Weekly check | Analytics Reporter | Note filled | Six metrics |
+
+### Week 4
+
+| # | Action | Owner | Done test | Measure |
+|---|---|---|---|---|
+| 12 | Post the answers to the five newcomer questions in the Discord forum (~60 min) | Content Creator | Post live | Outside replies |
+| 13 | Post "submit a role without git" on X (~20 min) | Twitter Engager | Post live | Submitted roles |
+| 14 | Run the final check against day 1 and apply the worked / unclear / did-not-work bands | Analytics Reporter | Verdict noted. The time needed was not estimated. | Thresholds below |
+
+**Capacity.** Each week comes to roughly 1.5–2.5 hours of the specialists' own estimates. That leaves room in the 4 hours for replies and website fixes. This is my sum of their estimates, not a measured figure.
+
+**Cut or deferred:**
+- Reddit warm-up (about 1 hour a week in weeks 1–2) is excluded by default. See the fork below.
+- Facebook and Hacker News get no steps, because nobody proposed any.
+- A Ukrainian-language wave stays pending the owner's answer.
+
+## Week-4 thresholds (the Analytics Reporter's proposal)
+
+- **Worked:** at least 3 of these 4 are true.
+  - 14-day unique visitors reach at least 30, and at least 3 times the day-1 figure.
+  - Net new stars are at least 5.
+  - There are at least 3 outside replies.
+  - Play acquisitions are at least 5 above the prior 28 days, or at least 3 acquisitions carry a campaign UTM.
+- **Did not work:** only if all of these hold:
+  - No 14-day window is more than 10 visitors above day 1.
+  - Net stars are under 2.
+  - There are no outside replies.
+  - Play acquisitions are not above the prior 28 days.
+- **Unclear:** everything else, including a lost GitHub window.
+
+A pack install inside the app cannot be measured. The app has no analytics, and GitHub does not count raw-file downloads. Proxies are unique cloners, questions about the install steps, and submitted roles.
+
+## If a week is lost
+
+- **Week 2 lost:** steps 6–8 simply move or are dropped. The Twitter Engager's rule is that a missed week is dropped, not repeated. The launch assets from week 1 keep working.
+- **Weeks 1–2 lost before launch:** everything shifts. Step 1 (the baseline) still has to come before the first post.
+- **Offline after launch for 15 days or more:** GitHub keeps only 14 days of traffic and has no backfill, so early days are lost for good. The Analytics Reporter says to record a blank cell as "lost", not zero. The weekly check is the only safeguard, so take a snapshot on launch day.
+- **Unanswered replies:** the Twitter Engager points calls to action at Discussions so answers stay findable. The Reddit Community Builder gave a reply template for Reddit only. **Nobody addressed who answers GitHub Discussions while the owner is offline.**
+
+## Forks (owner's call)
+
+- **Reddit.**
+  - *Branch A, skip it for these 4 weeks.* This is the Reddit Community Builder's own headline conclusion. It costs nothing, and it avoids the risks of a shadowbanned old account, new-account filters and a possible ban on AI-assisted text.
+  - *Branch B, warm-up.* About 1 hour a week of the 4 hours, plus the risks above. Comment-only in weeks 1–2, a post in weeks 3–4 only if the account is in good standing.
+  - The Reddit Community Builder's answer is internally split between these two. Their sources are third-party guides, not Reddit's own pages, so sidebars must be checked first.
+  - A cheap option within Branch A: check the old account's profile while logged out (a few minutes) and decide on one appeal.
+- **Website fixes.** The Content Creator reports from the live site that screenshots are "coming soon", that the role limit reads 10,000 characters where the facts file says 25,000, and that no Kit link is obvious on the homepage. I have not verified this myself. Nobody owns or estimates the fixes. Whether the owner can do them from a phone is open.
+
+## Claims I am not carrying into the plan
+
+- **Reddit draft post:** "we spent a few weeks", "three things surprised us" and "harder to write than the roles" are not in `02_facts.md`. The reason for leaving out tool-driving agents ("cannot run them safely on a phone") is also not in the facts. The Reddit Community Builder flagged this themselves. The draft must not be used without the owner checking each sentence.
+- **X thread:** it says "I built it solo, from a phone", while the brief says "we" and limits personal details. Whether "from a phone" stays is the owner's call.
+- **X mechanics:** the Twitter Engager found no usable sources, so all of it is marked [unverified]. The one link they cited supports only a general point about drafting launch assets.
+- **Reddit figures:** the appeal success rate and the posting-window advice are marked [unverified] by the Reddit Community Builder.
+- **GitHub mobile traffic:** whether the GitHub app shows Traffic is [unverified]. Use a phone browser.
+
+## Missing information and decisions
+
+1. Reddit: in or out for these 4 weeks?
+2. Can the owner make the website text fixes and add one screenshot? Both the Twitter Engager and the Content Creator want a screenshot.
+3. Is a Ukrainian wave wanted this month, or later?
+4. Does the site run GA4, and does a Kit page exist, or only the homepage and FAQ?
+5. Where do the FAQ and the pinned announcement live, and what covers Discussions while the owner is offline?
+6. Which pack should the walkthrough use as its example?
+7. Which one posting slot can the owner hold?
+
+## Follow-up queue
+
+1. Content Creator — Where should the FAQ and the pinned announcement live (README, a pinned Discussion, or the website /faq) so newcomers get answers while the owner is offline, and what one-line auto-reply or pinned note covers unanswered Discussions?
+2. Twitter Engager — Can you rewrite posts 1/ and 7/ of the launch thread to use "we" and drop any personal detail beyond "a solo developer from Ukraine, working with Claude", and say whether "from a phone" should stay?
+3. Reddit Community Builder — Which sentences of your draft post are supported by 02_facts.md, and which have no source and should be cut?
+4. Analytics Reporter — Given that only GitHub Discussions, Discord, Telegram and X are in the plan, which UTM SOURCE values should stay in the tagged links, and what is the one snapshot the owner should take on launch day so a 15-day gap does not erase the GitHub traffic record?
+
+> Open R · Anthropic: Claude Sonnet 5.5 · 🌐 · ↑22310 ↓7332
+
+---
+
+## Campaign Project Manager
+
+# Round 2 summary (Campaign Project Manager)
+
+I did no web search this round. The only outside facts are the GitHub Traffic rules quoted by the Analytics Reporter, and I have not checked them myself.
+
+## What changed in the plan
+
+**1. FAQ and announcement placement (Content Creator)**
+- The FAQ goes in the repository README, next to the intro and install steps.
+- The announcement stays in GitHub Discussions and links back to the README FAQ.
+- The website FAQ gets a link to the README rather than a second copy, and this is optional.
+- The pinned note says replies may be delayed and points to the README. The Content Creator is clear that it sets expectations only and does not answer anyone.
+- **New step, week 1, before step 2:** edit the README to add the FAQ. The Content Creator gave no time estimate. Whether the owner can edit the README and pin a Discussion from a phone is still open.
+
+**2. X thread wording (Twitter Engager)**
+- Post 1/ now uses the brief's wording for authorship and introduces the Kit in the same post.
+- Post 7/ carries the limits and says questions go to Discussions.
+- Post 6/ carries the call to action and the repository link.
+- "From a phone" stays only in post 7/, to explain slow replies. The Twitter Engager also offers a version without it.
+- The "we" / "a solo developer" wording is grammatically mixed, because it copies the brief. The owner decides whether to keep it.
+- The X post limit and link-length rules are still [unverified]. The advice is to test with one private post.
+- The Twitter Engager did not say which links go in which post. See question 2.
+
+**3. Reddit draft (Reddit Community Builder)**
+- The Reddit Community Builder checked the draft against `02_facts.md`. Three claims were cut: the "few weeks" claim, the "easier to check" claim, and the "harder to write than the roles" claim. The reason for leaving out tool-driving agents was also cut.
+- The AI-help disclosure was added.
+- One problem remains: the draft's last lines say the owner has checked the post. That is only true after the owner has actually checked it.
+- The rules of the target community have still not been read, and the Reddit decision is still the owner's. The default stays Branch A, skipping Reddit for these 4 weeks.
+
+**4. Tagging and launch snapshot (Analytics Reporter)**
+- Keep four UTM sources: `github`, `discord`, `telegram` and `x`. Drop `reddit`, `hackernews` and `facebook`.
+- `utm_campaign` stays `kit-launch` and `utm_medium` stays `social`. Change `utm_content` to `w1`, `w2`, `w3` or `w4` by week.
+- The repository URL stays plain. The tagged links are the website link and the Play link.
+- **New step in week 1:** a launch snapshot of GitHub Traffic, taken at the end of the launch sitting after the Discussion, Discord post and X thread are live. The baseline in step 1 still comes before the first post.
+- This matters because GitHub shows only 14 days of traffic, with no backfill ([GitHub Docs: viewing traffic](https://help.github.com/articles/viewing-traffic-to-a-repository/)).
+- The hourly visitor and clone totals include launch day only up to the hour of the snapshot. The referrer list may not include launch day yet. If the owner is offline the next day, the snapshot should say so, and a missing `t.co` row must not be read as "X brought nobody".
+- The Telegram link appears only in week 2. If that week is lost, record it as a skipped post, not a zero.
+- The Play UTM test from day 1 is still open. If it fails, the channel split for installs rests on website UTMs only.
+
+## Agreement and gaps
+
+- **Agreement.** The specialists agree on "we", on the disclosure line, and on pointing questions to Discussions and the README.
+- **Fork for the owner: "from a phone".** The Twitter Engager says keep it in post 7/. The brief lists phone-only work as a project fact but limits personal details. I take no side.
+- **Still unestimated.** Nobody has estimated the README edit, the baseline, the launch snapshot, the weekly check, the final check, replies or the website fixes. My earlier 1.5–2.5 h per week sum is now missing some steps. It is not a verified figure.
+- **Still unaddressed.** Nobody answers Discussions while the owner is offline. The pinned note only sets expectations, which is a partial answer.
+
+## Decisions for the owner (no change)
+
+1. Reddit: in or out? The default is out.
+2. Can the owner edit the README and pin from a phone?
+3. Do the website fixes and a screenshot get done?
+4. Does the owner keep "from a phone" and the mixed "we / a solo developer" voice?
+5. Is a Ukrainian wave wanted this month or later?
+6. Which pack is the walkthrough example?
+7. Which single posting slot can the owner hold?
+
+## Follow-up queue
+
+1. Content Creator — If the owner cannot edit the README or pin a Discussion from a phone, what is the fallback place for the FAQ and the pinned note, and about how many minutes does the README FAQ edit take?
+2. Twitter Engager — Which links go in which posts of the 7-post thread (plain repository URL, website with utm_source=x, Play link with referrer), given that post 7/ carries no link and the character limit is unverified?
+3. Reddit Community Builder — Which Reddit-owned pages (site rules plus the rules of one named target community) must the owner read before any post, and what go/no-go test applies after reading them?
+4. Analytics Reporter — What are your time estimates for the day-1 baseline, the launch snapshot, the weekly check and the final check, and does the launch snapshot replace step 5 or sit alongside it?
+
+> Open R · Anthropic: Claude Sonnet 5.5 · 🌐 · ↑23692 ↓4829
+
+---
+
+## Campaign Project Manager
+
+# Round 3 summary (Campaign Project Manager)
+
+I did no web search this round. Everything below comes from the four addressed answers. The Reddit Community Builder's and Twitter Engager's outside claims are third-party or unverified, and I have not checked them.
+
+## What changed in the plan
+
+**1. FAQ placement and fallback (Content Creator)**
+- **Default:** the FAQ goes in the README, with the pinned note.
+- **Fallback if the owner cannot edit the README or pin from a phone:** put the five FAQ answers and a delayed-reply note directly in the GitHub Discussions announcement. Post the same self-contained text in the Discord `feedback` forum.
+- The note is visible text, not an auto-reply. Individual questions wait while the owner is offline.
+- **Estimates (not tested):** the README FAQ edit takes about 20–30 min. The fallback adds about 10–15 min on top of the 60-minute announcement.
+- **Still open:** can the owner publish and edit a Discussion and a Discord forum post from the phone?
+
+**2. Links in the X thread (Twitter Engager)**
+- **Link placement:**
+  - Posts 1/–5/ and 7/ carry no link.
+  - Post 6/ carries the plain repository URL.
+  - A "pinned reply under 1/" carries the Play link with a `referrer`, the website link with `utm_source=x`, and the repository link.
+- **Consequence:** X traffic is measured only through the website link in the pinned reply. The `t.co` row in GitHub says nothing about which post was clicked.
+- **New recurring step:** repost the pinned reply in weeks 2–4 with `utm_content=w2`, `w3` or `w4`. Nobody estimated this step.
+- **Character limit:** still [unverified]. The Twitter Engager's own count is about 250 for post 6/ and about 320 for the reply. The advice is to paste both into the composer as drafts and read the counter. If the reply is too long, split it in two.
+- **My flag:** the Twitter Engager did not say whether X lets you pin a reply. I treat this as an open assumption.
+
+**3. Reddit (Reddit Community Builder)**
+- **Pages to read before any post:** Reddit's Rules page, the Content Policy, the Spam page, the self-promotion guidance, and the target subreddit's sidebar, wiki and pinned mod posts.
+- **Not opened:** the Reddit Community Builder did not open most of these pages. The sources are third-party summaries or search snippets, so the owner must read the current text.
+- **Correction to round 1:** the 10% rule and the AI-disclosure rule are not confirmed. Treat the ratio as a community custom.
+- **Go/no-go test:** silence in the rules means no-go. Account standing, age and karma, a mod answer if "ask first", facts traced to `02_facts.md`, and the AI-text policy must all pass. The owner must also be free for a 4–6 hour reply window. That window is the Reddit Community Builder's own rule, not Reddit's.
+- **My assessment:** the reply-window requirement conflicts with the brief's "no daily presence" rule. That strengthens the default, **Branch A: Reddit stays out of these 4 weeks**.
+- **Cross-platform correlation risk:** it is an [unverified] third-party claim. It is a reason not to post on Reddit in the same days as the launch.
+
+**4. Time estimates (Analytics Reporter)**
+- **Estimates, not timed trials:** they assume Play Console and Analytics are already logged in on the phone.
+
+| Task | Estimate |
+|---|---|
+| Day-1 baseline | 30 min (25–40) |
+| Launch snapshot | 10 min (8–15) |
+| Weekly check | 15 min (10 on launch day) |
+| Final check | 15 min (10–20) |
+
+- The launch snapshot sits beside step 5 and does not replace it. On launch day, step 5 copies the GitHub cells from the snapshot.
+- Write "not yet", not zero, for Play and site UTM rows that are still empty. A blank GitHub cell after a long gap stays "lost".
+- If the sitting runs out of time: baseline first, then the snapshot, then a full step 5.
+
+## Capacity (my sum, not a measured figure)
+
+- **Week 1:**
+  - The specialists' estimates add up to about 3.2–3.3 h. That is baseline 30, README 20–30, announcement 60, X batch plus thread 60, snapshot 10, and launch-day check 10.
+  - The Discord post, replies and website fixes are not included.
+  - With the fallback instead of the README, it is about 3 h.
+  - Week 1 is close to the 4-hour limit.
+- **Weeks 2–4:** about 1.3 h, 1.6 h and 1.8 h on the same basis. The weekly pinned-reply refresh is not included.
+
+## Agreement and gaps
+
+- **Agreement:** the specialists agree on the sequence (baseline, then posts, then snapshot) and on "not yet" instead of zero.
+- **Still unestimated:**
+  - the Discord post
+  - the website fixes
+  - the weekly pinned-reply refresh
+  - replies
+- **Still unaddressed:** nobody answers Discussions while the owner is offline. The pinned note sets expectations only.
+
+## Decisions for the owner
+
+1. Reddit: in or out? The default is out. If the owner wants one community tested, send the Reddit Community Builder the subreddit name and its rules text.
+2. Can the owner edit the README, pin a Discussion, and post in Discord from the phone? If not, use the fallback.
+3. Is a thread with one link in the body and the rest in a pinned reply acceptable?
+4. Do the website fixes and a screenshot get done?
+5. Does the owner keep "from a phone" and the mixed "we / a solo developer" voice?
+6. Is a Ukrainian wave wanted this month or later?
+7. Which pack is the walkthrough example?
+8. Which single posting slot can the owner hold?
+9. Are Play Console and Analytics already logged in on the phone?
+
+## Follow-up queue
+
+1. Content Creator — How many minutes do the Discord forum post and the three website fixes (screenshot, the 10,000 vs 25,000 character wording, a visible Kit link) take, and which one fix is the minimum worth doing?
+2. Twitter Engager — If X does not allow pinning a reply, where should the Play and website links sit instead, and how many minutes does the weekly refresh of that link set take?
+3. Reddit Community Builder — Since your 4–6 hour reply window conflicts with a possibly offline owner, do you withdraw Branch B and confirm that only the logged-out profile check of the old account remains for these 4 weeks?
+4. Analytics Reporter — If the owner skips refreshing the link set in a week, how should the weekly note record that week's X sessions still tagged `utm_content=w1`, so it is not read as a drop?
+
+> Open R · Anthropic: Claude Sonnet 5.5 · 🌐 · ↑27474 ↓4844
+
+---
+
