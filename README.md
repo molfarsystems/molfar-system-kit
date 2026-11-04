@@ -77,6 +77,6 @@ Want your role to be here? Open a **New issue** → the *Submit a role* form. No
 
 ## License
 
-Everything in this repository **except the [`external/`](external/) folder** is **CC0 1.0**, public domain: take it, change it, publish it, use it commercially. Credit is not required, but appreciated.
+Everything in this repository **except the [`external/`](external/) folder and the model answers in `examples/*/meeting/`** is **CC0 1.0**, public domain: take it, change it, publish it, use it commercially. Credit is not required, but appreciated.
 
-The contents of `external/` are under their authors' licenses (each subfolder has its `LICENSE` and source).
+The contents of `external/` are under their authors' licenses (each subfolder has its `LICENSE` and source). The files in `examples/*/meeting/` are unedited model output: we do not claim copyright in them and do not dedicate them to the public domain.

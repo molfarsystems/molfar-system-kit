@@ -14,6 +14,8 @@
 
 Nothing here was edited after the meeting. The exports in [`meeting/`](meeting/) are exactly what the app saved, including the typo in the meeting title ("Campaing").
 
+> **Correction, November 4, 2026.** An earlier version said that everything in this folder is CC0. That is true only of the human-written text. The files in `meeting/` are an unedited record of model output: we do not claim copyright in those answers and we do not dedicate them to the public domain. Text taken from The Agency remains under the MIT License, © AgentLand Contributors.
+
 ---
 
 ## Contents
@@ -64,7 +66,7 @@ Web search was on for the four specialists, with one rule: every outside fact co
 | 5 | Campaign Project Manager (orchestrator) | Molfar, built on its "Project Manager" role | Anthropic Claude Sonnet 5.5 | on, not used |
 | 6 | Secretary | Molfar, built in | Google Gemini 2.5 Flash | off |
 
-Seats 1–5 ran through OpenRouter, the secretary through Google directly. The scenario has a fifth agent, Instagram Curator; we left it out — Molfar seats four specialists, and the campaign has no visual channel.
+Seats 1–5 ran through OpenRouter, the secretary through Google directly. Model and company names are given as the app showed them in the provider's model list; we did not verify them with the vendors. The scenario has a fifth agent, Instagram Curator; we left it out — Molfar seats four specialists, and the campaign has no visual channel.
 
 The four Agency roles are used **unchanged**, as converted in [`external/agency-agents/`](../../external/agency-agents/) (each agent split into a prompt and a skill). The orchestrator is ours: Molfar's built-in "Project Manager" with three additions for a campaign — a capacity check against the owner's hours, a plan that survives a lost week, and a measure for every step. Its full text: [`pack/campaign-orchestrator.md`](pack/campaign-orchestrator.md).
 
@@ -163,6 +165,6 @@ For your own project, rewrite the three shared documents and keep the task files
 
 ## 12. Credits
 
-- Roles at seats 1–4: [The Agency](https://github.com/msitarzewski/agency-agents) — MIT License, © AgentLand Contributors. Used unchanged, as converted in [`external/agency-agents/`](../../external/agency-agents/). Molfar System is not affiliated with The Agency.
-- Everything in this folder is CC0 (public domain), like the rest of this repository outside `external/`. The model answers in `meeting/` are published as they were produced.
+- Roles at seats 1–4: adapted from [The Agency](https://github.com/msitarzewski/agency-agents) (agency-agents), MIT License, © AgentLand Contributors, used unchanged as converted in [`external/agency-agents/`](../../external/agency-agents/). Molfar is not affiliated with, endorsed by, or a partner of The Agency or AgentLand.
+- The human-written text in this folder (the READMEs, `documents/`, `pack/`) is CC0 (public domain). The files in `meeting/` are an unedited record of model output: we do not claim copyright in those answers and we do not dedicate them to the public domain. Text taken from The Agency remains under the MIT License.
 - Molfar System — https://molfar.nova-hata.com · not affiliated with any other company named Molfar.

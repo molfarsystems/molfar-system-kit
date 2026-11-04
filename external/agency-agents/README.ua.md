@@ -5,7 +5,8 @@
 Ролі з [**The Agency**](https://github.com/msitarzewski/agency-agents) — відкритої колекції ролей для ШІ-агентів — перероблені під Molfar System і зібрані в набори за розділами.
 
 - **Джерело:** [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), коміт `b37b5bb` (2026-10-24).
-- **Ліцензія:** MIT, © AgentLand Contributors — див. [`LICENSE`](LICENSE). У кожної ролі в кінці скіла — рядок авторства. Ці ролі **не** CC0.
+- **Ліцензія:** MIT, © AgentLand Contributors — див. [`LICENSE`](LICENSE). У кожної ролі в кінці скіла — рядок авторства, а повний текст ліцензії лежить у кожному наборі (у його `manifest.json`). Ці ролі **не** CC0.
+- Molfar не пов'язана з The Agency чи AgentLand, не схвалена ними й не є їхнім партнером.
 - **151 роль у 12 наборах.** Повний список з описами (англійською) — [`ROLES.md`](ROLES.md).
 
 ## Поставити
