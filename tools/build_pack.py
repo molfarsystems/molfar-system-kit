@@ -69,9 +69,12 @@ def role(folder):
             "prompt": prompt, "skill": skill, "_category": meta.get("category", "")}
 
 
-def write_pack(out, roles):
+def write_pack(out, roles, license_text=None):
     manifest = {"app": "molfar", "format": 2, "versionCode": VERSION_CODE, "versionName": VERSION_NAME,
                 "created": int(time.time() * 1000), "parts": ["roles"]}
+    if license_text:
+        # The full license of the roles' source travels inside the pack (MIT: the notice goes with every copy).
+        manifest["license"] = license_text
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("manifest.json", json.dumps(manifest, ensure_ascii=False))

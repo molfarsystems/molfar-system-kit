@@ -34,6 +34,7 @@ def main():
     labels = labels.get("divisions", labels)
     os.makedirs(os.path.join(out, "packs"), exist_ok=True)
     shutil.copy(os.path.join(repo, "LICENSE"), os.path.join(out, "LICENSE"))
+    license_text = open(os.path.join(repo, "LICENSE"), encoding="utf-8").read()
     listing, skipped, total = [], [], 0
     for div in DIVISIONS:
         label = labels.get(div, {}).get("label", div.title()) if isinstance(labels.get(div), dict) else div.title()
@@ -57,7 +58,7 @@ def main():
         if not roles:
             continue
         name = f"agency-{div}.zip"
-        build_pack.write_pack(os.path.join(out, "packs", name), roles)
+        build_pack.write_pack(os.path.join(out, "packs", name), roles, license_text)
         total += len(roles)
         listing.append((name, label, roles))
         print(f"{name}: {len(roles)} roles")

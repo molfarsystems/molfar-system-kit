@@ -5,7 +5,8 @@
 Roles from [**The Agency**](https://github.com/msitarzewski/agency-agents) — an open collection of AI agent personalities — converted for Molfar System and packed by division.
 
 - **Source:** [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) at commit `b37b5bb` (2026-10-24).
-- **License:** MIT, © AgentLand Contributors — see [`LICENSE`](LICENSE). Each role keeps an attribution line at the end of its skill. These roles are **not** CC0.
+- **License:** MIT, © AgentLand Contributors — see [`LICENSE`](LICENSE). Each role keeps an attribution line at the end of its skill, and the full license text travels inside every pack (in its `manifest.json`). These roles are **not** CC0.
+- Molfar is not affiliated with, endorsed by, or a partner of The Agency or AgentLand.
 - **151 roles in 12 packs.** The full list with descriptions — [`ROLES.md`](ROLES.md).
 
 ## Install

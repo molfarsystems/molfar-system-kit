@@ -26,6 +26,7 @@ Nothing else. The app ignores other entries, and the checker reports them.
 | `versionName` | For people only. |
 | `created` | Unix time in milliseconds. |
 | `parts` | `["roles"]` for a role pack. (The app also knows `"models"` and `"files"` in its own archives.) |
+| `license` | Optional. The full license text of the roles' source, when it requires that the notice travels with every copy (e.g. MIT). The app ignores it; it is there for people who unpack the file. |
 
 ### data/roles.json
 
