@@ -19,7 +19,7 @@ A role is who the model will be in a conversation: the **prompt** (who it is and
 - **Experts** — specialists at the meeting table (seats 1–4) and in the expert chat;
 - **Orchestrators** — run the meeting (seat 5): bring the answers together, look for disagreements, sum up.
 
-The app already comes with 28 built-in roles. This repository holds the ones it doesn't have.
+The app already comes with 29 built-in roles. This repository holds the ones it doesn't have.
 
 ---
 
@@ -54,6 +54,27 @@ A pack doesn't touch your API keys, chats or meetings — it holds roles only.
 **Settings** → **Data archive** → **Create archive** → **Roles only — to share**. You get a `.zip` with your own and changed roles — send it to friends or colleagues: they install it exactly like a pack from here.
 
 Want your role to be here? Open a **New issue** → the *Submit a role* form. No git needed: fill in the fields, submit, and the role appears here with a link to you.
+
+---
+
+## FAQ
+
+**What is a role?**
+A prompt (who the model is and how it talks) plus a skill (what it does and in what order), up to 25,000 characters each.
+
+**What do I need?**
+An Android phone with Android 7.0 or newer, Molfar 2.0.5 or newer to install packs, and your own key from an AI provider.
+
+**Will installing a pack delete my roles?**
+No. Identical roles are skipped; for a role with the same name but different text you choose Replace, Keep both or Skip. Nothing is deleted.
+
+**Where do my requests go?**
+Straight from your phone to the AI provider you chose. Molfar has no server of its own.
+
+**Can I contribute without git?**
+Yes: New issue → "Submit a role". Fill in the form and a bot turns it into a pull request.
+
+> We are a solo developer from Ukraine, working with Claude. Replies may be slow — questions are welcome in [Discussions](https://github.com/molfarsystems/molfar-system-kit/discussions), and this FAQ covers the common ones.
 
 ---
 

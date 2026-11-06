@@ -2,7 +2,7 @@
 
 Ready-made roles for Molfar System. Each one is a **prompt** (who the role is) and a **skill** (how it works).
 
-The app already comes with 28 built-in roles. This folder holds only roles that are **not** in the app. Ready-made `.zip` packs of these roles are in [`packs/`](packs/) — the quickest way to install them (see the [main README](../README.md)).
+The app already comes with 29 built-in roles. This folder holds only roles that are **not** in the app. Ready-made `.zip` packs of these roles are in [`packs/`](packs/) — the quickest way to install them (see the [main README](../README.md)).
 
 ---
 
