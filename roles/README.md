@@ -2,7 +2,7 @@
 
 Ready-made roles for Molfar System. Each one is a **prompt** (who the role is) and a **skill** (how it works).
 
-The app already comes with 29 built-in roles. This folder holds only roles that are **not** in the app. Ready-made `.zip` packs of these roles are in [`packs/`](packs/) — the quickest way to install them (see the [main README](../README.md)).
+The app already comes with 33 built-in roles. This folder holds only roles that are **not** in the app. Ready-made `.zip` packs of these roles are in [`packs/`](packs/) — the quickest way to install them (see the [main README](../README.md)).
 
 ---
 
@@ -17,6 +17,7 @@ Roles are not mirrored across languages. A role written in Ukrainian and one wri
 | Technology journalist | Technical articles built from supplied material. Fact kept apart from interpretation, sources checked. | Participant | [en](en/tech-journalist/) |
 | Interviewer | Draws out the details of an idea through questions and returns a structured summary. Does not advise. | Participant | [en](en/interviewer/) |
 | Devil's Advocate | Attacks a plan to find where it breaks | Participant | [en](en/devils-advocate/) |
+| ASO Specialist | Google Play and App Store listings: keyword core from Keyword Planner and store data, title and descriptions, localizations | Participant | [en](en/aso-specialist/) |
 
 ---
 
