@@ -19,7 +19,7 @@ A role is who the model will be in a conversation: the **prompt** (who it is and
 - **Experts** — specialists at the meeting table (seats 1–4) and in the expert chat;
 - **Orchestrators** — run the meeting (seat 5): bring the answers together, look for disagreements, sum up.
 
-The app already comes with 29 built-in roles. This repository holds the ones it doesn't have.
+The app already comes with 33 built-in roles. This repository holds the ones it doesn't have.
 
 ---
 
